@@ -1,0 +1,7 @@
+Шрифты:
+
+font-family: 'Montserrat', sans-serif;
+
+Medium 500
+Bold 700
+Black 900
