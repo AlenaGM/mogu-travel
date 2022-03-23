@@ -1,4 +1,3 @@
-
 let json = `[{
         "name": "Золотое кольцо Абхазии",
         "code": "gold",
@@ -74,10 +73,6 @@ buttonShow.addEventListener("click", function excursionType() {
             let result = excursions.filter((x) => x.category === radio.value);
             console.log(result);
         }
-
     }
 
 })
-
-
-
