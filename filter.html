@@ -12,7 +12,15 @@
 <body>
     <div class="wrapper">
         <header class="header"></header>
-        <main class="main"></main>
+        <main class="main">
+            <div class="rating__items">
+                <input type ="radio" class="rating__item" value="bus" name="type"></input> <input type ="radio" class="rating__item" value="plane" name="type"></input>
+                <input type ="radio" class="rating__item" value="foot" name="type"></input>
+            </div>
+            <button id="show">Показать</button>
+            <div class="excursions_container" id="excursions_container">
+            </div>
+        </main>
         <div class="footer"></div>
     </div>
     <script src="assets/js/filter.js"></script>
