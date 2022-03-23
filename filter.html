@@ -11,15 +11,40 @@
 </head>
 <body>
     <div class="wrapper">
-        <header class="header"></header>
+        <header class="header">
+            <a href="#" class="header__logo"></a>
+            <nav class="header__menu">
+                <ul class="header__list">
+                    <li>
+                        <a href="" class="header__link">Пункт меню 1</a>
+                    </li>
+                    <li>
+                        <a href="" class="header__link">Пункт меню 2</a>
+                    </li>
+                    <li>
+                        <a href="" class="header__link">Пункт меню 3</a>
+                    </li>
+                </ul>
+                <div class="header__burger">
+                    <span></span>
+                </div>
+            </nav>
+            <div class="header__title">Наши экскурсии</div>
+        </header>
         <main class="main">
-            <div class="rating__items">
-                <input type ="radio" class="rating__item" value="bus" name="type"/>
-                <input type ="radio" class="rating__item" value="plane" name="type"/>
-                <input type ="radio" class="rating__item" value="foot" name="type"/>
+            <div class="filter">
+                <div>
+                    <input type ="radio" value="bus" name="type"/>
+                    <input type ="radio" value="plane" name="type"/>
+                    <input type ="radio" value="foot" name="type"/>
+                </div>
+                <button id="show">Показать</button>
             </div>
-            <button id="show">Показать</button>
-            <div class="excursions_container" id="excursions_container">
+            <aside class="sidebar"></aside>
+            <div class="excursions">
+                <h1 class="excursions__title">Наши туры</h1>
+                <section class="excursions_container" id="excursions_container">
+                </section>
             </div>
         </main>
         <div class="footer"></div>
