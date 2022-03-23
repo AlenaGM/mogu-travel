@@ -72,20 +72,6 @@ buttonShow.addEventListener("click", function excursionType() {
             let result = excursions.filter((x) => x.category === radio.value);
             console.log(result);
         }
-
-
-        // if (radio.value === 'bus' && radio.checked) {
-        //     let result = excursions.filter((x) => x.category === "bus");
-        //     console.log(result);
-        // }
-        // else if (radio.value === 'plane' && radio.checked) {
-        //     let result = excursions.filter((x) => x.category === "plane");
-        //     console.log(result);
-        // }
-        // else {
-        //     let result = excursions.filter((x) => x.category === "foot");
-        //     console.log(result);
-        // }
     }
 
 })
