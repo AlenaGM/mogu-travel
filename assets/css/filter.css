@@ -1,1 +1,105 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap');
+
+.wrapper {
+    min-height: 100%;
+    display: grid;
+    grid-template: minmax(289px, auto) 1fr minmax(173px, auto) / 1fr;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer"
+}
+
+.header {
+    background-color: blueviolet;
+    grid-area: header;
+    padding: 15px;
+    display: grid;
+    grid-template: minmax(60px, auto) 1fr/ 1fr minmax(auto, 300px) minmax(auto, 820px) 1fr;
+    grid-template-areas:
+        ". header__logo header__menu ."
+        ". header__title header__title ."
+}
+
+.header__logo {
+    grid-area: header__logo;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: antiquewhite;
+    align-items: center;
+}
+
+.header__menu {
+    grid-area: header__menu;
+    align-items: center;
+}
+
+.header__list {
+    display: grid;
+    grid-auto-flow: column;
+    justify-items: end;
+}
+
+.header__list li {
+    list-style-type: none;
+}
+
+.header__link {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    text-decoration: none;
+}
+
+.header__burger {
+}
+
+.header__title {
+    grid-area: header__title;
+    display: grid;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 88px;
+    letter-spacing: 0em;
+    text-align: left;
+    align-items: center;
+}
+
+.main {
+    grid-area: main;
+    display: grid;
+    grid-template: minmax(260px, auto) 1fr/ 1fr minmax(auto, 300px) minmax(auto, 820px) 1fr;
+    grid-template-areas:
+        ". filter filter ."
+        ". sidebar excursions ."
+}
+
+.filter {
+    background-color: brown;
+    grid-area: filter;
+}
+
+.sidebar {
+    background-color: yellow;
+    grid-column: 2/3;
+}
+
+.excursions {
+    background-color: palevioletred;
+    grid-column: 3/4;
+}
+
+.excursions__title {
+}
+.excursions_container {
+}
+
+.footer {
+    background-color: yellowgreen;
+    grid-area: footer;
+}
