@@ -1,17 +1,17 @@
 
 let json = `[{
-    "name": "Золотое кольцо Абхазии",
-    "code": "gold",
-    "category": "plane",
-    "priceadult": "2000",
-    "pricechild": "1000",
-    "duration":"2",
-    "description":"очень красиво",
-    "favorite":"0",
-    "capacity":"",
-    "destination":"50",
-    "date":"12.05.22",
-    "image": "assets/img/1.jpeg"
+        "name": "Золотое кольцо Абхазии",
+        "code": "gold",
+        "category": "plane",
+        "priceadult": "2000",
+        "pricechild": "1000",
+        "duration":"2",
+        "description":"очень красиво",
+        "favorite":"0",
+        "capacity":"",
+        "destination":"50",
+        "date":"12.05.22",
+        "image": "assets/img/1.jpeg"
     },{
         "name": "Золотое кольцо Грузии",
         "code": "gold",
@@ -25,20 +25,20 @@ let json = `[{
         "destination":"50",
         "date":"12.05.22",
         "image": "assets/img/2.jpeg"
-        },{
-            "name": "Золотое кольцо Армении",
-            "code": "gold",
-            "category": "foot",
-            "priceadult": "2000",
-            "pricechild": "1000",
-            "duration":"2",
-            "description":"очень красиво",
-            "favorite":"0",
-            "capacity":"",
-            "destination":"50",
-            "date":"12.05.22",
-            "image": "assets/img/3.jpeg"
-            }]`
+    },{
+        "name": "Золотое кольцо Армении",
+        "code": "gold",
+        "category": "foot",
+        "priceadult": "2000",
+        "pricechild": "1000",
+        "duration":"2",
+        "description":"очень красиво",
+        "favorite":"0",
+        "capacity":"",
+        "destination":"50",
+        "date":"12.05.22",
+        "image": "assets/img/3.jpeg"
+    }]`
 
 document.addEventListener("DOMContentLoaded", function () {
     let excursions = JSON.parse(json);
@@ -57,7 +57,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
                 </div>`
     }
+
     document.getElementById("excursions_container").innerHTML = excursionsContent;
+
 });
 
 let buttonShow = document.getElementById("show");
@@ -73,19 +75,6 @@ buttonShow.addEventListener("click", function excursionType() {
             console.log(result);
         }
 
-
-        // if (radio.value === 'bus' && radio.checked) {
-        //     let result = excursions.filter((x) => x.category === "bus");
-        //     console.log(result);
-        // }
-        // else if (radio.value === 'plane' && radio.checked) {
-        //     let result = excursions.filter((x) => x.category === "plane");
-        //     console.log(result);
-        // }
-        // else {
-        //     let result = excursions.filter((x) => x.category === "foot");
-        //     console.log(result);
-        // }
     }
 
 })
