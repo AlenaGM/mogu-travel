@@ -43,7 +43,8 @@ body {
 
 .header__menu {
     grid-area: header__menu;
-    align-items: center;
+    display: grid;
+    align-content: center;
 }
 
 .header__list {
@@ -51,12 +52,11 @@ body {
     grid-auto-flow: column;
     justify-items: end;
     align-items: center;
+    margin-block-start: 0;
 }
 
 .header__list li {
     list-style-type: none;
-    padding-inline-start: 0px;
-    margin: 0px 0px 0px 20px;
 }
 
 .header__link {
