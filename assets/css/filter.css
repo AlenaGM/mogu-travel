@@ -56,7 +56,7 @@ body {
 .header__list li {
     list-style-type: none;
     padding-inline-start: 0px;
-    padding: 0px 0px 0px 20px;
+    margin: 0px 0px 0px 20px;
 }
 
 .header__link {
@@ -71,10 +71,6 @@ body {
 
 .header__link:hover{
     color: #FFC700;
-}
-
-
-.header__burger {
 }
 
 .header__title {
@@ -178,6 +174,24 @@ body {
     }
 
 }
+
+/*-------бургер------------*/
+@media screen and (max-width: 767px){
+    .header__list{
+        display: none;
+    }
+
+    .header__menu {
+        display: grid;
+        justify-items: end;
+    }
+
+
+    .header__burger {
+    }
+}
+
+
 
 /*-------ДЕСКТОПЫ------------*/
 @media screen and (min-width: 913px){
