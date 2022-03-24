@@ -52,7 +52,6 @@ body {
     grid-auto-flow: column;
     justify-items: end;
     align-items: center;
-    margin-block-start: 0;
 }
 
 .header__list li {
