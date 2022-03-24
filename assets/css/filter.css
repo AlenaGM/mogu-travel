@@ -1,9 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap');
 
+html,
+body {
+    height: 100%;
+    background-color: #E5E5E5;
+}
+
+/*-------МОБИЛЬНИКИ------------*/
 .wrapper {
     min-height: 100%;
     display: grid;
-    grid-template: minmax(289px, auto) 1fr minmax(173px, auto) / 1fr;
+    grid-template: minmax(370px, auto) 1fr minmax(173px, auto) / 1fr;
     grid-template-areas:
         "header"
         "main"
@@ -15,7 +22,7 @@
     grid-area: header;
     padding: 15px;
     display: grid;
-    grid-template: minmax(60px, auto) 1fr/ 1fr minmax(auto, 300px) minmax(auto, 820px) 1fr;
+    grid-template: minmax(60px, auto) 1fr/ minmax(1rem, 1fr) minmax(auto, 300px) minmax(auto, 820px) minmax(1rem, 1fr);
     grid-template-areas:
         ". header__logo header__menu ."
         ". header__title header__title ."
@@ -23,11 +30,15 @@
 
 .header__logo {
     grid-area: header__logo;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background-color: antiquewhite;
+    position: relative;
+    width: 40px;
     align-items: center;
+}
+
+.header__img {
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
 }
 
 .header__menu {
@@ -39,10 +50,13 @@
     display: grid;
     grid-auto-flow: column;
     justify-items: end;
+    align-items: center;
 }
 
 .header__list li {
     list-style-type: none;
+    padding-inline-start: 0px;
+    padding: 0px 0px 0px 20px;
 }
 
 .header__link {
@@ -52,7 +66,13 @@
     font-weight: 500;
     line-height: 17px;
     text-decoration: none;
+    cursor: pointer;
 }
+
+.header__link:hover{
+    color: #FFC700;
+}
+
 
 .header__burger {
 }
@@ -62,44 +82,142 @@
     display: grid;
     font-family: 'Montserrat', sans-serif;
     color: white;
-    font-size: 72px;
+    font-size: 36px;
     font-weight: 700;
-    line-height: 88px;
+    line-height: 44px;
     letter-spacing: 0em;
-    text-align: left;
+    text-align: center;
     align-items: center;
 }
 
 .main {
     grid-area: main;
     display: grid;
-    grid-template: minmax(260px, auto) 1fr/ 1fr minmax(auto, 300px) minmax(auto, 820px) 1fr;
+    grid-template: minmax(500px, auto) 1fr minmax(690px, auto)/ minmax(1rem, 1fr) minmax(auto, 1120px) minmax(1rem, 1fr);
     grid-template-areas:
-        ". filter filter ."
-        ". sidebar excursions ."
+        ". filter ."
+        ". excursions ."
+        ". sidebar ."
+
 }
 
 .filter {
     background-color: brown;
     grid-area: filter;
-}
-
-.sidebar {
-    background-color: yellow;
-    grid-column: 2/3;
+    margin: 60px 0px 20px 0px;
+    padding: 60px;
 }
 
 .excursions {
-    background-color: palevioletred;
-    grid-column: 3/4;
+    background-color: #E5E5E5;
+    grid-area: excursions;
+    padding: 40px 0px 40px 0px;
+    margin: 0px 0px 40px 0px;
 }
 
 .excursions__title {
+    font-family: 'Montserrat', sans-serif;
+    color: #0499DD;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding: 0px 0px 40px 0px;
+    margin: 0px;
 }
+
 .excursions_container {
+}
+
+.sidebar{
+    display: grid;
+    grid-area: sidebar;
+    background-color: yellow;
+    padding: 25px 35px;
+    margin: 0px 0px 80px 0px;
 }
 
 .footer {
     background-color: yellowgreen;
     grid-area: footer;
+}
+
+/*-------ПЛАНШЕТЫ------------*/
+@media screen and (min-width: 767px){
+    .wrapper {
+        min-height: 100%;
+        display: grid;
+        grid-template: minmax(509px, auto) 1fr minmax(173px, auto) / 1fr;
+        grid-template-areas:
+            "header"
+            "main"
+            "footer"
+    }
+
+    .header__title {
+        font-size: 48px;
+        line-height: 58px;
+    }
+
+    .filter {
+        background-color: brown;
+        grid-area: filter;
+        margin: 100px 40px 60px 40px;
+    }
+
+    .excursions {
+        padding: 40px 0px 40px 40px;
+        margin: 0px 0px 40px 0px;
+    }
+
+    .sidebar{
+        padding: 25px 35px;
+        margin: 0px 40px 80px 40px;
+    }
+
+}
+
+/*-------ДЕСКТОПЫ------------*/
+@media screen and (min-width: 913px){
+    .wrapper {
+        min-height: 100%;
+        display: grid;
+        grid-template: minmax(289px, auto) 1fr minmax(173px, auto) / 1fr;
+        grid-template-areas:
+            "header"
+            "main"
+            "footer"
+    }
+
+    .header__title {
+        font-size: 72px;
+        line-height: 88px;
+        text-align: left;
+    }
+
+    .main {
+        grid-area: main;
+        display: grid;
+        grid-template: minmax(260px, auto) 1fr/ minmax(1rem, 1fr) minmax(auto, 300px) minmax(auto, 820px) minmax(1rem, 1fr);
+        grid-template-areas:
+            ". filter filter ."
+            ". sidebar excursions ."
+    }
+
+    .sidebar {
+        display: grid;
+        grid-area: sidebar;
+        background-color: yellow;
+        padding: 25px 35px;
+        margin: 40px 0px 80px 0px;
+    }
+
+    .filter {
+        background-color: brown;
+        grid-area: filter;
+        margin: 40px 0px 0px 0px;
+        padding: 60px;
+    }
 }
