@@ -45,13 +45,15 @@ body {
     grid-area: header__menu;
     display: grid;
     align-content: center;
+    justify-items: end;
 }
 
 .menu__list {
     display: grid;
     grid-auto-flow: column;
-    justify-items: end;
+    justify-content: end;
     align-items: center;
+    padding-inline-start: 0px;
 }
 
 .menu__list li {
@@ -147,8 +149,6 @@ body {
     }
 
     .header__menu {
-        display: grid;
-        justify-items: end;
     }
 
     .menu__burger{
@@ -170,27 +170,17 @@ body {
 
 /*-------ПЛАНШЕТЫ------------*/
 @media screen and (min-width: 767px){
-    .wrapper {
-        min-height: 100%;
-        display: grid;
-        grid-template: minmax(509px, auto) 1fr minmax(173px, auto) / 1fr;
-        grid-template-areas:
-            "header"
-            "main"
-            "footer"
-    }
 
     .menu__burger{
         display: none;
     }
 
     .menu__list {
-        padding-inline-start: 0px;
-        justify-content: end;
+
     }
 
     .menu__list li {
-        padding-inline-start: 0px;
+
     }
 
     .header__title {
@@ -218,15 +208,7 @@ body {
 
 /*-------ДЕСКТОПЫ------------*/
 @media screen and (min-width: 913px){
-    .wrapper {
-        min-height: 100%;
-        display: grid;
-        grid-template: minmax(289px, auto) 1fr minmax(173px, auto) / 1fr;
-        grid-template-areas:
-            "header"
-            "main"
-            "footer"
-    }
+
 
     .header__title {
         font-size: 72px;
