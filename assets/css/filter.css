@@ -47,19 +47,19 @@ body {
     align-content: center;
 }
 
-.header__list {
+.menu__list {
     display: grid;
     grid-auto-flow: column;
     justify-items: end;
     align-items: center;
 }
 
-.header__list li {
+.menu__list li {
     list-style-type: none;
     margin: 0px 0px 0px 20px;
 }
 
-.header__link {
+.menu__link {
     font-family: 'Montserrat', sans-serif;
     color: white;
     font-size: 14px;
@@ -69,7 +69,7 @@ body {
     cursor: pointer;
 }
 
-.header__link:hover{
+.menu__link:hover{
     color: #FFC700;
 }
 
@@ -142,7 +142,7 @@ body {
 
 /*-------БУРГЕР------------*/
 @media screen and (max-width: 767px) {
-    .header__list {
+    .menu__list {
         display: none;
     }
 
@@ -151,16 +151,16 @@ body {
         justify-items: end;
     }
 
-    .header__burger{
+    .menu__burger{
         width: 40px;
         display: grid;
         align-items: center;
         grid-template: repeat(3, 10px) / 1fr;
     }
 
-    .header__burger span,
-    .header__burger::before,
-    .header__burger::after {
+    .menu__burger span,
+    .menu__burger::before,
+    .menu__burger::after {
         content:"";
         height: 3px;
         width: 40px;
@@ -180,8 +180,17 @@ body {
             "footer"
     }
 
-    .header__burger{
+    .menu__burger{
         display: none;
+    }
+
+    .menu__list {
+        padding-inline-start: 0px;
+        justify-content: end;
+    }
+
+    .menu__list li {
+        padding-inline-start: 0px;
     }
 
     .header__title {
@@ -204,7 +213,6 @@ body {
         padding: 25px 35px;
         margin: 0px 40px 80px 40px;
     }
-
 }
 
 
