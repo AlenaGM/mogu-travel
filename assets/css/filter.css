@@ -22,7 +22,7 @@ body {
     grid-area: header;
     padding: 15px;
     display: grid;
-    grid-template: minmax(60px, auto) 1fr/ minmax(1rem, 1fr) minmax(auto, 300px) minmax(auto, 820px) minmax(1rem, 1fr);
+    grid-template: minmax(60px, auto) 1fr/ minmax(1rem, 1fr) minmax(auto, 40px) minmax(auto, 1080px) minmax(1rem, 1fr);
     grid-template-areas:
         ". header__logo header__menu ."
         ". header__title header__title ."
@@ -45,20 +45,17 @@ body {
     grid-area: header__menu;
     display: grid;
     align-content: center;
-    justify-items: end;
+
 }
 
 .menu__list {
-    display: grid;
-    grid-auto-flow: column;
-    justify-content: end;
-    align-items: center;
     padding-inline-start: 0px;
+    margin-left: -40px;
+    align-self: center;
 }
 
 .menu__list li {
-    list-style-type: none;
-    margin: 0px 0px 0px 20px;
+
 }
 
 .menu__link {
@@ -145,27 +142,64 @@ body {
 /*-------БУРГЕР------------*/
 @media screen and (max-width: 767px) {
     .menu__list {
-        display: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu__list li {
+        list-style-type: none;
+        padding: 10px 0;
     }
 
     .header__menu {
     }
 
     .menu__burger{
-        width: 40px;
+        z-index: 5;
         display: grid;
         align-items: center;
-        grid-template: repeat(3, 10px) / 1fr;
+        justify-self: end;
+        width: 40px;
+        height: 26px;
+        position: relative;
+        cursor: pointer;
     }
 
     .menu__burger span,
     .menu__burger::before,
     .menu__burger::after {
-        content:"";
-        height: 3px;
-        width: 40px;
+        left: 0;
+        position: absolute;
+        height: 12%;
+        width: 100%;
+        transition: all 0.3s ease 0s;
         background-color: #FFFFFF;
+        border-radius: 20px;
     }
+
+    .menu__burger::before,
+    .menu__burger::after {
+        content:"";
+    }
+
+    .menu__burger::before {
+        top: 0;
+    }
+
+    .menu__burger::after {
+        bottom: 0;
+    }
+
+    .menu__burger::after {
+        bottom: 0;
+    }
+
+    .menu__burger span {
+        bottom: 40%;
+        transform: scale(1) translate(0px, -40%);
+    }
+
 }
 
 /*-------ПЛАНШЕТЫ------------*/
@@ -176,11 +210,15 @@ body {
     }
 
     .menu__list {
-
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: end;
+        align-items: center;
+        padding-inline-start: 0px;
     }
 
     .menu__list li {
-
+        margin: 0px 0px 0px 20px;
     }
 
     .header__title {
@@ -205,10 +243,8 @@ body {
     }
 }
 
-
 /*-------ДЕСКТОПЫ------------*/
 @media screen and (min-width: 913px){
-
 
     .header__title {
         font-size: 72px;
