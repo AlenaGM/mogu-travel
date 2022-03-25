@@ -6,6 +6,7 @@ html,
 body {
     box-sizing: border-box;
     height: 100%;
+    margin: 0;
 }
 
 .wrapper {
@@ -51,6 +52,15 @@ body {
     color: #0499DD;
 }
 
+/* сброс стилей кнопок */
+button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+}
+
 /* Header -------------------- */
 
 .header {
@@ -93,9 +103,63 @@ body {
     grid-area: gallery;
 }
 
-/* Отзывы ----- Алина*/
+/* Отзывы ------------------ Алина*/
 .reviews {
     grid-area: reviews;
+    overflow: hidden;
+}
+
+.reviews_wrapper {
+    margin-left: 160px;
+}
+
+.reviews_title {
+    margin-bottom: 90px;
+}
+
+.reviews-cards_wrapper {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.reviews-card {
+    box-sizing: border-box;
+    display: flex;
+    gap: 28px;
+    width: 740px;
+    height: 322px;
+    padding: 38px 27px 39px 45px;
+    background-color: #EDEDED;
+    background-image: url(/assets/img/reviews-background.svg);
+    background-repeat: no-repeat;
+    background-position: bottom 10px right 10px;
+    border-radius: 10px;
+}
+
+.reviews-photo {
+    width: 245px;
+    height: 245px;
+}
+
+.reviews-card_name {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.reviews_text {
+    width: 395px;
+    height: 153px;
+}
+
+.reviews-slider {
+    height: 43px;
+}
+
+.reviews-slider_arrow {
+    width: 24px;
+    height: 43px;
 }
 
 /* Форма связи */
