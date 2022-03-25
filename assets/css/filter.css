@@ -56,6 +56,7 @@ body {
 
 .header__list li {
     list-style-type: none;
+    margin: 0px 0px 0px 20px;
 }
 
 .header__link {
@@ -139,6 +140,34 @@ body {
     grid-area: footer;
 }
 
+/*-------БУРГЕР------------*/
+@media screen and (max-width: 767px) {
+    .header__list {
+        display: none;
+    }
+
+    .header__menu {
+        display: grid;
+        justify-items: end;
+    }
+
+    .header__burger{
+        width: 40px;
+        display: grid;
+        align-items: center;
+        grid-template: repeat(3, 10px) / 1fr;
+    }
+
+    .header__burger span,
+    .header__burger::before,
+    .header__burger::after {
+        content:"";
+        height: 3px;
+        width: 40px;
+        background-color: #FFFFFF;
+    }
+}
+
 /*-------ПЛАНШЕТЫ------------*/
 @media screen and (min-width: 767px){
     .wrapper {
@@ -149,6 +178,10 @@ body {
             "header"
             "main"
             "footer"
+    }
+
+    .header__burger{
+        display: none;
     }
 
     .header__title {
@@ -173,23 +206,6 @@ body {
     }
 
 }
-
-/*-------бургер------------*/
-@media screen and (max-width: 767px){
-    .header__list{
-        display: none;
-    }
-
-    .header__menu {
-        display: grid;
-        justify-items: end;
-    }
-
-
-    .header__burger {
-    }
-}
-
 
 
 /*-------ДЕСКТОПЫ------------*/
