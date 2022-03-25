@@ -28,7 +28,7 @@ let json = `[{
     "date":"",
     "image": "assets/img/lyon.jpeg"
     },
-    {    
+    {
     "name": "Страсбург: Франция с немецким акцентом",
     "code": "strasbourg",
     "category": "bus",
@@ -58,7 +58,7 @@ let json = `[{
     "date":"",
     "image": "assets/img/colmar.jpeg"
     },
-    {    
+    {
     "name": "Правда и выдумки о Марселе",
     "code": "marseilles",
     "category": "bus",
@@ -73,7 +73,7 @@ let json = `[{
     "date":"",
     "image": "assets/img/marseilles.jpeg"
     },
-    {    
+    {
     "name": "Монпелье — открыть настоящую Южную Францию",
     "code": "montpellier",
     "category": "foot",
@@ -88,7 +88,7 @@ let json = `[{
     "date":"",
     "image": "assets/img/montpellier.jpeg"
     },
-    {    
+    {
     "name": "Многоликий Версаль",
     "code": "versailles",
     "category": "bus",
@@ -103,7 +103,7 @@ let json = `[{
     "date":"",
     "image": "assets/img/versailles.jpeg"
     },
-    {    
+    {
     "name": "Руан — средневековые врата в Нормандию",
     "code": "rouen",
     "category": "foot",
@@ -118,7 +118,7 @@ let json = `[{
     "date":"",
     "image": "assets/img/rouen.jpeg"
     },
-    {    
+    {
     "name": "Ежедневная прогулка по Парижу",
     "code": "paris",
     "category": "foot",
@@ -149,13 +149,16 @@ let json = `[{
     "image": "assets/img/nice.jpeg"
     }]`
 
+
 document.addEventListener("DOMContentLoaded", function () {
     let excursions = JSON.parse(json);
     let excursionsContent = "";
     for (let excursion of excursions) {
         excursionsContent +=
             `<div class="excursion_item">
-                    <img class="characterImage" src="${excursion.image}" alt="${excursion.code}"></img>
+                    <div class="excursions__image">
+                        <img class="characterImage" src="${excursion.image}" alt="${excursion.code}"></img>
+                    </div>
                     <h2 class="characterName" id="${excursion.code}">${excursion.name}</h2>
                     <div class="excursionInfo">
                         <div> ${excursion.priceadult}</div>
@@ -165,10 +168,11 @@ document.addEventListener("DOMContentLoaded", function () {
                         <div> ${excursion.favorite}</div>
                         <div> ${excursion.code}</div>
                     </div>
-                </div>`
+            </div>`
     }
     document.getElementById("excursions_container").innerHTML = excursionsContent;
 });
+
 
 let buttonShow = document.getElementById("show");
 let radioType = document.querySelectorAll('input[name="type"]');
@@ -186,4 +190,30 @@ buttonShow.addEventListener("click", function excursionType() {
 })
 
 
+//МЕНЮ-БУРГЕР
 
+const burgerMenu = document.querySelector('.menu__burger');
+const bodyMenu = document.querySelector('.menu__body');
+const menuLinks = document.querySelectorAll('.menu__link')
+
+if(burgerMenu){
+    burgerMenu.addEventListener('click', function(e) {
+        document.body.classList.toggle('_lock');
+        burgerMenu.classList.toggle('_active');
+        bodyMenu.classList.toggle('_active');
+    });
+}
+
+if(menuLinks.length > 0) {
+    menuLinks.forEach(menuLink => {
+        menuLink.addEventListener('click', onMenuLinkClick)
+    });
+
+    function onMenuLinkClick() {
+        if (burgerMenu.classList.contains('_active')){
+            document.body.classList.remove('_lock');
+            burgerMenu.classList.remove('_active');
+            bodyMenu.classList.remove('_active');
+        }
+    }
+}
