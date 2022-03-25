@@ -6,6 +6,10 @@ body {
     background-color: #E5E5E5;
 }
 
+body._lock {
+    overflow: hidden;
+}
+
 /*-------МОБИЛЬНИКИ------------*/
 .wrapper {
     min-height: 100%;
@@ -20,9 +24,9 @@ body {
 .header {
     background-color: blueviolet;
     grid-area: header;
-    padding: 15px;
+    padding-top: 15px;
     display: grid;
-    grid-template: minmax(60px, auto) 1fr/ minmax(1rem, 1fr) minmax(auto, 300px) minmax(auto, 820px) minmax(1rem, 1fr);
+    grid-template: minmax(60px, auto) 1fr/ minmax(1rem, 1fr) minmax(auto, 40px) minmax(auto, 1080px) minmax(1rem, 1fr);
     grid-template-areas:
         ". header__logo header__menu ."
         ". header__title header__title ."
@@ -31,6 +35,7 @@ body {
 .header__logo {
     grid-area: header__logo;
     position: relative;
+    z-index: 5;
     width: 40px;
     align-items: center;
 }
@@ -43,38 +48,21 @@ body {
 
 .header__menu {
     grid-area: header__menu;
-    align-items: center;
-}
-
-.header__list {
     display: grid;
-    grid-auto-flow: column;
-    justify-items: end;
-    align-items: center;
+    align-content: center;
 }
 
-.header__list li {
-    list-style-type: none;
-    padding-inline-start: 0px;
-    padding: 0px 0px 0px 20px;
-}
-
-.header__link {
+.menu__link {
     font-family: 'Montserrat', sans-serif;
     color: white;
-    font-size: 14px;
     font-weight: 500;
     line-height: 17px;
     text-decoration: none;
     cursor: pointer;
 }
 
-.header__link:hover{
+.menu__link:hover{
     color: #FFC700;
-}
-
-
-.header__burger {
 }
 
 .header__title {
@@ -98,7 +86,6 @@ body {
         ". filter ."
         ". excursions ."
         ". sidebar ."
-
 }
 
 .filter {
@@ -144,16 +131,130 @@ body {
     grid-area: footer;
 }
 
+/*-------БУРГЕР------------*/
+@media screen and (max-width: 767px) {
+
+    .menu__burger{
+        z-index: 5;
+        display: grid;
+        align-items: center;
+        justify-self: end;
+        width: 40px;
+        height: 26px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .menu__burger span,
+    .menu__burger::before,
+    .menu__burger::after {
+        left: 0;
+        position: absolute;
+        height: 12%;
+        width: 100%;
+        transition: all 0.3s ease 0s;
+        background-color: #FFFFFF;
+        border-radius: 20px;
+    }
+
+    .menu__burger::before,
+    .menu__burger::after {
+        content:"";
+    }
+
+    .menu__burger::before {
+        top: 0;
+    }
+
+    .menu__burger::after {
+        bottom: 0;
+    }
+
+    .menu__burger::after {
+        bottom: 0;
+    }
+
+    .menu__burger span {
+        top: 50%;
+        transform: scale(1) translate(0px, -50%);
+    }
+
+    .menu__burger._active span {
+        transform: scale(0) translate(0px, -50%);
+    }
+
+    .menu__burger._active::before {
+        top: 50%;
+        transform: rotate(-45deg) translate(0px, -50%);
+    }
+
+    .menu__burger._active::after {
+        bottom: 50%;
+        transform: rotate(45deg) translate(0px, 50%);
+    }
+
+    .menu__body {
+        position: fixed;
+        top: 0;
+        left: -120%;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 150px 30px 30px 30px;
+        transition: left 0.3s ease 0s;
+        overflow: auto;
+    }
+
+    .menu__body._active {
+        left: 0;
+    }
+
+    .menu__list {
+        display: flex;
+        flex-direction: column;
+        padding-inline-start: 0px;
+        margin-left: -40px;
+        align-self: center;
+        align-items: center;
+    }
+
+    .menu__list li {
+        list-style-type: none;
+        flex-wrap: wrap;
+        margin: 0px 0px 60px 0px;
+    }
+
+    .menu__list li:last-child {
+        margin-bottom: 0px;
+    }
+
+    .menu__link {
+        font-size: 24px;
+    }
+}
+
 /*-------ПЛАНШЕТЫ------------*/
 @media screen and (min-width: 767px){
-    .wrapper {
-        min-height: 100%;
+
+    .menu__burger{
+        display: none;
+    }
+
+    .menu__list {
         display: grid;
-        grid-template: minmax(509px, auto) 1fr minmax(173px, auto) / 1fr;
-        grid-template-areas:
-            "header"
-            "main"
-            "footer"
+        grid-auto-flow: column;
+        justify-content: end;
+        align-items: center;
+        padding-inline-start: 0px;
+        list-style-type: none;
+    }
+
+    .menu__list li {
+        margin: 0px 0px 0px 20px;
+    }
+
+    .menu__link {
+        font-size: 14px;
     }
 
     .header__title {
@@ -176,20 +277,10 @@ body {
         padding: 25px 35px;
         margin: 0px 40px 80px 40px;
     }
-
 }
 
 /*-------ДЕСКТОПЫ------------*/
 @media screen and (min-width: 913px){
-    .wrapper {
-        min-height: 100%;
-        display: grid;
-        grid-template: minmax(289px, auto) 1fr minmax(173px, auto) / 1fr;
-        grid-template-areas:
-            "header"
-            "main"
-            "footer"
-    }
 
     .header__title {
         font-size: 72px;
