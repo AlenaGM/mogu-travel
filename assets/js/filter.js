@@ -149,13 +149,16 @@ let json = `[{
     "image": "assets/img/nice.jpeg"
     }]`
 
+
 document.addEventListener("DOMContentLoaded", function () {
     let excursions = JSON.parse(json);
     let excursionsContent = "";
     for (let excursion of excursions) {
         excursionsContent +=
             `<div class="excursion_item">
-                    <img class="characterImage" src="${excursion.image}" alt="${excursion.code}"></img>
+                    <div class="excursions__image">
+                        <img class="characterImage" src="${excursion.image}" alt="${excursion.code}"></img>
+                    </div>
                     <h2 class="characterName" id="${excursion.code}">${excursion.name}</h2>
                     <div class="excursionInfo">
                         <div> ${excursion.priceadult}</div>
@@ -165,10 +168,11 @@ document.addEventListener("DOMContentLoaded", function () {
                         <div> ${excursion.favorite}</div>
                         <div> ${excursion.code}</div>
                     </div>
-                </div>`
+            </div>`
     }
     document.getElementById("excursions_container").innerHTML = excursionsContent;
 });
+
 
 let buttonShow = document.getElementById("show");
 let radioType = document.querySelectorAll('input[name="type"]');

@@ -116,7 +116,19 @@ body._lock {
 }
 
 .excursions_container {
-    overflow: hidden;
+
+}
+
+.excursion_item {
+    width: 100%;
+}
+
+.excursions__image {
+    width: 300px;
+}
+
+.excursions__image img {
+    width: 100%;
 }
 
 .sidebar{
