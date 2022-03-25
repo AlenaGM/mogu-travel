@@ -116,6 +116,7 @@ body._lock {
 }
 
 .excursions_container {
+    overflow: hidden;
 }
 
 .sidebar{
