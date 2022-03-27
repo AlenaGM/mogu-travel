@@ -1,13 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap');
-
 .wrapper {
     min-height: 100%;
     display: grid;
     grid-template: minmax(289px, auto) 1fr minmax(173px, auto) / 1fr;
-    grid-template-areas:
-        "header"
-        "main"
-        "footer"
+    grid-template-areas: "header" "main" "footer"
+}
+
+.body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+html {
+    font-size: 20px;
 }
 
 .header {
@@ -16,9 +20,7 @@
     padding: 15px;
     display: grid;
     grid-template: minmax(60px, auto) 1fr/ 1fr minmax(auto, 300px) minmax(auto, 820px) 1fr;
-    grid-template-areas:
-        ". header__logo header__menu ."
-        ". header__title header__title ."
+    grid-template-areas: ". header__logo header__menu ." ". header__title header__title ."
 }
 
 .header__logo {
@@ -54,8 +56,7 @@
     text-decoration: none;
 }
 
-.header__burger {
-}
+.header__burger {}
 
 .header__title {
     grid-area: header__title;
@@ -74,9 +75,7 @@
     grid-area: main;
     display: grid;
     grid-template: minmax(260px, auto) 1fr/ 1fr minmax(auto, 300px) minmax(auto, 820px) 1fr;
-    grid-template-areas:
-        ". filter filter ."
-        ". sidebar excursions ."
+    grid-template-areas: ". filter filter ." ". sidebar excursions ."
 }
 
 .filter {
@@ -90,16 +89,160 @@
 }
 
 .excursions {
-    background-color: palevioletred;
+    background-color: #E5E5E5;
     grid-column: 3/4;
+    padding: 38px 0 137px;
 }
 
 .excursions__title {
+    font-size: 1.2rem;
+    color: #0499DD;
+    margin: 0 0 40px 40px;
 }
-.excursions_container {
-}
+
+.excursions_container {}
 
 .footer {
     background-color: yellowgreen;
     grid-area: footer;
+}
+
+.excursion_item {
+    display: flex;
+    max-width: 779px;
+    margin: 0 0 20px 40px;
+    background-color: white;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    position: relative;
+}
+
+.characterImage {
+    max-width: 238px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px;
+}
+
+.container_card {
+    margin-left: 47px;
+    max-width: 541px;
+}
+
+.characterName {
+    font-size: .9rem;
+    margin: 2px 0 20px;
+    max-width: 363px;
+}
+
+.tour_name {
+    color: #FFC700;
+    font-size: .6rem;
+    margin: 27px 0 0 0;
+}
+
+.container_for_price {
+    display: flex;
+}
+
+.container_for_ticket {
+    display: flex;
+}
+
+.description {
+    border-left: 3px solid #0499DD;
+    padding-left: 20px;
+    font-size: .6rem;
+}
+
+
+/*.description::before {
+    content: "";
+    display: inline-block;
+    width: 3px;
+    height: 75px;
+    background: #0499DD;
+    margin-right: 20px;
+}*/
+
+.adult,
+.child {
+    font-size: .5rem;
+    margin-top: 1px;
+}
+
+.adult {
+    margin-right: 13px;
+}
+
+.priceadult,
+.pricechild,
+.duration {
+    font-size: .9rem;
+    color: #0499DD;
+    font-weight: bold;
+}
+
+.priceadult {
+    margin-right: 26px;
+}
+
+.pricechild {
+    margin-right: 40px;
+}
+
+.more {
+    margin: 20px 0 27px;
+    font-size: .6rem;
+    font-weight: bold;
+    display: block;
+    width: 160px;
+    height: 40px;
+    border-radius: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: white;
+    transition: all .8;
+    background: linear-gradient(92.71deg, #0499DD 0%, #17C1BC 100%);
+    text-decoration: none;
+}
+
+.more:hover {
+    transform: scale(1.1);
+}
+
+.container {
+    display: flex;
+}
+
+.click {
+    display: block;
+    border-radius: 50%;
+    background: #EDEDED;
+    border: 1px solid #EDEDED;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: 27px;
+    right: 284px;
+    transition: all .8;
+}
+
+.click i:hover {
+    color: #0499DD;
+}
+
+.click:hover {
+    border: 2px solid #0499DD;
+}
+
+.container_for_price i {
+    font-size: .7rem;
+    color: #0499DD;
+    margin: 4px 5px 0 0;
+}
+
+.container i {
+    font-size: 1.1rem;
+    color: #D4D4D4;
 }
