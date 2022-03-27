@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
     <link rel="shortcut icon" href="assets/img/logo-color.png" type="img/png">
     <title>Mogu Travel</title>
 </head>
+
 <body>
     <div class="wrapper">
         <header class="header">
@@ -34,17 +36,18 @@
                 </nav>
             </div>
             <div class="header__title">Наши экскурсии</div>
-    </header>
+        </header>
         <main class="main">
             <div class="filter">
                 <div>
-                    <input type ="radio" value="bus" name="type"/>
-                    <input type ="radio" value="plane" name="type"/>
-                    <input type ="radio" value="foot" name="type"/>
+                    <input type="radio" value="bus" name="type" />
+                    <input type="radio" value="plane" name="type" />
+                    <input type="radio" value="foot" name="type" />
                 </div>
                 <button id="show">Показать</button>
             </div>
-            <!-- Блок боковые фильтры туров на сайте --> 
+            <!-- Блок боковые фильтры туров на сайте -->
+            <!-- Блок боковые фильтры туров на сайте -->
             <aside class="sidebar sidebar-filter">
                 <div class="sidebar-filter__wrapper">
                     <h3 class="sidebar-filter__title">Фильтры</h3>
@@ -54,14 +57,16 @@
                             <span class="sidebar-filter_close"></span>
                         </div>
                         <div class="filter__price_range">
-                            <div class="filter__price_inputs"> 
-                                <label for=""><input type="number" class="filter__inputs input-min" value="1600"></label>
-                                <label for=""><input type="number" class="filter__inputs input-max" value="4000"></label>
+                            <div class="filter__price_inputs">
+                                <label for=""><input type="number" class="filter__inputs input-min"
+                                        value="1600"></label>
+                                <label for=""><input type="number" class="filter__inputs input-max"
+                                        value="4000"></label>
                             </div>
-                            <label for=""><input type="range" class="filter__range" min="1600" max="4000"></label>   
+                            <label for=""><input type="range" class="filter__range" min="1600" max="4000"></label>
                         </div>
 
-                        <div class="divider"></div>    
+                        <div class="divider"></div>
                     </div>
                     <div class="sidebar-filter__persons">
                         <div class="filter__subtitle_wrapper">
@@ -69,10 +74,10 @@
                             <span class="sidebar-filter_close"></span>
                         </div>
                         <div class="filter__persons_input">
-                            <label for=""><input class="filter__inputs" type="text" value="1 чел."></label> 
+                            <label for=""><input class="filter__inputs" type="text" value="1 чел."></label>
                             <label for=""><input class="filter__inputs" type="text" value="до 5 чел."></label>
-                            <label for=""><input class="filter__inputs" type="text" value="до 10 чел."></label> 
-                            <label for=""><input class="filter__inputs" type="text" value="больше 10 чел."></label>  
+                            <label for=""><input class="filter__inputs" type="text" value="до 10 чел."></label>
+                            <label for=""><input class="filter__inputs" type="text" value="больше 10 чел."></label>
                         </div>
                         <div class="divider"></div>
                     </div>
@@ -83,7 +88,8 @@
                         </div>
                         <div class="filter__place_radio">
                             <label class="radio" for=""><input type="radio" name="radio" checked="">Абхазия</label>
-                            <label class="radio" for=""><input type="radio" name="radio" checked="">Красная поляна</label>
+                            <label class="radio" for=""><input type="radio" name="radio" checked="">Красная
+                                поляна</label>
                             <label class="radio" for=""><input type="radio" name="radio" checked="">Сочи</label>
                             <label class="radio" for=""><input type="radio" name="radio" checked="">Адлер</label>
                         </div>
@@ -103,19 +109,17 @@
                         </div>
                         <div class="divider"></div>
                     </div>
-                    <div  class="sidebar-filter__show">
+                    <div class="sidebar-filter__show">
                         <button class="btn__show">Показать</button>
-                        </div>
+                    </div>
                     <div class="sidebar-filter__reset">
                         <div class="filter__reset">
-                            <div class="reset-checkbox"></div> 
-                            <div class="reset__text">Сбросить фильтры</div> 
+                            <div class="reset-checkbox"></div>
+                            <div class="reset__text">Сбросить фильтры</div>
                         </div>
-         
                     </div>
                 </div>
             </aside>
-
             <div class="excursions">
                 <h1 class="excursions__title">Наши туры</h1>
                 <div class="excursions_container" id="excursions_container">
@@ -126,4 +130,5 @@
     </div>
     <script src="assets/js/filter.js"></script>
 </body>
+
 </html>
