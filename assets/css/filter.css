@@ -91,9 +91,178 @@ body._lock {
 .filter {
     background-color: brown;
     grid-area: filter;
-    margin: 60px 0px 20px 0px;
-    padding: 60px;
+
 }
+/*Блок боковые фильтры туров на сайте*/
+
+.sidebar {
+    grid-column: 2/3;
+}
+.sidebar-filter__wrapper {
+    width: 295px;
+    box-sizing: border-box;
+    margin: 0;
+    background: #ffffff;
+    box-shadow:  0px 0px 40px rgba(0,0,0,0.05);
+    border-radius: 10px;
+    padding-left: 35px;
+}
+
+.sidebar-filter__title{
+    font-family: 'Montserrat', sans-serif;
+    color: #0499dd;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
+    margin: 0;
+    padding-top: 25px;
+    padding-bottom: 30px;
+}
+.filter__subtitle_wrapper{
+    display: flex;
+    width: 225px;
+    padding-top: 40px;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.sidebar-filter__subtitle {
+    font-family: 'Montserrat', sans-serif;
+    color: #282828;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
+    margin: 0;
+}
+.sidebar-filter_close {
+    display: block;
+    width: 16px;
+    height: 2px;
+    background:#0499DD;
+    border-radius: 40px;
+    cursor: pointer;
+}
+.sidebar-filter_close:hover{
+
+}
+
+.sidebar-filter_open {
+    height: 2px; 
+    width: 16px;
+    background: #0499DD;
+    border-radius: 40px;
+    cursor: pointer;
+    position: relative;
+    
+
+    }
+.sidebar-filter_open:after {
+    content: "";
+    height: 2px; 
+    width: 16px;
+    background: #0499DD;
+    border-radius: 40px;
+    position: absolute; 
+    transform: rotate(90deg);    
+    }
+.sidebar-filter_open:hover{
+
+}
+.filter__place_radio{
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+.filter__price_range{
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+.filter__price_inputs{
+    display: flex;
+    justify-content: space-between;
+}
+.filter__inputs {
+    width: 105px;
+    height: 30px;
+    background: #FFFFFF;
+    border: 1px solid #eDeDeD;
+    border-radius: 40px;
+}
+.filter__persons_input{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+.divider {
+    width: 225px;
+    height: 1px;
+    margin-top: 40px;
+    background-color: #ededed;
+}
+.btn__show {
+    display: block;
+    width: 225px;
+    height: 40px;
+    margin-top: 44px;
+    background: linear-gradient(92.71deg, #0499dd 0%, #17c1bc 100%);
+    border-radius: 40px;
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
+    border: none;
+    cursor: pointer;
+}
+.btn__show:hover{
+
+}
+
+.filter__subtitle_wrapper{
+    padding-top: 12px;
+}
+.filter__reset{
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    align-items: center;
+
+}
+.reset__text {
+    font-family: 'Montserrat', sans-serif;
+    color: #282828;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+}
+.reset-checkbox {
+    height: 2px; 
+    width: 14px;
+    background: #d4d4d4;
+    border-radius: 40px;
+    cursor: pointer;
+    position: relative;  
+    transform: rotate(45deg);
+
+    }
+.reset-checkbox:after {
+    content: "";
+    height: 2px; 
+    width: 14px;
+    background: #d4d4d4;
+    border-radius: 40px;
+    transform: rotate(-90deg);
+    position: absolute;    
+    }
+
+
+/*Блок карточек туров на сайте*/
 
 .excursions {
     background-color: #E5E5E5;
@@ -143,6 +312,7 @@ body._lock {
     background-color: yellowgreen;
     grid-area: footer;
 }
+
 
 /*-------БУРГЕР------------*/
 @media screen and (max-width: 767px) {
