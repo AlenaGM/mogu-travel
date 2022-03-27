@@ -6,34 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/filter.css">
-    <link rel="shortcut icon" href="#" type="img/png">
-    <title>НАЗВАНИЕ</title>
+    <link rel="shortcut icon" href="assets/img/logo-color.png" type="img/png">
+    <title>Mogu Travel</title>
 </head>
 <body>
     <div class="wrapper">
         <header class="header">
-            <a href="#" class="header__logo"></a>
-            <nav class="header__menu">
-                <ul class="header__list">
-                    <li>
-                        <a href="" class="header__link">Пункт меню 1</a>
-                    </li>
-                    <li>
-                        <a href="" class="header__link">Пункт меню 2</a>
-                    </li>
-                    <li>
-                        <a href="" class="header__link">Пункт меню 3</a>
-                    </li>
-                    <li>
-                        <a href="" class="header__link">Пункт меню 4</a>
-                    </li>
-                </ul>
-                <div class="header__burger">
+            <a href="#" class="header__logo">
+                <img class="header__img" src="assets/img/logo-white.svg" alt="Company logo">
+            </a>
+            <div class="header__menu menu">
+                <div class="menu__burger">
                     <span></span>
                 </div>
-            </nav>
+                <nav class="menu__body">
+                    <ul class="menu__list">
+                        <li>
+                            <div class="menu__link">Главная</div>
+                        </li>
+                        <li>
+                            <div class="menu__link">Экскурсии</div>
+                        </li>
+                        <li>
+                            <div class="menu__link">Личный кабинет</div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
             <div class="header__title">Наши экскурсии</div>
-        </header>
+    </header>
         <main class="main">
             <div class="filter">
                 <div>
@@ -110,14 +111,15 @@
                             <div class="reset-checkbox"></div> 
                             <div class="reset__text">Сбросить фильтры</div> 
                         </div>
-                
+         
                     </div>
                 </div>
             </aside>
+
             <div class="excursions">
                 <h1 class="excursions__title">Наши туры</h1>
-                <section class="excursions_container" id="excursions_container">
-                </section>
+                <div class="excursions_container" id="excursions_container">
+                </div>
             </div>
         </main>
         <div class="footer"></div>

@@ -1,9 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap');
 
+html,
+body {
+    height: 100%;
+    background-color: #E5E5E5;
+}
+
+body._lock {
+    overflow: hidden;
+}
+
+/*-------МОБИЛЬНИКИ------------*/
 .wrapper {
     min-height: 100%;
     display: grid;
-    grid-template: minmax(289px, auto) 1fr minmax(173px, auto) / 1fr;
+    grid-template: minmax(370px, auto) 1fr minmax(173px, auto) / 1fr;
     grid-template-areas:
         "header"
         "main"
@@ -13,9 +24,9 @@
 .header {
     background-color: blueviolet;
     grid-area: header;
-    padding: 15px;
+    padding-top: 15px;
     display: grid;
-    grid-template: minmax(60px, auto) 1fr/ 1fr minmax(auto, 300px) minmax(auto, 820px) 1fr;
+    grid-template: minmax(60px, auto) 1fr/ minmax(1rem, 1fr) minmax(auto, 40px) minmax(auto, 1080px) minmax(1rem, 1fr);
     grid-template-areas:
         ". header__logo header__menu ."
         ". header__title header__title ."
@@ -23,38 +34,35 @@
 
 .header__logo {
     grid-area: header__logo;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background-color: antiquewhite;
+    position: relative;
+    z-index: 5;
+    width: 40px;
     align-items: center;
+}
+
+.header__img {
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
 }
 
 .header__menu {
     grid-area: header__menu;
-    align-items: center;
-}
-
-.header__list {
     display: grid;
-    grid-auto-flow: column;
-    justify-items: end;
+    align-content: center;
 }
 
-.header__list li {
-    list-style-type: none;
-}
-
-.header__link {
+.menu__link {
     font-family: 'Montserrat', sans-serif;
     color: white;
-    font-size: 14px;
     font-weight: 500;
     line-height: 17px;
     text-decoration: none;
+    cursor: pointer;
 }
 
-.header__burger {
+.menu__link:hover{
+    color: #FFC700;
 }
 
 .header__title {
@@ -62,26 +70,28 @@
     display: grid;
     font-family: 'Montserrat', sans-serif;
     color: white;
-    font-size: 72px;
+    font-size: 36px;
     font-weight: 700;
-    line-height: 88px;
+    line-height: 44px;
     letter-spacing: 0em;
-    text-align: left;
+    text-align: center;
     align-items: center;
 }
 
 .main {
     grid-area: main;
     display: grid;
-    grid-template: minmax(260px, auto) 1fr/ 1fr minmax(auto, 300px) minmax(auto, 820px) 1fr;
+    grid-template: minmax(500px, auto) 1fr minmax(690px, auto)/ minmax(1rem, 1fr) minmax(auto, 1120px) minmax(1rem, 1fr);
     grid-template-areas:
-        ". filter filter ."
-        ". sidebar excursions ."
+        ". filter ."
+        ". excursions ."
+        ". sidebar ."
 }
 
 .filter {
     background-color: brown;
     grid-area: filter;
+
 }
 /*Блок боковые фильтры туров на сайте*/
 
@@ -255,16 +265,233 @@
 /*Блок карточек туров на сайте*/
 
 .excursions {
-    background-color: palevioletred;
-    grid-column: 3/4;
+    background-color: #E5E5E5;
+    grid-area: excursions;
+    padding: 40px 0px 40px 0px;
+    margin: 0px 0px 40px 0px;
 }
 
 .excursions__title {
+    font-family: 'Montserrat', sans-serif;
+    color: #0499DD;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding: 0px 0px 40px 0px;
+    margin: 0px;
 }
+
 .excursions_container {
+
+}
+
+.excursion_item {
+    width: 100%;
+}
+
+.excursions__image {
+    width: 300px;
+}
+
+.excursions__image img {
+    width: 100%;
+}
+
+.sidebar{
+    display: grid;
+    grid-area: sidebar;
+    background-color: yellow;
+    padding: 25px 35px;
+    margin: 0px 0px 80px 0px;
 }
 
 .footer {
     background-color: yellowgreen;
     grid-area: footer;
+}
+
+
+/*-------БУРГЕР------------*/
+@media screen and (max-width: 767px) {
+
+    .menu__burger{
+        z-index: 5;
+        display: grid;
+        align-items: center;
+        justify-self: end;
+        width: 40px;
+        height: 26px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .menu__burger span,
+    .menu__burger::before,
+    .menu__burger::after {
+        left: 0;
+        position: absolute;
+        height: 12%;
+        width: 100%;
+        transition: all 0.3s ease 0s;
+        background-color: #FFFFFF;
+        border-radius: 20px;
+    }
+
+    .menu__burger::before,
+    .menu__burger::after {
+        content:"";
+    }
+
+    .menu__burger::before {
+        top: 0;
+    }
+
+    .menu__burger::after {
+        bottom: 0;
+    }
+
+    .menu__burger::after {
+        bottom: 0;
+    }
+
+    .menu__burger span {
+        top: 50%;
+        transform: scale(1) translate(0px, -50%);
+    }
+
+    .menu__burger._active span {
+        transform: scale(0) translate(0px, -50%);
+    }
+
+    .menu__burger._active::before {
+        top: 50%;
+        transform: rotate(-45deg) translate(0px, -50%);
+    }
+
+    .menu__burger._active::after {
+        bottom: 50%;
+        transform: rotate(45deg) translate(0px, 50%);
+    }
+
+    .menu__body {
+        position: fixed;
+        top: 0;
+        left: -120%;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 150px 30px 30px 30px;
+        transition: left 0.3s ease 0s;
+        overflow: auto;
+    }
+
+    .menu__body._active {
+        left: 0;
+    }
+
+    .menu__list {
+        display: flex;
+        flex-direction: column;
+        padding-inline-start: 0px;
+        margin-left: -40px;
+        align-self: center;
+        align-items: center;
+    }
+
+    .menu__list li {
+        list-style-type: none;
+        flex-wrap: wrap;
+        margin: 0px 0px 60px 0px;
+    }
+
+    .menu__list li:last-child {
+        margin-bottom: 0px;
+    }
+
+    .menu__link {
+        font-size: 24px;
+    }
+}
+
+/*-------ПЛАНШЕТЫ------------*/
+@media screen and (min-width: 767px){
+
+    .menu__burger{
+        display: none;
+    }
+
+    .menu__list {
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: end;
+        align-items: center;
+        padding-inline-start: 0px;
+        list-style-type: none;
+    }
+
+    .menu__list li {
+        margin: 0px 0px 0px 20px;
+    }
+
+    .menu__link {
+        font-size: 14px;
+    }
+
+    .header__title {
+        font-size: 48px;
+        line-height: 58px;
+    }
+
+    .filter {
+        background-color: brown;
+        grid-area: filter;
+        margin: 100px 40px 60px 40px;
+    }
+
+    .excursions {
+        padding: 40px 0px 40px 40px;
+        margin: 0px 0px 40px 0px;
+    }
+
+    .sidebar{
+        padding: 25px 35px;
+        margin: 0px 40px 80px 40px;
+    }
+}
+
+/*-------ДЕСКТОПЫ------------*/
+@media screen and (min-width: 913px){
+
+    .header__title {
+        font-size: 72px;
+        line-height: 88px;
+        text-align: left;
+    }
+
+    .main {
+        grid-area: main;
+        display: grid;
+        grid-template: minmax(260px, auto) 1fr/ minmax(1rem, 1fr) minmax(auto, 300px) minmax(auto, 820px) minmax(1rem, 1fr);
+        grid-template-areas:
+            ". filter filter ."
+            ". sidebar excursions ."
+    }
+
+    .sidebar {
+        display: grid;
+        grid-area: sidebar;
+        background-color: yellow;
+        padding: 25px 35px;
+        margin: 40px 0px 80px 0px;
+    }
+
+    .filter {
+        background-color: brown;
+        grid-area: filter;
+        margin: 40px 0px 0px 0px;
+        padding: 60px;
+    }
 }
