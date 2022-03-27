@@ -43,7 +43,77 @@
                 </div>
                 <button id="show">Показать</button>
             </div>
-            <aside class="sidebar"></aside>
+            <!-- Блок боковые фильтры туров на сайте --> 
+            <aside class="sidebar sidebar-filter">
+                <div class="sidebar-filter__wrapper">
+                    <h3 class="sidebar-filter__title">Фильтры</h3>
+                    <div class="sidebar-filter__price">
+                        <div class="filter__subtitle_wrapper">
+                            <h4 class="sidebar-filter__subtitle price__title">Стоимость</h4>
+                            <span class="sidebar-filter_close"></span>
+                        </div>
+                        <div class="filter__price_range">
+                            <div class="filter__price_inputs"> 
+                                <label for=""><input type="number" class="filter__inputs input-min" value="1600"></label>
+                                <label for=""><input type="number" class="filter__inputs input-max" value="4000"></label>
+                            </div>
+                            <label for=""><input type="range" class="filter__range" min="1600" max="4000"></label>   
+                        </div>
+
+                        <div class="divider"></div>    
+                    </div>
+                    <div class="sidebar-filter__persons">
+                        <div class="filter__subtitle_wrapper">
+                            <h4 class="sidebar-filter__subtitle persons__title">Количество человек</h4>
+                            <span class="sidebar-filter_close"></span>
+                        </div>
+                        <div class="filter__persons_input">
+                            <label for=""><input class="filter__inputs" type="text" value="1 чел."></label> 
+                            <label for=""><input class="filter__inputs" type="text" value="до 5 чел."></label>
+                            <label for=""><input class="filter__inputs" type="text" value="до 10 чел."></label> 
+                            <label for=""><input class="filter__inputs" type="text" value="больше 10 чел."></label>  
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="sidebar-filter__place">
+                        <div class="filter__subtitle_wrapper">
+                            <h4 class="sidebar-filter__subtitle place__title">Место</h4>
+                            <span class="sidebar-filter_close"></span>
+                        </div>
+                        <div class="filter__place_radio">
+                            <label class="radio" for=""><input type="radio" name="radio" checked="">Абхазия</label>
+                            <label class="radio" for=""><input type="radio" name="radio" checked="">Красная поляна</label>
+                            <label class="radio" for=""><input type="radio" name="radio" checked="">Сочи</label>
+                            <label class="radio" for=""><input type="radio" name="radio" checked="">Адлер</label>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="sidebar-filter__duration">
+                        <div class="filter__subtitle_wrapper">
+                            <h4 class="sidebar-filter__subtitle duration__title">Длительность</h4>
+                            <span class="sidebar-filter_open"></span>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="sidebar-filter__date">
+                        <div class="filter__subtitle_wrapper">
+                            <h4 class="sidebar-filter__subtitle date__title">Дата</h4>
+                            <span class="sidebar-filter_open"></span>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div  class="sidebar-filter__show">
+                        <button class="btn__show">Показать</button>
+                        </div>
+                    <div class="sidebar-filter__reset">
+                        <div class="filter__reset">
+                            <div class="reset-checkbox"></div> 
+                            <div class="reset__text">Сбросить фильтры</div> 
+                        </div>
+                
+                    </div>
+                </div>
+            </aside>
             <div class="excursions">
                 <h1 class="excursions__title">Наши туры</h1>
                 <section class="excursions_container" id="excursions_container">
