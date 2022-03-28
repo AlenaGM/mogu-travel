@@ -32,7 +32,7 @@ let json = `[{
     "name": "Страсбург: Франция с немецким акцентом",
     "code": "strasbourg",
     "category": "bus",
-    "categoryname": "Экскурсия пешком",
+    "categoryname": "Экскурсия на автобусе",
     "priceadult": "3000",
     "pricechild": "1000",
     "duration":"2",
@@ -62,7 +62,7 @@ let json = `[{
     "name": "Правда и выдумки о Марселе",
     "code": "marseilles",
     "category": "bus",
-    "categoryname": "Экскурсия пешком",
+    "categoryname": "Экскурсия на автобусе",
     "priceadult": "5000",
     "pricechild": "2500",
     "duration":"3",
@@ -92,7 +92,7 @@ let json = `[{
     "name": "Многоликий Версаль",
     "code": "versailles",
     "category": "bus",
-    "categoryname": "Экскурсия пешком",
+    "categoryname": "Экскурсия на автобусе",
     "priceadult": "6000",
     "pricechild": "3000",
     "duration":"4",
@@ -173,18 +173,55 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("excursions_container").innerHTML = excursionsContent;
 });
 
+//пробуем стоимость фильтр
+const priceInput = document.querySelector('#pricemax');
+const priceRange = document.querySelector('#pricerange');
+
+priceRange.addEventListener('input', function () {
+    priceInput.value = priceRange.value;
+});
+
+priceInput.addEventListener('input', function () {
+    priceRange.value = priceInput.value;
+});
+
+
 
 let buttonShow = document.getElementById("show");
 let radioType = document.querySelectorAll('input[name="type"]');
+let excursionsContent = "";
 
 buttonShow.addEventListener("click", function excursionType() {
     let excursions = JSON.parse(json);
 
+    let result = "";
     for (const radio of radioType) {
         if (radio.checked) {
-            let result = excursions.filter((x) => x.category === radio.value);
-            console.log(result);
+            result = excursions.filter((x) => x.category === radio.value);
         }
+    }
+
+    for (let excursion of excursions) {
+        if (+`${excursion.priceadult}` <= +priceInput.value) {
+            let result2 = result.filter((x) => x.priceadult <= priceInput.value);
+            console.log(result2);
+            excursionsContent +=
+                `<div class="excursion_item">
+                    <div class="excursions__image">
+                        <img class="characterImage" src="${excursion.image}" alt="${excursion.code}"></img>
+                    </div>
+                    <h2 class="characterName" id="${excursion.code}">${excursion.name}</h2>
+                    <div class="excursionInfo">
+                        <div> ${excursion.priceadult}</div>
+                        <div> ${excursion.pricechild}</div>
+                        <div> ${excursion.duration}</div>
+                        <div> ${excursion.description}</div>
+                        <div> ${excursion.favorite}</div>
+                        <div> ${excursion.code}</div>
+                    </div>
+            </div>`
+        }
+        document.getElementById("excursions_container").innerHTML = excursionsContent;
     }
 
 })
@@ -196,21 +233,21 @@ const burgerMenu = document.querySelector('.menu__burger');
 const bodyMenu = document.querySelector('.menu__body');
 const menuLinks = document.querySelectorAll('.menu__link')
 
-if(burgerMenu){
-    burgerMenu.addEventListener('click', function(e) {
+if (burgerMenu) {
+    burgerMenu.addEventListener('click', function (e) {
         document.body.classList.toggle('_lock');
         burgerMenu.classList.toggle('_active');
         bodyMenu.classList.toggle('_active');
     });
 }
 
-if(menuLinks.length > 0) {
+if (menuLinks.length > 0) {
     menuLinks.forEach(menuLink => {
         menuLink.addEventListener('click', onMenuLinkClick)
     });
 
     function onMenuLinkClick() {
-        if (burgerMenu.classList.contains('_active')){
+        if (burgerMenu.classList.contains('_active')) {
             document.body.classList.remove('_lock');
             burgerMenu.classList.remove('_active');
             bodyMenu.classList.remove('_active');

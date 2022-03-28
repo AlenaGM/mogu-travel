@@ -83,7 +83,6 @@ body._lock {
     display: grid;
     grid-template: minmax(500px, auto) 1fr minmax(690px, auto)/ minmax(1rem, 1fr) minmax(auto, 1120px) minmax(1rem, 1fr);
     grid-template-areas:
-        ". filter ."
         ". excursions ."
         ". sidebar ."
 }
@@ -482,7 +481,6 @@ body._lock {
         display: grid;
         grid-template: minmax(260px, auto) 1fr/ minmax(1rem, 1fr) minmax(auto, 300px) minmax(auto, 820px) minmax(1rem, 1fr);
         grid-template-areas:
-            ". filter filter ."
             ". sidebar excursions ."
     }
 
