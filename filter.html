@@ -41,28 +41,40 @@
             <!-- Блок боковые фильтры туров на сайте --> <aside class="sidebar sidebar-filter">
                 <div class="sidebar-filter__wrapper">
                     <h3 class="sidebar-filter__title">Фильтры</h3>
-                    <div>
-                        <input type="radio" value="bus" name="type"/>
-                        <input type="radio" value="foot" name="type"/>
+                    <div class="sidebar-filter__movement sidebar-filter__container">
+                        <div class="filter__subtitle_wrapper">
+                            <h4 class="sidebar-filter__subtitle">Способ передвижения</h4>
+                            <span class="sidebar-filter_close"></span>
+                        </div>
+                        <div class="filter__movement_radio">
+                        <label for=""><input type="radio" value="bus" name="type"/>Автобусные</label>
+                        <label for=""><input type="radio" value="foot" name="type"/>Пешеходные</label>
+                        </div>
+                        <div class="divider"></div>
                     </div>
-                    <div class="sidebar-filter__price">
+                    <div class="sidebar-filter__price sidebar-filter__container ">
                         <div class="filter__subtitle_wrapper">
                             <h4 class="sidebar-filter__subtitle price__title">Стоимость</h4>
                             <span class="sidebar-filter_close"></span>
                         </div>
                         <div class="filter__price_range">
                             <div class="filter__price_inputs">
-                                <label for=""><input type="number" class="filter__inputs input-min"
-                                        id="pricemin"></label>
-                                <label for=""><input type="number" class="filter__inputs input-max"
-                                        id="pricemax"></label>
+                                <input type="number" class="filter__inputs input-min"
+                                        id="pricemin" value="1600">
+                                <input type="number" class="filter__inputs input-max"
+                                        id="pricemax" value="4000">
                             </div>
-                            <label for=""><input type="range" class="filter__range" min="1000" max="8000" id="pricerange"></label>
+                            <div class="filter__price_slider"> 
+                                <div class="progress"></div>
+                            </div>
+                            <div class="filter__price_rande">
+                                <input type="range" class="filter__range_min" min="0" max="8000" id="pricerangemin" value="1600" step="100">
+                                <input type="range" class="filter__range_max" min="0" max="8000" id="pricerangemax" value="4000" step="100">
+                            </div>   
                         </div>
-
                         <div class="divider"></div>
                     </div>
-                    <div class="sidebar-filter__persons">
+                    <div class="sidebar-filter__persons sidebar-filter__container ">
                         <div class="filter__subtitle_wrapper">
                             <h4 class="sidebar-filter__subtitle persons__title">Количество человек</h4>
                             <span class="sidebar-filter_close"></span>
@@ -75,38 +87,43 @@
                         </div>
                         <div class="divider"></div>
                     </div>
-                    <div class="sidebar-filter__place">
+                    <div class="sidebar-filter__place sidebar-filter__container ">
                         <div class="filter__subtitle_wrapper">
                             <h4 class="sidebar-filter__subtitle place__title">Место</h4>
                             <span class="sidebar-filter_close"></span>
                         </div>
                         <div class="filter__place_radio">
-                            <label class="radio" for=""><input type="radio" name="radio" checked="">Абхазия</label>
-                            <label class="radio" for=""><input type="radio" name="radio" checked="">Красная
-                                поляна</label>
-                            <label class="radio" for=""><input type="radio" name="radio" checked="">Сочи</label>
-                            <label class="radio" for=""><input type="radio" name="radio" checked="">Адлер</label>
+                            <label class="radio" for=""><input type="radio" name="radio" value="monmartre" checked="">Монмарт</label>
+                            <label class="radio" for=""><input type="radio" name="radio" value="lyon" checked="">Лион</label>
+                            <label class="radio" for=""><input type="radio" name="radio" value="strasbourg" checked="">Страсбург</label>
+                            <label class="radio" for=""><input type="radio" name="radio" value="colmar" checked="">Кольмар</label>
+                            <label class="radio" for=""><input type="radio" name="radio" value="marseilles" checked="">Марсель</label>
+                            <label class="radio" for=""><input type="radio" name="radio" value="montpellier" checked="">Монпелье</label>
+                            <label class="radio" for=""><input type="radio" name="radio" value="versailles" checked="">Версаль</label>
+                            <label class="radio" for=""><input type="radio" name="radio" value="rouen" checked="">Руан</label>
+                            <label class="radio" for=""><input type="radio" name="radio" value="paris" checked="">Париж</label>
+                            <label class="radio" for=""><input type="radio" name="radio" value="nice" checked="">Ницца</label>
                         </div>
                         <div class="divider"></div>
                     </div>
-                    <div class="sidebar-filter__duration">
+                    <div class="sidebar-filter__duration sidebar-filter__container ">
                         <div class="filter__subtitle_wrapper">
                             <h4 class="sidebar-filter__subtitle duration__title">Длительность</h4>
                             <span class="sidebar-filter_open"></span>
                         </div>
                         <div class="divider"></div>
                     </div>
-                    <div class="sidebar-filter__date">
+                    <div class="sidebar-filter__date sidebar-filter__container ">
                         <div class="filter__subtitle_wrapper">
                             <h4 class="sidebar-filter__subtitle date__title">Дата</h4>
                             <span class="sidebar-filter_open"></span>
                         </div>
                         <div class="divider"></div>
                     </div>
-                    <div class="sidebar-filter__show">
+                    <div class="sidebar-filter__show sidebar-filter__container ">
                         <button class="btn__show" id="show">Показать</button>
                     </div>
-                    <div class="sidebar-filter__reset">
+                    <div class="sidebar-filter__reset sidebar-filter__container">
                         <div class="filter__reset">
                             <div class="reset-checkbox"></div>
                             <div class="reset__text">Сбросить фильтры</div>
