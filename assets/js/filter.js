@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </div>
         </div>
     </div>`
-  }
+    }
     document.getElementById("excursions_container").innerHTML = excursionsContent;
 });
 
