@@ -4,14 +4,28 @@
 
 html,
 body {
-    box-sizing: border-box;
+    width: 100%;
     height: 100%;
     margin: 0;
+    /* padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    outline: none; */
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .wrapper {
     display: grid;
-    min-height: 100%;
+    /* min-height: 100%; */
     grid-template-columns: 1fr;
     grid-template-rows: minmax(789px, auto) 1fr minmax(173px, auto);
     grid-template-areas:
@@ -103,6 +117,78 @@ body {
 /* Форма связи */
 .contacts {
     grid-area: contacts;
+    margin: 0;
+}
+
+.contacts .contacts_bg {
+    background-position: center;
+    background-image: url(/assets/img/contacts_background.jpg);
+    height: 0;
+    display: block;
+    padding-bottom: 44.44444%;
+    background-size: cover;
+    position: relative;
+}
+
+.contacts .contacts_wrapper {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(7px);
+    width: 38.9%;
+    height: 100%;
+    top: 0;
+    left: 50%;
+}
+
+.contacts .contacts_wrapper form {
+    backdrop-filter: blur(4px);
+    width: 100%;
+    height: 100%;
+    padding: 20.6% 16.4% 22.3% 14.8%;
+}
+
+.contacts .contacts_wrapper .form .title_white {
+    color: rgba(255, 255, 255, 1);
+    margin: 0;
+    font-size: 1.45em;
+}
+
+.contacts .contacts_wrapper .form span {
+    display: block;
+    color: rgba(255, 199, 0, 1);
+    margin-top: 6px;
+}
+
+.contacts .contacts_wrapper .form .inputs {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.contacts .contacts_wrapper .form .inputs>input[type="text"] {
+    background-color: inherit;
+    width: 100%;
+    height: auto;
+    border: 1px solid #FFFFFF;
+    border-style: none none solid none;
+    color: #FFFFFF;
+    outline: none;
+}
+
+.contacts .contacts_wrapper .form .inputs>input[type="text"]::placeholder {
+    color: #FFFFFF;
+}
+
+.contacts .contacts_wrapper .form .inputs>input[type="button"] {
+    background: linear-gradient(92.71deg, #0499DD 0%, #17C1BC 100%);
+    border-radius: 60px;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 700;
+    width: 64%;
+    min-width: 150px;
+    padding: 16px 8%;
+    border: 0;
 }
 
 /* Footer -------------------- */
@@ -111,15 +197,20 @@ body {
     grid-area: footer;
     min-height: 173px;
     width: 100%;
-    max-width: 1440px;
+    /* max-width: 1440px; */
     background: #EDEDED;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .footer .footer_wrapper {
     /* min-height: 144px; */
-    padding: 30px 10% 29px 10%;
+    padding: 30px 10%;
     display: flex;
     flex-direction: row;
+    max-width: 1440px;
+    width: 100%;
 }
 
 .footer .footer_wrapper .logo_color {
