@@ -30,7 +30,7 @@ let json = `[{
     "name": "Страсбург: Франция с немецким акцентом",
     "code": "strasbourg",
     "category": "bus",
-    "categoryname": "Экскурсия пешком",
+    "categoryname": "Экскурсия на автобусе",
     "priceadult": "3000",
     "pricechild": "1000",
     "duration": "2",
@@ -58,7 +58,7 @@ let json = `[{
     "name": "Правда и выдумки о Марселе",
     "code": "marseilles",
     "category": "bus",
-    "categoryname": "Экскурсия пешком",
+    "categoryname": "Экскурсия на автобусе",
     "priceadult": "5000",
     "pricechild": "2500",
     "duration": "3",
@@ -86,7 +86,7 @@ let json = `[{
     "name": "Многоликий Версаль",
     "code": "versailles",
     "category": "bus",
-    "categoryname": "Экскурсия пешком",
+    "categoryname": "Экскурсия на автобусе",
     "priceadult": "6000",
     "pricechild": "3000",
     "duration": "4",
@@ -179,18 +179,103 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("excursions_container").innerHTML = excursionsContent;
 });
 
+//пробуем стоимость фильтр
+const rangeInput = document.querySelectorAll(".filter__price_rande input"),
+    priceInput = document.querySelectorAll(".filter__price_inputs input"),
+    progress = document.querySelector(".filter__price_slider .progress");
+
+let priceGap = 1000;
+
+priceInput.forEach(input => {
+    input.addEventListener("input", (e) => {
+        //получаем значения из импутов двух диапазонов и их парсим в число
+        let minVal = parseInt(priceInput[0].value),
+            maxVal = parseInt(priceInput[1].value);
+        console.log(e.target.className);
+
+        if ((maxVal - minVal >= priceGap) && maxVal <= 8000) {
+            //если активный инпут - минимальный инпут
+            if (e.target.className === "filter__inputs input-min") {
+                rangeInput[0].value = minVal;
+                progress.style.left = (minVal / rangeInput[0].max) * 100 + "%";
+            } else {
+                rangeInput[1].value = maxVal;
+                progress.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+            }
+
+        }
+    });
+});
+rangeInput.forEach(input => {
+    input.addEventListener("input", (e) => {
+        //получаем значения из бегунков двух диапазонов и их парсим в число
+        let minVal = parseInt(rangeInput[0].value),
+            maxVal = parseInt(rangeInput[1].value);
+
+        if (maxVal - minVal < priceGap) {
+            //если активный ползунок - минимальный ползунок
+            if (e.target.className === "filter__range_min") {
+                rangeInput[0].value = maxVal - priceGap;
+            } else {
+                rangeInput[1].value = minVal + priceGap;
+            }
+        } else {
+            priceInput[0].value = minVal;
+            priceInput[1].value = maxVal;
+            progress.style.left = (minVal / rangeInput[0].max) * 100 + "%";
+            progress.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+        }
+    });
+});
+
+/* const priceInput = document.querySelector('#pricemax');
+const priceRange = document.querySelector('#pricerangemax');
+
+priceRange.addEventListener('input', function () {
+    priceInput.value = priceRange.value;
+});
+
+priceInput.addEventListener('input', function () {
+    priceRange.value = priceInput.value;
+});
+ */
+
 
 let buttonShow = document.getElementById("show");
 let radioType = document.querySelectorAll('input[name="type"]');
+let excursionsContent = "";
 
 buttonShow.addEventListener("click", function excursionType() {
     let excursions = JSON.parse(json);
 
+    let result = "";
     for (const radio of radioType) {
         if (radio.checked) {
-            let result = excursions.filter((x) => x.category === radio.value);
-            console.log(result);
+            result = excursions.filter((x) => x.category === radio.value);
         }
+    }
+
+    for (let excursion of excursions) {
+        if (+`${excursion.priceadult}` <= +priceInput.value) {
+            let result2 = result.filter((x) => x.priceadult <= priceInput.value);
+            console.log(result2);
+            excursionsContent +=
+                `<div class="excursion_item">
+                    <div class="excursions__image">
+                        <img class="characterImage" src="${excursion.image}" alt="${excursion.code}"></img>
+                    </div>
+                    <h2 class="characterName" id="${excursion.code}">${excursion.name}</h2>
+                    <div class="excursionInfo">
+                        <div> ${excursion.priceadult}</div>
+                        <div> ${excursion.pricechild}</div>
+                        <div> ${excursion.duration}</div>
+                        <div> ${excursion.description}</div>
+                        <div> ${excursion.favorite}</div>
+                        <div> ${excursion.code}</div>
+                    </div>
+            </div>`
+        }
+        document.getElementById("excursions_container").innerHTML = excursionsContent;
     }
 
 })

@@ -91,7 +91,7 @@
         grid-area: main;
         display: grid;
         grid-template: minmax(500px, auto) 1fr minmax(690px, auto)/ minmax(1rem, 1fr) minmax(auto, 1120px) minmax(1rem, 1fr);
-        grid-template-areas: ". filter ." ". excursions ." ". sidebar ."
+        grid-template-areas: ". sidebar." " .excursions ."
     }
     
     .filter {
