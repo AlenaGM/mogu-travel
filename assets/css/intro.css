@@ -124,6 +124,7 @@ body {
     background-position: center;
     background-image: url(/assets/img/contacts_background.jpg);
     height: 0;
+    min-height: 640px;
     display: block;
     padding-bottom: 44.44444%;
     background-size: cover;
@@ -136,6 +137,7 @@ body {
     backdrop-filter: blur(7px);
     width: 38.9%;
     height: 100%;
+    min-height: 640px;
     top: 0;
     left: 50%;
 }
@@ -166,7 +168,14 @@ body {
     justify-content: space-evenly;
 }
 
-.contacts .contacts_wrapper .form .inputs>input[type="text"] {
+.contacts .contacts_wrapper .form .inputs .error {
+    display: none;
+    color: rgba(255, 199, 0, 1);
+}
+
+.contacts .contacts_wrapper .form .inputs>input[type="text"],
+.contacts .contacts_wrapper .form .inputs>input[type="tel"],
+.contacts .contacts_wrapper .form .inputs>input[type="email"] {
     background-color: inherit;
     width: 100%;
     height: auto;
@@ -176,7 +185,9 @@ body {
     outline: none;
 }
 
-.contacts .contacts_wrapper .form .inputs>input[type="text"]::placeholder {
+.contacts .contacts_wrapper .form .inputs>input[type="text"]::placeholder,
+.contacts .contacts_wrapper .form .inputs>input[type="tel"]::placeholder,
+.contacts .contacts_wrapper .form .inputs>input[type="email"]::placeholder {
     color: #FFFFFF;
 }
 
@@ -190,6 +201,22 @@ body {
     padding: 16px 8%;
     border: 0;
 }
+
+@media screen and (min-width: 666px) and (max-width: 768px) {
+    .contacts .contacts_wrapper {
+        width: 52%;
+        left: 37%;
+    }
+
+    .contacts .contacts_bg {
+        background-image: url(/assets/img/contacts_background_iPad.jpg);
+    }
+
+    .contacts .contacts_wrapper form {
+        padding: 137px 43px;
+    }
+}
+
 
 /* Footer -------------------- */
 
@@ -219,7 +246,6 @@ body {
 }
 
 .footer .footer_wrapper .menu_wrapper {
-    /* background: bisque; */
     width: 100%;
     max-width: 1100px;
     /*перевести в более гибкий формат*/
@@ -244,12 +270,17 @@ body {
 }
 
 .footer .footer_wrapper .menu_wrapper .menu {
-    /* padding: 0; */
     margin: 0 9% 0 6%;
 }
 
 .footer .footer_wrapper .menu_wrapper .social {
     margin-left: 6%;
+}
+
+.footer .footer_wrapper .contacts li,
+.footer .footer_wrapper .social li {
+    display: flex;
+    flex-direction: row;
 }
 
 .footer .footer_wrapper .menu_wrapper .menu a,
@@ -271,3 +302,26 @@ body {
     align-items: center;
     max-width: 112px;
 }
+
+@media screen and (min-width: 666px) and (max-width: 768px) {
+    .footer .footer_wrapper {
+        padding: 30px 9%;
+    }
+
+    .footer .footer_wrapper .logo_color {
+        height: 93px;
+        max-width: 65px;
+        align-self: center;
+    }
+
+    .footer .footer_wrapper .menu_wrapper .menu {
+        margin: 0 5% 0 5%;
+        min-width: 120px;
+    }
+
+    .footer .footer_wrapper .menu_wrapper .social {
+        margin-left: 4%;
+    }
+}
+
+@media screen and (min-width: 360px) and (max-width: 665px) {}
