@@ -83,27 +83,20 @@ body._lock {
 .main {
     grid-area: main;
     display: grid;
-    grid-template: minmax(500px, auto) 1fr minmax(690px, auto)/ minmax(1rem, 1fr) minmax(auto, 1120px) minmax(1rem, 1fr);
+    grid-template: minmax(500px, auto) 1fr/ minmax(1rem, 1fr) minmax(auto, 1120px) minmax(1rem, 1fr);
     grid-template-areas:
-        ". excursions ."
         ". sidebar ."
+        ". excursions ."
 }
 
-.filter {
-    background-color: brown;
-    grid-area: filter;
-}
 /*Блок боковые фильтры туров на сайте*/
-
-.sidebar {
-    grid-column: 2/3;
-    margin: 60px 0px 20px 0px;
-    padding: 60px;
+.sidebar{
+    display: grid;
+    grid-area: sidebar;
+    padding: 25px 0px;
 }
 
 .sidebar-filter__wrapper {
-    width: 295px;
-    max-height: 1100px;
     box-sizing: border-box;
     margin: 0;
     background: #ffffff;
@@ -323,7 +316,7 @@ input[type="range"]::-moz-range-thumb{
 
 .filter__subtitle_wrapper{
     padding-top: 12px;
-    
+
 }
 
 .filter__reset{
@@ -372,8 +365,8 @@ input[type="range"]::-moz-range-thumb{
 .excursions {
     background-color: #E5E5E5;
     grid-area: excursions;
-    grid-column: 3/4;
-    padding: 38px 0 40px 137px;
+    padding: 40px 0px 40px 0px;
+    margin: 0px 0px 40px 0px;
 }
 
 .excursions__title {
@@ -388,78 +381,49 @@ input[type="range"]::-moz-range-thumb{
     margin: 0px 0px 40px 0px;
 }
 
-.excursion_item {
+.excursion__item {
     width: 100%;
-}
-
-.excursions__image {
-    width: 300px;
-}
-
-.excursions__image img {
-    width: 100%;
-}
-
-.excursion_item {
     display: flex;
-    max-width: 779px;
     background-color: white;
     box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.05);
     border-radius: 10px;
     position: relative;
 }
 
-.excursion_item:not(:last-child) {
+.excursion__item:not(:last-child) {
     margin-bottom: 20px;
 }
 
-.characterImage {
+.excursion__img img {
     max-width: 238px;
     height: 100%;
     object-fit: cover;
     border-radius: 10px 0 0 10px;
 }
 
-.container_card {
+.excursion__card {
     margin-left: 47px;
-    max-width: 541px;
 }
 
-.characterName {
-    font-size: .9rem;
-    margin: 2px 0 20px;
-    max-width: 363px;
-}
-
-.tour_name {
+.excursion__category {
     color: #FFC700;
     font-size: .6rem;
     margin: 27px 0 0 0;
 }
 
-.container_for_price {
+.excursion__title {
+    font-size: .9rem;
+    margin: 2px 0 20px;
+}
+
+.info__price {
     display: flex;
 }
 
-.container_for_ticket {
-    display: flex;
-}
-
-.description {
-    border-left: 3px solid #0499DD;
-    padding-left: 20px;
-    font-size: .6rem;
-    max-width: 431px;
-}
-
-.adult,
-.child {
-    font-size: .5rem;
-    margin-top: 1px;
-}
-
-.adult {
-    margin-right: 13px;
+.info__price i {
+    font-size: .7rem;
+    color: #0499DD;
+    margin: 4px 5px 0 0;
 }
 
 .priceadult,
@@ -478,11 +442,40 @@ input[type="range"]::-moz-range-thumb{
     margin-right: 40px;
 }
 
+.info__ticket {
+    display: flex;
+}
+
+.adult,
+.child {
+    font-size: .5rem;
+    margin-top: 1px;
+}
+
+.adult {
+    margin-right: 13px;
+}
+
+.description {
+    border-left: 3px solid #0499DD;
+    padding: 0px 20px 0px 20px;
+    font-size: .6rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.container i {
+    font-size: 1.1rem;
+    color: #D4D4D4;
+}
+
 .more {
     margin: 20px 0 27px;
     font-size: .6rem;
     font-weight: bold;
-    display: block;
     width: 160px;
     height: 40px;
     border-radius: 40px;
@@ -498,21 +491,16 @@ input[type="range"]::-moz-range-thumb{
     transform: scale(1.1);
 }
 
-.container {
-    display: flex;
-}
-
 .click {
-    display: block;
     border-radius: 50%;
     background: #EDEDED;
     border: 1px solid #EDEDED;
     width: 40px;
     height: 40px;
-    position: absolute;
     bottom: 27px;
     right: 284px;
     transition: all .8;
+    margin: 20px 0px 27px 8px;
 }
 
 .click i:hover {
@@ -521,24 +509,6 @@ input[type="range"]::-moz-range-thumb{
 
 .click:hover {
     border: 2px solid #0499DD;
-}
-
-.container_for_price i {
-    font-size: .7rem;
-    color: #0499DD;
-    margin: 4px 5px 0 0;
-}
-
-.container i {
-    font-size: 1.1rem;
-    color: #D4D4D4;
-}
-
-.sidebar{
-    display: grid;
-    grid-area: sidebar;
-    padding: 25px 35px;
-    margin: 0px 0px 80px 0px;
 }
 
 .footer {
@@ -677,20 +647,14 @@ input[type="range"]::-moz-range-thumb{
         line-height: 58px;
     }
 
-    .filter {
-        background-color: brown;
-        grid-area: filter;
-        margin: 100px 40px 60px 40px;
-    }
-
     .excursions {
-        padding: 40px 0px 40px 40px;
-        margin: 0px 0px 40px 0px;
+        padding: 40px 0px 40px 0px;
+        margin: 0px 80px 40px 80px;
     }
 
     .sidebar{
-        padding: 25px 35px;
-        margin: 0px 40px 80px 40px;
+        padding: 40px;
+        margin: 40px 40px 0px 40px;
     }
 }
 
@@ -718,10 +682,12 @@ input[type="range"]::-moz-range-thumb{
         margin: 40px 0px 80px 0px;
     }
 
-    .filter {
-        background-color: brown;
-        grid-area: filter;
-        margin: 40px 0px 80px 0px;
-        padding: 60px;
+    .sidebar-filter__wrapper {
+        max-height: 1100px;
+    }
+
+    .excursions {
+        padding: 40px 0px 40px 40px;
+        margin: 0px 0px 40px 0px;
     }
 }

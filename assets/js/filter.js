@@ -147,36 +147,36 @@ document.addEventListener("DOMContentLoaded", function () {
     let excursionsContent = "";
     for (let excursion of excursions) {
         excursionsContent +=
-            `<div class="excursion_item">
-        <div class= "container_img">
-            <img class="characterImage" src="${excursion.image}" alt="${excursion.code}"></img>
-        </div>
-        <div class= "container_card">
-            <p class= "tour_name">${excursion.categoryname}</p>
-            <h2 class="characterName" id="${excursion.code}">${excursion.name}</h2>
-            <div class="excursionInfo">
-                <div class= "container_for_price">
-                    <i class="fa-solid fa-coins"></i>
-                    <div class= "priceadult">${excursion.priceadult}</div>
-                    <i class="fa-solid fa-coins"></i>
-                    <div class= "pricechild"> ${excursion.pricechild}</div>
-                    <i class="fa-regular fa-clock"></i>
-                    <div class= "duration">${excursion.duration}</div>
-                </div>
-                <div class= "container_for_ticket">
-                    <p class= "adult">Взрослый билет</p>
-                    <p class= "child">Детский билет</p>
-                </div>
-                <div class="description">${excursion.description}</div>
-                <div class="container">
-                    <a class="more" href="#">Подробнее</a>
-                    <button class="click"><i class="fa-regular fa-heart"></i></button>
+        `<div class="excursion__item">
+            <div class= "excursion__img">
+                <img src="${excursion.image}" alt="${excursion.code}"></img>
+            </div>
+            <div class= "excursion__card">
+                <p class= "excursion__category">${excursion.categoryname}</p>
+                <h2 class="excursion__title" id="${excursion.code}">${excursion.name}</h2>
+                <div class="excursion__info">
+                    <div class= "info__price">
+                        <i class="fa-solid fa-coins"></i>
+                        <div class= "priceadult">${excursion.priceadult}</div>
+                        <i class="fa-solid fa-coins"></i>
+                        <div class= "pricechild"> ${excursion.pricechild}</div>
+                        <i class="fa-regular fa-clock"></i>
+                        <div class= "duration">${excursion.duration}</div>
+                    </div>
+                    <div class= "info__ticket">
+                        <p class= "adult">Взрослый билет</p>
+                        <p class= "child">Детский билет</p>
+                    </div>
+                    <div class="description">${excursion.description}</div>
+                    <div class="container">
+                        <a class="more" href="#">Подробнее</a>
+                        <button class="click"><i class="fa-regular fa-heart"></i></button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>`
+        </div>`
     }
-    document.getElementById("excursions_container").innerHTML = excursionsContent;
+    document.getElementById("excursions__container").innerHTML = excursionsContent;
 });
 
 //пробуем стоимость фильтр
@@ -317,36 +317,36 @@ buttonShow.addEventListener("click", function excursionType() {
             result5 = result4.filter((x) => x.priceadult >= priceInput0.value);
             console.log(`result3=${result3}`);
             excursionsContent +=
-                `<div class="excursion_item">
-            <div class= "container_img">
-                <img class="characterImage" src="${excursion.image}" alt="${excursion.code}"></img>
-            </div>
-            <div class= "container_card">
-                <p class= "tour_name">${excursion.categoryname}</p>
-                <h2 class="characterName" id="${excursion.code}">${excursion.name}</h2>
-                <div class="excursionInfo">
-                    <div class= "container_for_price">
-                        <i class="fa-solid fa-coins"></i>
-                        <div class= "priceadult">${excursion.priceadult}</div>
-                        <i class="fa-solid fa-coins"></i>
-                        <div class= "pricechild"> ${excursion.pricechild}</div>
-                        <i class="fa-regular fa-clock"></i>
-                        <div class= "duration">${excursion.duration}</div>
-                    </div>
-                    <div class= "container_for_ticket">
-                        <p class= "adult">Взрослый билет</p>
-                        <p class= "child">Детский билет</p>
-                    </div>
-                    <div class="description">${excursion.description}</div>
-                    <div class="container">
-                        <a class="more" href="#">Подробнее</a>
-                        <button class="click"><i class="fa-regular fa-heart"></i></button>
+            `<div class="excursion__item">
+                <div class= "excursion__img">
+                    <img src="${excursion.image}" alt="${excursion.code}"></img>
+                </div>
+                <div class= "excursion__card">
+                    <p class= "excursion__category">${excursion.categoryname}</p>
+                    <h2 class="excursion__title" id="${excursion.code}">${excursion.name}</h2>
+                    <div class="excursion__info">
+                        <div class= "info__price">
+                            <i class="fa-solid fa-coins"></i>
+                            <div class= "priceadult">${excursion.priceadult}</div>
+                            <i class="fa-solid fa-coins"></i>
+                            <div class= "pricechild"> ${excursion.pricechild}</div>
+                            <i class="fa-regular fa-clock"></i>
+                            <div class= "duration">${excursion.duration}</div>
+                        </div>
+                        <div class= "info__ticket">
+                            <p class= "adult">Взрослый билет</p>
+                            <p class= "child">Детский билет</p>
+                        </div>
+                        <div class="description">${excursion.description}</div>
+                        <div class="container">
+                            <a class="more" href="#">Подробнее</a>
+                            <button class="click"><i class="fa-regular fa-heart"></i></button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>`
+            </div>`
         }
-        document.getElementById("excursions_container").innerHTML = excursionsContent;
+        document.getElementById("excursions__container").innerHTML = excursionsContent;
     }
 
 
@@ -382,36 +382,36 @@ resetText.addEventListener("click", () => {
     let excursionsContent = "";
     for (let excursion of excursions) {
         excursionsContent +=
-            `<div class="excursion_item">
-        <div class= "container_img">
-            <img class="characterImage" src="${excursion.image}" alt="${excursion.code}"></img>
-        </div>
-        <div class= "container_card">
-            <p class= "tour_name">${excursion.categoryname}</p>
-            <h2 class="characterName" id="${excursion.code}">${excursion.name}</h2>
-            <div class="excursionInfo">
-                <div class= "container_for_price">
-                    <i class="fa-solid fa-coins"></i>
-                    <div class= "priceadult">${excursion.priceadult}</div>
-                    <i class="fa-solid fa-coins"></i>
-                    <div class= "pricechild"> ${excursion.pricechild}</div>
-                    <i class="fa-regular fa-clock"></i>
-                    <div class= "duration">${excursion.duration}</div>
-                </div>
-                <div class= "container_for_ticket">
-                    <p class= "adult">Взрослый билет</p>
-                    <p class= "child">Детский билет</p>
-                </div>
-                <div class="description">${excursion.description}</div>
-                <div class="container">
-                    <a class="more" href="#">Подробнее</a>
-                    <button class="click"><i class="fa-regular fa-heart"></i></button>
+        `<div class="excursion__item">
+            <div class= "excursion__img">
+                <img src="${excursion.image}" alt="${excursion.code}"></img>
+            </div>
+            <div class= "excursion__card">
+                <p class= "excursion__category">${excursion.categoryname}</p>
+                <h2 class="excursion__title" id="${excursion.code}">${excursion.name}</h2>
+                <div class="excursion__info">
+                    <div class= "info__price">
+                        <i class="fa-solid fa-coins"></i>
+                        <div class= "priceadult">${excursion.priceadult}</div>
+                        <i class="fa-solid fa-coins"></i>
+                        <div class= "pricechild"> ${excursion.pricechild}</div>
+                        <i class="fa-regular fa-clock"></i>
+                        <div class= "duration">${excursion.duration}</div>
+                    </div>
+                    <div class= "info__ticket">
+                        <p class= "adult">Взрослый билет</p>
+                        <p class= "child">Детский билет</p>
+                    </div>
+                    <div class="description">${excursion.description}</div>
+                    <div class="container">
+                        <a class="more" href="#">Подробнее</a>
+                        <button class="click"><i class="fa-regular fa-heart"></i></button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>`
+        </div>`
     }
-    document.getElementById("excursions_container").innerHTML = excursionsContent;
+    document.getElementById("excursions__container").innerHTML = excursionsContent;
 
 });
 
