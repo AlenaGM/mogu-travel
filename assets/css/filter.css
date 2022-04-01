@@ -24,7 +24,7 @@ body._lock {
 }
 
 .header {
-    background-color: blueviolet;
+    background: url(../img/cite.jpg) 50% /cover no-repeat;
     grid-area: header;
     padding-top: 15px;
     display: grid;
