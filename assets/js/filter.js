@@ -273,7 +273,7 @@ buttonShow.addEventListener("click", function excursionType() {
                         <div> ${excursion.favorite}</div>
                         <div> ${excursion.code}</div>
                     </div>
-            </div>`
+                </div>`
         }
         document.getElementById("excursions_container").innerHTML = excursionsContent;
     }
@@ -307,4 +307,41 @@ if (menuLinks.length > 0) {
             bodyMenu.classList.remove('_active');
         }
     }
+}
+
+let hidden_move = document.querySelector('.filter__movement_radio');
+let hidden_cost = document.querySelector('.filter__price_range');
+let hidden_amount = document.querySelector('.filter__persons_input');
+let hidden_place = document.querySelector('.filter__place_radio');
+//let hidden_date = document.querySelector('.');
+
+let change_move = document.getElementById('change_move');
+let change_cost = document.getElementById('change_cost');
+let change_amount = document.getElementById('change_amount');
+let change_place = document.getElementById('change_place');
+let change_date = document.getElementById('change_date');
+
+change_move.onclick = function() {
+    hidden_move.classList.toggle('hidden');
+    change_move.classList.toggle('plus');
+}
+
+change_cost.onclick = function() {
+    hidden_cost.classList.toggle('hidden');
+    change_cost.classList.toggle('plus');
+}
+
+change_amount.onclick = function() {
+    hidden_amount.classList.toggle('hidden');
+    change_amount.classList.toggle('plus');
+}
+
+change_place.onclick = function() {
+    hidden_place.classList.toggle('hidden');
+    change_place.classList.toggle('plus');
+}
+
+change_date.onclick = function() {
+    //hidden_date.classList.toggle('hidden');
+    change_date.classList.toggle('plus');
 }
