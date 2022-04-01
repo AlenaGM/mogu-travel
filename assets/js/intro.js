@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 console.log('intro');
 // Берём кнопку вперёд
 let btnRight = document.querySelector(".arrow__right");
@@ -46,3 +47,21 @@ btnLeft.addEventListener("click", function () {
         slides[y].classList.add("block");
     }
 })
+=======
+const productContainers = [...document.querySelectorAll('.product-container')];
+        const nxtBtn = [...document.querySelectorAll('.nxt-btn')];
+        const preBtn = [...document.querySelectorAll('.pre-btn')];
+
+        productContainers.forEach((item, i) => {
+            let containerDimensions = item.getBoundingClientRect();
+            let containerWidth = containerDimensions.width;
+
+            nxtBtn[i].addEventListener('click', () => {
+                item.scrollLeft += containerWidth;
+            })
+
+            preBtn[i].addEventListener('click', () => {
+                item.scrollLeft -= containerWidth;
+            })
+        })
+>>>>>>> 39ebbd79b18e7d1b8a9381ebf7b0ba6f71f4fd35
