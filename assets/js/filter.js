@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let excursionsContent = "";
     for (let excursion of excursions) {
         excursionsContent +=
-        `<div class="excursion__item">
+            `<div class="excursion__item">
             <div class= "excursion__img">
                 <img src="${excursion.image}" alt="${excursion.code}"></img>
             </div>
@@ -256,6 +256,7 @@ priceInput0.addEventListener('input', function () {
 
 //Логика работы фильтра
 
+
 let buttonShow = document.getElementById("show");
 console.log(`buttonShow=${buttonShow}`);
 let radioType = document.querySelectorAll('input[name="type"]');
@@ -265,89 +266,265 @@ let radioPersons = document.querySelectorAll('input[name="radio"]');
 console.log(`radioType=${radioType}`);
 let excursionsContent = "";
 
-buttonShow.addEventListener("click", function excursionType() {
-    let excursions = JSON.parse(json);
+const inputs = document.querySelectorAll('input');
 
-    let result = "";
-    let result1 = "";
-    let result2 = "";
-    let result3 = "";
-    let result4 = "";
-    let result5 = "";
+for (const input of inputs) {
+    input.addEventListener('input', function () {
+
+        let excursions = JSON.parse(json);
+
+        let result = "";
+        let result1 = "";
+        let result2 = "";
+        let result3 = "";
+        let result4 = "";
+        let result5 = "";
 
 
-    for (const radio of radioType) {
-        if (radio.checked) {
-            console.log(radio.checked);
-            result = excursions.filter((x) => x.category === radio.value);
-            console.log(`result=${result}`);
-        }
-    }
-    for (const radio2 of radioPersons) {
-        if (radio2.checked) {
-            console.log(radio2.checked);
-            result1 = result.filter((x) => x.capacity === radio2.value);
-            console.log(`result=${result}`);
-        }
-    }
-
-    for (const radio3 of radioCity) {
-        if (radio3.checked) {
-            console.log(radio3.checked);
-            result2 = result1.filter((x) => x.destination === radio3.value);
-            console.log(`result=${result}`);
-        }
-    }
-    for (const radio4 of radioDuration) {
-        if (radio4.checked) {
-            console.log(radio4.checked);
-            result3 = result2.filter((x) => x.duration === radio4.value);
-            console.log(`result=${result}`);
-        }
-    }
-
-    for (let excursion of result3) {
-        if (+`${excursion.priceadult}` <= +priceInput1.value) {
-            result4 = result3.filter((x) => x.priceadult <= priceInput1.value);
-            console.log(`result2=${result2}`);
-        }
-    }
-    for (let excursion of result4) {
-        if (+`${excursion.priceadult}` >= +priceInput0.value) {
-            result5 = result4.filter((x) => x.priceadult >= priceInput0.value);
-            console.log(`result3=${result3}`);
-            excursionsContent +=
-            `<div class="excursion__item">
-                <div class= "excursion__img">
-                    <img src="${excursion.image}" alt="${excursion.code}"></img>
-                </div>
-                <div class= "excursion__card">
-                    <p class= "excursion__category">${excursion.categoryname}</p>
-                    <h2 class="excursion__title" id="${excursion.code}">${excursion.name}</h2>
-                    <div class="excursion__info">
-                        <div class= "info__price">
-                            <i class="fa-solid fa-coins"></i>
-                            <div class= "priceadult">${excursion.priceadult}</div>
-                            <i class="fa-solid fa-coins"></i>
-                            <div class= "pricechild"> ${excursion.pricechild}</div>
-                            <i class="fa-regular fa-clock"></i>
-                            <div class= "duration">${excursion.duration}</div>
-                        </div>
-                        <div class= "info__ticket">
-                            <p class= "adult">Взрослый билет</p>
-                            <p class= "child">Детский билет</p>
-                        </div>
-                        <div class="description">${excursion.description}</div>
-                        <div class="container">
-                            <a class="more" href="#">Подробнее</a>
-                            <button class="click"><i class="fa-regular fa-heart"></i></button>
+        for (const radio of radioType) {
+            if (radio.checked) {
+                console.log(radio.checked);
+                result = excursions.filter((x) => x.category === radio.value);
+                console.log(`result=${result}`);
+                excursionsContent = "";
+                for (let excursion of result) {
+                    excursionsContent +=
+                        `<div class="excursion__item">
+                    <div class= "excursion__img">
+                        <img src="${excursion.image}" alt="${excursion.code}"></img>
+                    </div>
+                    <div class= "excursion__card">
+                        <p class= "excursion__category">${excursion.categoryname}</p>
+                        <h2 class="excursion__title" id="${excursion.code}">${excursion.name}</h2>
+                        <div class="excursion__info">
+                            <div class= "info__price">
+                                <i class="fa-solid fa-coins"></i>
+                                <div class= "priceadult">${excursion.priceadult}</div>
+                                <i class="fa-solid fa-coins"></i>
+                                <div class= "pricechild"> ${excursion.pricechild}</div>
+                                <i class="fa-regular fa-clock"></i>
+                                <div class= "duration">${excursion.duration}</div>
+                            </div>
+                            <div class= "info__ticket">
+                                <p class= "adult">Взрослый билет</p>
+                                <p class= "child">Детский билет</p>
+                            </div>
+                            <div class="description">${excursion.description}</div>
+                            <div class="container">
+                                <a class="more" href="#">Подробнее</a>
+                                <button class="click"><i class="fa-regular fa-heart"></i></button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>`
+                </div>`
+                }
+                document.getElementById("excursions__container").innerHTML = excursionsContent;
+            }
         }
-        document.getElementById("excursions__container").innerHTML = excursionsContent;
-    }
+
+        for (const radio2 of radioPersons) {
+            if (radio2.checked) {
+                console.log(radio2.checked);
+                console.log(result);
+                result1 = result.filter((x) => x.capacity === radio2.value);
+                console.log(`result1=${result1}`);
+
+                excursionsContent = "";
+                for (let excursion of result1) {
+                    excursionsContent +=
+                        `<div class="excursion__item">
+                        <div class= "excursion__img">
+                            <img src="${excursion.image}" alt="${excursion.code}"></img>
+                        </div>
+                        <div class= "excursion__card">
+                            <p class= "excursion__category">${excursion.categoryname}</p>
+                            <h2 class="excursion__title" id="${excursion.code}">${excursion.name}</h2>
+                            <div class="excursion__info">
+                                <div class= "info__price">
+                                    <i class="fa-solid fa-coins"></i>
+                                    <div class= "priceadult">${excursion.priceadult}</div>
+                                    <i class="fa-solid fa-coins"></i>
+                                    <div class= "pricechild"> ${excursion.pricechild}</div>
+                                    <i class="fa-regular fa-clock"></i>
+                                    <div class= "duration">${excursion.duration}</div>
+                                </div>
+                                <div class= "info__ticket">
+                                    <p class= "adult">Взрослый билет</p>
+                                    <p class= "child">Детский билет</p>
+                                </div>
+                                <div class="description">${excursion.description}</div>
+                                <div class="container">
+                                    <a class="more" href="#">Подробнее</a>
+                                    <button class="click"><i class="fa-regular fa-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`
+                }
+                document.getElementById("excursions__container").innerHTML = excursionsContent;
+            }
+        }
+
+        for (const radio3 of radioCity) {
+            if (radio3.checked) {
+                console.log(radio3.checked);
+                result2 = result1.filter((x) => x.destination === radio3.value);
+                console.log(`result2=${result2}`);
+                excursionsContent = "";
+                for (let excursion of result2) {
+                    excursionsContent +=
+                        `<div class="excursion__item">
+                        <div class= "excursion__img">
+                            <img src="${excursion.image}" alt="${excursion.code}"></img>
+                        </div>
+                        <div class= "excursion__card">
+                            <p class= "excursion__category">${excursion.categoryname}</p>
+                            <h2 class="excursion__title" id="${excursion.code}">${excursion.name}</h2>
+                            <div class="excursion__info">
+                                <div class= "info__price">
+                                    <i class="fa-solid fa-coins"></i>
+                                    <div class= "priceadult">${excursion.priceadult}</div>
+                                    <i class="fa-solid fa-coins"></i>
+                                    <div class= "pricechild"> ${excursion.pricechild}</div>
+                                    <i class="fa-regular fa-clock"></i>
+                                    <div class= "duration">${excursion.duration}</div>
+                                </div>
+                                <div class= "info__ticket">
+                                    <p class= "adult">Взрослый билет</p>
+                                    <p class= "child">Детский билет</p>
+                                </div>
+                                <div class="description">${excursion.description}</div>
+                                <div class="container">
+                                    <a class="more" href="#">Подробнее</a>
+                                    <button class="click"><i class="fa-regular fa-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`
+                }
+                document.getElementById("excursions__container").innerHTML = excursionsContent;
+            }
+        }
+        for (const radio4 of radioDuration) {
+            if (radio4.checked) {
+                console.log(radio4.checked);
+                result3 = result2.filter((x) => x.duration === radio4.value);
+                console.log(`result3=${result3}`);
+                excursionsContent = "";
+                for (let excursion of result3) {
+                    excursionsContent +=
+                        `<div class="excursion__item">
+                        <div class= "excursion__img">
+                            <img src="${excursion.image}" alt="${excursion.code}"></img>
+                        </div>
+                        <div class= "excursion__card">
+                            <p class= "excursion__category">${excursion.categoryname}</p>
+                            <h2 class="excursion__title" id="${excursion.code}">${excursion.name}</h2>
+                            <div class="excursion__info">
+                                <div class= "info__price">
+                                    <i class="fa-solid fa-coins"></i>
+                                    <div class= "priceadult">${excursion.priceadult}</div>
+                                    <i class="fa-solid fa-coins"></i>
+                                    <div class= "pricechild"> ${excursion.pricechild}</div>
+                                    <i class="fa-regular fa-clock"></i>
+                                    <div class= "duration">${excursion.duration}</div>
+                                </div>
+                                <div class= "info__ticket">
+                                    <p class= "adult">Взрослый билет</p>
+                                    <p class= "child">Детский билет</p>
+                                </div>
+                                <div class="description">${excursion.description}</div>
+                                <div class="container">
+                                    <a class="more" href="#">Подробнее</a>
+                                    <button class="click"><i class="fa-regular fa-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`
+                }
+                document.getElementById("excursions__container").innerHTML = excursionsContent;
+            }
+        }
+
+        for (let excursion of result3) {
+            if (+`${excursion.priceadult}` <= +priceInput1.value) {
+                result4 = result3.filter((x) => x.priceadult <= priceInput1.value);
+                console.log(`result4=${result4}`);
+                excursionsContent = "";
+                excursionsContent +=
+                    `<div class="excursion__item">
+                        <div class= "excursion__img">
+                            <img src="${excursion.image}" alt="${excursion.code}"></img>
+                        </div>
+                        <div class= "excursion__card">
+                            <p class= "excursion__category">${excursion.categoryname}</p>
+                            <h2 class="excursion__title" id="${excursion.code}">${excursion.name}</h2>
+                            <div class="excursion__info">
+                                <div class= "info__price">
+                                    <i class="fa-solid fa-coins"></i>
+                                    <div class= "priceadult">${excursion.priceadult}</div>
+                                    <i class="fa-solid fa-coins"></i>
+                                    <div class= "pricechild"> ${excursion.pricechild}</div>
+                                    <i class="fa-regular fa-clock"></i>
+                                    <div class= "duration">${excursion.duration}</div>
+                                </div>
+                                <div class= "info__ticket">
+                                    <p class= "adult">Взрослый билет</p>
+                                    <p class= "child">Детский билет</p>
+                                </div>
+                                <div class="description">${excursion.description}</div>
+                                <div class="container">
+                                    <a class="more" href="#">Подробнее</a>
+                                    <button class="click"><i class="fa-regular fa-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`
+            }
+            document.getElementById("excursions__container").innerHTML = excursionsContent;
+        }
+
+        for (let excursion of result4) {
+            if (+`${excursion.priceadult}` >= +priceInput0.value) {
+                result5 = result4.filter((x) => x.priceadult >= priceInput0.value);
+                console.log(`result5=${result5}`);
+                excursionsContent +=
+                    `<div class="excursion__item">
+                        <div class= "excursion__img">
+                            <img src="${excursion.image}" alt="${excursion.code}"></img>
+                        </div>
+                        <div class= "excursion__card">
+                            <p class= "excursion__category">${excursion.categoryname}</p>
+                            <h2 class="excursion__title" id="${excursion.code}">${excursion.name}</h2>
+                            <div class="excursion__info">
+                                <div class= "info__price">
+                                    <i class="fa-solid fa-coins"></i>
+                                    <div class= "priceadult">${excursion.priceadult}</div>
+                                    <i class="fa-solid fa-coins"></i>
+                                    <div class= "pricechild"> ${excursion.pricechild}</div>
+                                    <i class="fa-regular fa-clock"></i>
+                                    <div class= "duration">${excursion.duration}</div>
+                                </div>
+                                <div class= "info__ticket">
+                                    <p class= "adult">Взрослый билет</p>
+                                    <p class= "child">Детский билет</p>
+                                </div>
+                                <div class="description">${excursion.description}</div>
+                                <div class="container">
+                                    <a class="more" href="#">Подробнее</a>
+                                    <button class="click"><i class="fa-regular fa-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`
+            }
+            document.getElementById("excursions__container").innerHTML = excursionsContent;
+        }
+    });
+}
+
+buttonShow.addEventListener("click", function excursionType() {
+
 
 
 });
@@ -382,7 +559,7 @@ resetText.addEventListener("click", () => {
     let excursionsContent = "";
     for (let excursion of excursions) {
         excursionsContent +=
-        `<div class="excursion__item">
+            `<div class="excursion__item">
             <div class= "excursion__img">
                 <img src="${excursion.image}" alt="${excursion.code}"></img>
             </div>
