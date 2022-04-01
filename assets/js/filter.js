@@ -147,42 +147,45 @@ document.addEventListener("DOMContentLoaded", function() {
     let excursionsContent = "";
     for (let excursion of excursions) {
         excursionsContent +=
-            `<div class="excursion_item">
-                <div class= "container_img">
-                    <img class="characterImage" src="${excursion.image}" alt="${excursion.code}"></img>
-                </div>
-                <div class= "container_card">
-                    <p class= "tour_name">${excursion.categoryname}</p>
-                    <h2 class="characterName" id="${excursion.code}">${excursion.name}</h2>
-                    <div class="excursionInfo">
-                        <div class= "container_for_price">
-                            <i class="fa-solid fa-coins"></i>
-                            <div class= "priceadult">${excursion.priceadult}</div>
-                            <i class="fa-solid fa-coins"></i>
-                            <div class= "pricechild"> ${excursion.pricechild}</div>
-                            <i class="fa-regular fa-clock"></i>
-                            <div class= "duration">${excursion.duration}</div>
-                        </div>
-                        <div class= "container_for_ticket">
-                            <p class= "adult">Взрослый билет</p>
-                            <p class= "child">Детский билет</p>
-                        </div>    
-                        <div class="description">${excursion.description}</div>
-                        <div class="container">
-                            <a class="more" href="#">Подробнее</a>
-                            <button class="click"><i class="fa-regular fa-heart"></i></button>
-                        </div>
+            `<div class="excursion__item">
+            <div class= "excursion__img">
+                <img src="${excursion.image}" alt="${excursion.code}"></img>
+            </div>
+            <div class= "excursion__card">
+                <p class= "excursion__category">${excursion.categoryname}</p>
+                <h2 class="excursion__title" id="${excursion.code}">${excursion.name}</h2>
+                <div class="excursion__info">
+                    <div class= "info__price">
+                        <i class="fa-solid fa-coins"></i>
+                        <div class= "priceadult">${excursion.priceadult}</div>
+                        <i class="fa-solid fa-coins"></i>
+                        <div class= "pricechild"> ${excursion.pricechild}</div>
+                        <i class="fa-regular fa-clock"></i>
+                        <div class= "duration">${excursion.duration}</div>
+                    </div>
+                    <div class= "info__ticket">
+                        <p class= "adult">Взрослый билет</p>
+                        <p class= "child">Детский билет</p>
+                    </div>
+                    <div class="description">${excursion.description}</div>
+                    <div class="container">
+                        <a class="more" href="#">Подробнее</a>
+                        <button class="click"><i class="fa-regular fa-heart"></i></button>
                     </div>
                 </div>
-            </div>`
+            </div>
+        </div>`
     }
-    document.getElementById("excursions_container").innerHTML = excursionsContent;
+    document.getElementById("excursions__container").innerHTML = excursionsContent;
 });
 
 //пробуем стоимость фильтр
 const rangeInput = document.querySelectorAll(".filter__price_rande input"),
     priceInput = document.querySelectorAll(".filter__price_inputs input"),
     progress = document.querySelector(".filter__price_slider .progress");
+console.log(`rangeInput = ${rangeInput}`);
+console.log(`priceInput=  ${priceInput}`);
+console.log(`progress =${progress}`);
 
 let priceGap = 1000;
 
@@ -206,6 +209,7 @@ priceInput.forEach(input => {
         }
     });
 });
+
 rangeInput.forEach(input => {
     input.addEventListener("input", (e) => {
         //получаем значения из бегунков двух диапазонов и их парсим в число
@@ -228,57 +232,188 @@ rangeInput.forEach(input => {
     });
 });
 
-/* const priceInput = document.querySelector('#pricemax');
-const priceRange = document.querySelector('#pricerangemax');
+const priceInput1 = document.querySelector('#pricemax');
+const priceRange1 = document.querySelector('#pricerangemax');
+const priceInput0 = document.querySelector('#pricemin');
+const priceRange0 = document.querySelector('#pricerangemin');
 
-priceRange.addEventListener('input', function () {
-    priceInput.value = priceRange.value;
+priceRange1.addEventListener('input', function() {
+    priceInput1.value = priceRange1.value;
+    priceInput0.value = priceRange0.value;
+});
+priceRange0.addEventListener('input', function() {
+    priceInput0.value = priceRange0.value;
 });
 
-priceInput.addEventListener('input', function () {
-    priceRange.value = priceInput.value;
+priceInput1.addEventListener('input', function() {
+    priceRange1.value = priceInput1.value;
+    priceRange0.value = priceInput0.value;
 });
- */
+priceInput0.addEventListener('input', function() {
+    priceRange0.value = priceInput0.value;
+});
 
+
+//Логика работы фильтра
 
 let buttonShow = document.getElementById("show");
+console.log(`buttonShow=${buttonShow}`);
 let radioType = document.querySelectorAll('input[name="type"]');
+let radioCity = document.querySelectorAll('input[name="radio1"]');
+let radioDuration = document.querySelectorAll('input[name="radio2"]');
+let radioPersons = document.querySelectorAll('input[name="radio"]');
+console.log(`radioType=${radioType}`);
 let excursionsContent = "";
 
 buttonShow.addEventListener("click", function excursionType() {
     let excursions = JSON.parse(json);
 
     let result = "";
+    let result1 = "";
+    let result2 = "";
+    let result3 = "";
+    let result4 = "";
+    let result5 = "";
+
+
     for (const radio of radioType) {
         if (radio.checked) {
+            console.log(radio.checked);
             result = excursions.filter((x) => x.category === radio.value);
+            console.log(`result=${result}`);
+        }
+    }
+    for (const radio2 of radioPersons) {
+        if (radio2.checked) {
+            console.log(radio2.checked);
+            result1 = result.filter((x) => x.capacity === radio2.value);
+            console.log(`result=${result}`);
         }
     }
 
-    for (let excursion of excursions) {
-        if (+`${excursion.priceadult}` <= +priceInput.value) {
-            let result2 = result.filter((x) => x.priceadult <= priceInput.value);
-            console.log(result2);
+    for (const radio3 of radioCity) {
+        if (radio3.checked) {
+            console.log(radio3.checked);
+            result2 = result1.filter((x) => x.destination === radio3.value);
+            console.log(`result=${result}`);
+        }
+    }
+    for (const radio4 of radioDuration) {
+        if (radio4.checked) {
+            console.log(radio4.checked);
+            result3 = result2.filter((x) => x.duration === radio4.value);
+            console.log(`result=${result}`);
+        }
+    }
+
+    for (let excursion of result3) {
+        if (+`${excursion.priceadult}` <= +priceInput1.value) {
+            result4 = result3.filter((x) => x.priceadult <= priceInput1.value);
+            console.log(`result2=${result2}`);
+        }
+    }
+    for (let excursion of result4) {
+        if (+`${excursion.priceadult}` >= +priceInput0.value) {
+            result5 = result4.filter((x) => x.priceadult >= priceInput0.value);
+            console.log(`result3=${result3}`);
             excursionsContent +=
-                `<div class="excursion_item">
-                    <div class="excursions__image">
-                        <img class="characterImage" src="${excursion.image}" alt="${excursion.code}"></img>
+                `<div class="excursion__item">
+                <div class= "excursion__img">
+                    <img src="${excursion.image}" alt="${excursion.code}"></img>
+                </div>
+                <div class= "excursion__card">
+                    <p class= "excursion__category">${excursion.categoryname}</p>
+                    <h2 class="excursion__title" id="${excursion.code}">${excursion.name}</h2>
+                    <div class="excursion__info">
+                        <div class= "info__price">
+                            <i class="fa-solid fa-coins"></i>
+                            <div class= "priceadult">${excursion.priceadult}</div>
+                            <i class="fa-solid fa-coins"></i>
+                            <div class= "pricechild"> ${excursion.pricechild}</div>
+                            <i class="fa-regular fa-clock"></i>
+                            <div class= "duration">${excursion.duration}</div>
+                        </div>
+                        <div class= "info__ticket">
+                            <p class= "adult">Взрослый билет</p>
+                            <p class= "child">Детский билет</p>
+                        </div>
+                        <div class="description">${excursion.description}</div>
+                        <div class="container">
+                            <a class="more" href="#">Подробнее</a>
+                            <button class="click"><i class="fa-regular fa-heart"></i></button>
+                        </div>
                     </div>
-                    <h2 class="characterName" id="${excursion.code}">${excursion.name}</h2>
-                    <div class="excursionInfo">
-                        <div> ${excursion.priceadult}</div>
-                        <div> ${excursion.pricechild}</div>
-                        <div> ${excursion.duration}</div>
-                        <div> ${excursion.description}</div>
-                        <div> ${excursion.favorite}</div>
-                        <div> ${excursion.code}</div>
-                    </div>
-                </div>`
+                </div>
+            </div>`
         }
-        document.getElementById("excursions_container").innerHTML = excursionsContent;
+        document.getElementById("excursions__container").innerHTML = excursionsContent;
     }
 
-})
+
+});
+
+let resetText = document.querySelector(".reset__text");
+console.log(resetText);
+
+resetText.addEventListener("click", () => {
+    for (const radio of radioType) {
+        if (radio.checked) {
+            radio.checked = false;
+        }
+    }
+    for (const radio2 of radioPersons) {
+        if (radio2.checked) {
+            radio2.checked = false;
+        }
+    }
+
+    for (const radio3 of radioCity) {
+        if (radio3.checked) {
+            radio3.checked = false;
+        }
+    }
+    for (const radio4 of radioDuration) {
+        if (radio4.checked) {
+            radio4.checked = false;
+        }
+    }
+
+    let excursions = JSON.parse(json);
+    let excursionsContent = "";
+    for (let excursion of excursions) {
+        excursionsContent +=
+            `<div class="excursion__item">
+            <div class= "excursion__img">
+                <img src="${excursion.image}" alt="${excursion.code}"></img>
+            </div>
+            <div class= "excursion__card">
+                <p class= "excursion__category">${excursion.categoryname}</p>
+                <h2 class="excursion__title" id="${excursion.code}">${excursion.name}</h2>
+                <div class="excursion__info">
+                    <div class= "info__price">
+                        <i class="fa-solid fa-coins"></i>
+                        <div class= "priceadult">${excursion.priceadult}</div>
+                        <i class="fa-solid fa-coins"></i>
+                        <div class= "pricechild"> ${excursion.pricechild}</div>
+                        <i class="fa-regular fa-clock"></i>
+                        <div class= "duration">${excursion.duration}</div>
+                    </div>
+                    <div class= "info__ticket">
+                        <p class= "adult">Взрослый билет</p>
+                        <p class= "child">Детский билет</p>
+                    </div>
+                    <div class="description">${excursion.description}</div>
+                    <div class="container">
+                        <a class="more" href="#">Подробнее</a>
+                        <button class="click"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>`
+    }
+    document.getElementById("excursions__container").innerHTML = excursionsContent;
+
+});
 
 
 //МЕНЮ-БУРГЕР
@@ -311,15 +446,15 @@ if (menuLinks.length > 0) {
 
 let hidden_move = document.querySelector('.filter__movement_radio');
 let hidden_cost = document.querySelector('.filter__price_range');
-let hidden_amount = document.querySelector('.filter__persons_input');
+let hidden_amount = document.querySelector('.filter__persons_radio');
 let hidden_place = document.querySelector('.filter__place_radio');
-//let hidden_date = document.querySelector('.');
+let hidden_date = document.querySelector('.filter__duration_radio');
 
 let change_move = document.getElementById('change_move');
 let change_cost = document.getElementById('change_cost');
 let change_amount = document.getElementById('change_amount');
 let change_place = document.getElementById('change_place');
-let change_date = document.getElementById('change_date');
+let change_date = document.getElementById('change_duration');
 
 change_move.onclick = function() {
     hidden_move.classList.toggle('hidden');
@@ -341,7 +476,7 @@ change_place.onclick = function() {
     change_place.classList.toggle('plus');
 }
 
-change_date.onclick = function() {
-    //hidden_date.classList.toggle('hidden');
+change_duration.onclick = function() {
+    hidden_date.classList.toggle('hidden');
     change_date.classList.toggle('plus');
 }

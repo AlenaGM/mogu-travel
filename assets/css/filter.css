@@ -1,23 +1,10 @@
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap');
-    .wrapper {
-        min-height: 100%;
-        display: grid;
-        grid-template: minmax(289px, auto) 1fr minmax(173px, auto) / 1fr;
-        grid-template-areas: "header" "main" "footer"
-    }
-    
-    .body {
-        font-family: 'Montserrat', sans-serif;
-    }
-    
-    html {
-        font-size: 20px;
-    }
-    
     html,
     body {
         height: 100%;
         background-color: #E5E5E5;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
     }
     
     body._lock {
@@ -33,7 +20,7 @@
     }
     
     .header {
-        background-color: blueviolet;
+        background: url(../img/cite.jpg) 50% /cover no-repeat;
         grid-area: header;
         padding-top: 15px;
         display: grid;
@@ -90,24 +77,18 @@
     .main {
         grid-area: main;
         display: grid;
-        grid-template: minmax(500px, auto) 1fr minmax(690px, auto)/ minmax(1rem, 1fr) minmax(auto, 1120px) minmax(1rem, 1fr);
-        grid-template-areas: ". sidebar." " .excursions ."
-    }
-    
-    .filter {
-        background-color: brown;
-        grid-area: filter;
+        grid-template: minmax(500px, auto) 1fr/ minmax(1rem, 1fr) minmax(auto, 1120px) minmax(1rem, 1fr);
+        grid-template-areas: ". sidebar ." ". excursions ."
     }
     /*Блок боковые фильтры туров на сайте*/
     
     .sidebar {
-        grid-column: 2/3;
-        margin: 60px 0px 20px 0px;
-        padding: 60px;
+        display: grid;
+        grid-area: sidebar;
+        padding: 25px 0px;
     }
     
     .sidebar-filter__wrapper {
-        width: 295px;
         box-sizing: border-box;
         margin: 0;
         background: #ffffff;
@@ -153,8 +134,6 @@
         cursor: pointer;
     }
     
-    .sidebar-filter_close:hover {}
-    
     .sidebar-filter_open {
         height: 2px;
         width: 16px;
@@ -174,27 +153,45 @@
         transform: rotate(90deg);
     }
     
-    .sidebar-filter_open:hover {}
+    .sidebar-filter__container {
+        width: 225px;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    .filter__movement_radio,
+    .filter__persons_radio,
+    .filter__duration_radio {
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        color: #282828;
+    }
     
     .filter__place_radio {
         display: flex;
         flex-direction: column;
-        width: 225px;
         padding-top: 20px;
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        color: #282828;
     }
     
     .filter__price_range {
         display: flex;
         flex-direction: column;
-        width: 225px;
         padding-top: 20px;
     }
     
-    .filter__range {
-        width: 225px;
-    }
-    
     .filter__price_inputs {
+        width: 100%;
         display: flex;
         justify-content: space-between;
     }
@@ -202,9 +199,74 @@
     .filter__inputs {
         width: 105px;
         height: 30px;
+        outline: none;
+        text-align: center;
         background: #FFFFFF;
         border: 1px solid #eDeDeD;
         border-radius: 40px;
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        color: #282828;
+        -moz-appearance: textfield;
+    }
+    
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+    
+    .filter__price_slider {
+        margin-top: 30px;
+        height: 3px;
+        position: relative;
+        border-radius: 5px;
+        background: #D4D4D4;
+    }
+    
+    .filter__price_slider .progress {
+        height: 3px;
+        left: 25%;
+        right: 50%;
+        position: absolute;
+        border-radius: 5px;
+        background: #0499DD;
+    }
+    
+    .filter__price_rande {
+        position: relative;
+    }
+    
+    .filter__price_rande input {
+        position: absolute;
+        height: 3px;
+        top: -3px;
+        width: 100%;
+        background: none;
+        pointer-events: none;
+        -webkit-appearance: none;
+    }
+    
+    input[type="range"]::-webkit-slider-thumb {
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        -webkit-appearance: none;
+        pointer-events: auto;
+        background: #0499DD;
+        border: 1px solid #D4D4D4;
+    }
+    
+    input[type="range"]::-moz-range-thumb {
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        -webkit-appearance: none;
+        pointer-events: auto;
+        background: #0499DD;
+        border: 1px solid #D4D4D4;
     }
     
     .filter__persons_input {
@@ -238,7 +300,11 @@
         cursor: pointer;
     }
     
-    .btn__show:hover {}
+    .btn__show:hover {
+        background: rgba(0, 0, 0, 0);
+        color: #0499dd;
+        box-shadow: inset 0 0 0 3px #0499dd;
+    }
     
     .filter__subtitle_wrapper {
         padding-top: 12px;
@@ -249,6 +315,7 @@
         justify-content: center;
         padding-top: 15px;
         align-items: center;
+        cursor: pointer;
     }
     
     .reset__text {
@@ -257,6 +324,10 @@
         font-size: 12px;
         font-weight: 500;
         line-height: 15px;
+    }
+    
+    .reset__text:hover {
+        color: #0499dd;
     }
     
     .reset-checkbox {
@@ -282,12 +353,10 @@
     
     .excursions {
         background-color: #E5E5E5;
-        grid-column: 3/4;
-        padding: 38px 0 40px 137px;
         grid-area: excursions;
+        padding: 40px 0px 40px 0px;
+        margin: 0px 0px 40px 0px;
     }
-    
-    .excursions_container {}
     
     .excursions__title {
         font-family: 'Montserrat', sans-serif;
@@ -298,93 +367,52 @@
         line-height: 29px;
         letter-spacing: 0em;
         text-align: left;
-        margin: 0 0 40px 0px;
+        margin: 0px 0px 40px 0px;
     }
     
-    .excursion_item {
+    .excursion__item {
         width: 100%;
-    }
-    
-    .excursions__image {
-        width: 300px;
-    }
-    
-    .excursions__image img {
-        width: 100%;
-    }
-    
-    .sidebar {
-        display: grid;
-        grid-area: sidebar;
-        padding: 25px 35px;
-        margin: 0px 0px 80px 0px;
-    }
-    
-    .footer {
-        background-color: yellowgreen;
-        grid-area: footer;
-    }
-    
-    .excursion_item {
         display: flex;
-        max-width: 779px;
         background-color: white;
         box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.05);
         border-radius: 10px;
         position: relative;
     }
     
-    .excursion_item:not(:last-child) {
+    .excursion__item:not(:last-child) {
         margin-bottom: 20px;
     }
     
-    .characterImage {
+    .excursion__img img {
         max-width: 238px;
         height: 100%;
         object-fit: cover;
         border-radius: 10px 0 0 10px;
     }
     
-    .container_card {
+    .excursion__card {
         margin-left: 47px;
-        max-width: 541px;
     }
     
-    .characterName {
-        font-size: .9rem;
-        margin: 2px 0 20px;
-        max-width: 363px;
-    }
-    
-    .tour_name {
+    .excursion__category {
         color: #FFC700;
         font-size: .6rem;
         margin: 27px 0 0 0;
     }
     
-    .container_for_price {
+    .excursion__title {
+        font-size: .9rem;
+        margin: 2px 0 20px;
+    }
+    
+    .info__price {
         display: flex;
     }
     
-    .container_for_ticket {
-        display: flex;
-    }
-    
-    .description {
-        border-left: 3px solid #0499DD;
-        padding-left: 20px;
-        font-size: .6rem;
-        max-width: 431px;
-    }
-    
-    .adult,
-    .child {
-        font-size: .5rem;
-        margin-top: 1px;
-    }
-    
-    .adult {
-        margin-right: 13px;
+    .info__price i {
+        font-size: .7rem;
+        color: #0499DD;
+        margin: 4px 5px 0 0;
     }
     
     .priceadult,
@@ -403,11 +431,40 @@
         margin-right: 40px;
     }
     
+    .info__ticket {
+        display: flex;
+    }
+    
+    .adult,
+    .child {
+        font-size: .5rem;
+        margin-top: 1px;
+    }
+    
+    .adult {
+        margin-right: 13px;
+    }
+    
+    .description {
+        border-left: 3px solid #0499DD;
+        padding: 0px 20px 0px 20px;
+        font-size: .6rem;
+    }
+    
+    .container {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .container i {
+        font-size: 1.1rem;
+        color: #D4D4D4;
+    }
+    
     .more {
         margin: 20px 0 27px;
         font-size: .6rem;
         font-weight: bold;
-        display: block;
         width: 160px;
         height: 40px;
         border-radius: 40px;
@@ -423,21 +480,16 @@
         transform: scale(1.1);
     }
     
-    .container {
-        display: flex;
-    }
-    
     .click {
-        display: block;
         border-radius: 50%;
         background: #EDEDED;
         border: 1px solid #EDEDED;
         width: 40px;
         height: 40px;
-        position: absolute;
         bottom: 27px;
         right: 284px;
         transition: all .8;
+        margin: 20px 0px 27px 8px;
     }
     
     .click i:hover {
@@ -448,15 +500,9 @@
         border: 2px solid #0499DD;
     }
     
-    .container_for_price i {
-        font-size: .7rem;
-        color: #0499DD;
-        margin: 4px 5px 0 0;
-    }
-    
-    .container i {
-        font-size: 1.1rem;
-        color: #D4D4D4;
+    .footer {
+        background-color: yellowgreen;
+        grid-area: footer;
     }
     /*-------БУРГЕР------------*/
     
@@ -568,18 +614,13 @@
             font-size: 48px;
             line-height: 58px;
         }
-        .filter {
-            background-color: brown;
-            grid-area: filter;
-            margin: 100px 40px 60px 40px;
-        }
         .excursions {
-            padding: 40px 0px 40px 40px;
-            margin: 0px 0px 40px 0px;
+            padding: 40px 0px 40px 0px;
+            margin: 0px 80px 40px 80px;
         }
         .sidebar {
-            padding: 25px 35px;
-            margin: 0px 40px 80px 40px;
+            padding: 40px;
+            margin: 40px 40px 0px 40px;
         }
     }
     /*-------ДЕСКТОПЫ------------*/
@@ -594,7 +635,7 @@
             grid-area: main;
             display: grid;
             grid-template: minmax(260px, auto) 1fr/ minmax(1rem, 1fr) minmax(auto, 300px) minmax(auto, 820px) minmax(1rem, 1fr);
-            grid-template-areas: ". filter filter ." ". sidebar excursions ."
+            grid-template-areas: ". sidebar excursions ."
         }
         .sidebar {
             display: grid;
@@ -602,33 +643,31 @@
             padding: 0px 0px;
             margin: 40px 0px 80px 0px;
         }
-        .filter {
-            background-color: brown;
-            grid-area: filter;
-            margin: 40px 0px 80px 0px;
-            padding: 60px;
+        .sidebar-filter__wrapper {
+            max-height: 1100px;
         }
-    }
-    
-    .hidden {
-        display: none;
-    }
-    
-    .sidebar-filter_close.plus {
-        height: 2px;
-        width: 16px;
-        background: #0499DD;
-        border-radius: 40px;
-        cursor: pointer;
-        position: relative;
-    }
-    
-    .sidebar-filter_close.plus:after {
-        content: "";
-        height: 2px;
-        width: 16px;
-        background: #0499DD;
-        border-radius: 40px;
-        position: absolute;
-        transform: rotate(90deg);
+        .excursions {
+            padding: 40px 0px 40px 40px;
+            margin: 0px 0px 40px 0px;
+        }
+        .hidden {
+            display: none;
+        }
+        .sidebar-filter_close.plus {
+            height: 2px;
+            width: 16px;
+            background: #0499DD;
+            border-radius: 40px;
+            cursor: pointer;
+            position: relative;
+        }
+        .sidebar-filter_close.plus:after {
+            content: "";
+            height: 2px;
+            width: 16px;
+            background: #0499DD;
+            border-radius: 40px;
+            position: absolute;
+            transform: rotate(90deg);
+        }
     }

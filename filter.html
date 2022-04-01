@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/css/filter.css">
     <script src="https://kit.fontawesome.com/4d945f1e23.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="assets/img/logo-color.png" type="img/png">
-    <title>Mogu Travel!</title>
+    <title>Mogu Travel31</title>
 </head>
 
 <body>
@@ -79,44 +79,41 @@
                             <h4 class="sidebar-filter__subtitle persons__title">Количество человек</h4>
                             <span class="sidebar-filter_close" id="change_amount"></span>
                         </div>
-                        <div class="filter__persons_input">
-                            <label for=""><input class="filter__inputs" type="text" value="1 чел."></label>
-                            <label for=""><input class="filter__inputs" type="text" value="до 5 чел."></label>
-                            <label for=""><input class="filter__inputs" type="text" value="до 10 чел."></label>
-                            <label for=""><input class="filter__inputs" type="text" value="больше 10 чел."></label>
+                        <div class="filter__persons_radio">
+                            <label for=""><input type="radio" name="radio" value="5">до 5 чел.</label>
+                            <label for=""><input type="radio" name="radio" value="10">до 10 чел.</label>
+                            <label for=""><input type="radio" name="radio" value="15">больше 10 чел.</label>
                         </div>
                         <div class="divider"></div>
                     </div>
-                    <div class="sidebar-filter__place sidebar-filter__container">
+                    <div class="sidebar-filter__place sidebar-filter__container ">
                         <div class="filter__subtitle_wrapper">
                             <h4 class="sidebar-filter__subtitle place__title">Место</h4>
                             <span class="sidebar-filter_close" id="change_place"></span>
                         </div>
                         <div class="filter__place_radio">
-                            <label class="radio" for=""><input type="radio" name="radio" value="monmartre" checked="">Монмарт</label>
-                            <label class="radio" for=""><input type="radio" name="radio" value="lyon" checked="">Лион</label>
-                            <label class="radio" for=""><input type="radio" name="radio" value="strasbourg" checked="">Страсбург</label>
-                            <label class="radio" for=""><input type="radio" name="radio" value="colmar" checked="">Кольмар</label>
-                            <label class="radio" for=""><input type="radio" name="radio" value="marseilles" checked="">Марсель</label>
-                            <label class="radio" for=""><input type="radio" name="radio" value="montpellier" checked="">Монпелье</label>
-                            <label class="radio" for=""><input type="radio" name="radio" value="versailles" checked="">Версаль</label>
-                            <label class="radio" for=""><input type="radio" name="radio" value="rouen" checked="">Руан</label>
-                            <label class="radio" for=""><input type="radio" name="radio" value="paris" checked="">Париж</label>
-                            <label class="radio" for=""><input type="radio" name="radio" value="nice" checked="">Ницца</label>
+                            <label class="radio" for=""><input type="radio" name="radio1" value="monmartre">Монмарт</label>
+                            <label class="radio" for=""><input type="radio" name="radio1" value="lyon">Лион</label>
+                            <label class="radio" for=""><input type="radio" name="radio1" value="strasbourg">Страсбург</label>
+                            <label class="radio" for=""><input type="radio" name="radio1" value="colmar">Кольмар</label>
+                            <label class="radio" for=""><input type="radio" name="radio1" value="marseilles">Марсель</label>
+                            <label class="radio" for=""><input type="radio" name="radio1" value="montpellier">Монпелье</label>
+                            <label class="radio" for=""><input type="radio" name="radio1" value="versailles" >Версаль</label>
+                            <label class="radio" for=""><input type="radio" name="radio1" value="rouen" >Руан</label>
+                            <label class="radio" for=""><input type="radio" name="radio1" value="paris" >Париж</label>
+                            <label class="radio" for=""><input type="radio" name="radio1" value="nice" >Ницца</label>
                         </div>
                         <div class="divider"></div>
                     </div>
                     <div class="sidebar-filter__duration sidebar-filter__container ">
                         <div class="filter__subtitle_wrapper">
                             <h4 class="sidebar-filter__subtitle duration__title">Длительность</h4>
-                            <span class="sidebar-filter_open"></span>
+                            <span class="sidebar-filter_close" id="change_duration"></span>
                         </div>
-                        <div class="divider"></div>
-                    </div>
-                    <div class="sidebar-filter__date sidebar-filter__container ">
-                        <div class="filter__subtitle_wrapper">
-                            <h4 class="sidebar-filter__subtitle date__title">Дата</h4>
-                            <span class="sidebar-filter_close" id="change_date"></span>
+                        <div class="filter__duration_radio">
+                            <label for=""><input type="radio" name="radio2" value="2">2 ч.</label>
+                            <label for=""><input type="radio" name="radio2" value="3">3 ч.</label>
+                            <label for=""><input type="radio" name="radio2" value="4">4 ч.</label>
                         </div>
                         <div class="divider"></div>
                     </div>
@@ -133,7 +130,7 @@
             </aside>
             <div class="excursions">
                 <h1 class="excursions__title">Наши туры</h1>
-                <div class="excursions_container" id="excursions_container">
+                <div class="excursions__container" id="excursions__container">
                 </div>
             </div>
         </main>
