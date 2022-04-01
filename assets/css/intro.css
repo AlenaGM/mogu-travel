@@ -112,7 +112,131 @@ body {
 /* Отзывы */
 .reviews {
     grid-area: reviews;
+    overflow: hidden;
 }
+
+.reviews_wrapper {
+    margin-left: 11%;
+}
+
+.block {
+    display: flex;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.reviews_title {
+    margin-bottom: 90px;
+}
+
+.reviews-cards_wrapper {
+    display: flex;
+    gap: 20px;
+    width: 1279px;
+    margin-bottom: 40px;
+}
+
+.reviews-card {
+    display: none;
+}
+
+.block {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    gap: 28px;
+    max-width: 740px;
+    max-height: 322px;
+    padding: 38px 27px 39px 45px;
+    background-color: #EDEDED;
+    background-image: url(/assets/img/reviews-background.svg);
+    background-repeat: no-repeat;
+    background-position: bottom 10px right 10px;
+    border-radius: 10px;
+}
+
+.reviews-photo {
+    max-width: 245px;
+    max-height: 245px;
+    border-radius: 10px;
+}
+
+.reviews-card_name {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.reviews_text {
+    width: 395px;
+    height: 153px;
+}
+
+.reviews-slider {
+    display: flex;
+    gap: 10px;
+    height: 43px;
+}
+
+.reviews-slider_arrow {
+    width: 24px;
+    height: 43px;
+}
+
+.arrow__right {
+    color: #282828;
+}
+
+@media screen and (min-width: 610px) and (max-width: 768px) {
+    .reviews_wrapper {
+        margin-left: 10.4%;
+    }
+
+    .block {
+        max-width: 505px;
+        padding: 26px 31px;
+    }
+
+    .reviews-photo {
+        max-width: 168px;
+        max-height: 168px;
+    }
+
+    .reviews_text {
+        max-width: 255px;
+        max-height: 165px;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
+
+@media screen and (min-width: 350px) and (max-width: 609px) {
+    .reviews_wrapper {
+        margin-left: 24px;
+    }
+
+    .block {
+        max-width: 280px;
+        min-height: 447px;
+        padding: 32px 24px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .reviews-photo {
+        max-height: 120px;
+    }
+
+    .reviews_text {
+        max-width: 228px;
+        max-height: 240px;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 20px;
+    }
+}
+
 
 /* Форма связи */
 .contacts {
@@ -122,7 +246,7 @@ body {
 
 .contacts .contacts_bg {
     background-position: center;
-    background-image: url(/assets/img/contacts_background.jpg);
+    background-image: url(/assets/img/contacts_background_new2.jpeg);
     height: 0;
     min-height: 640px;
     display: block;
@@ -143,7 +267,7 @@ body {
 }
 
 .contacts .contacts_wrapper form {
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(20px);
     width: 100%;
     height: 100%;
     padding: 20.6% 16.4% 22.3% 14.8%;
@@ -202,14 +326,14 @@ body {
     border: 0;
 }
 
-@media screen and (min-width: 666px) and (max-width: 768px) {
+@media screen and (min-width: 530px) and (max-width: 768px) {
     .contacts .contacts_wrapper {
         width: 52%;
         left: 37%;
     }
 
     .contacts .contacts_bg {
-        background-image: url(/assets/img/contacts_background_iPad.jpg);
+        /* background-image: url(/assets/img/contacts_background_iPad.jpg); */
     }
 
     .contacts .contacts_wrapper form {
@@ -217,9 +341,9 @@ body {
     }
 }
 
-@media screen and (min-width: 360px) and (max-width: 665px) {
+@media screen and (min-width: 350px) and (max-width: 529px) {
     .contacts .contacts_bg {
-        background-image: url(/assets/img/contacts_background_mobile.jpg);
+        /* background-image: url(/assets/img/contacts_background_mobile.jpg); */
         min-height: 928px;
     }
 
@@ -230,12 +354,14 @@ body {
 
     }
 
-    /* .contacts .contacts_wrapper form {
-        backdrop-filter: blur(4px);
-        width: 100%;
-        height: 100%;
-        padding: 20.6% 16.4% 22.3% 14.8%;
-    } */
+    .contacts .contacts_wrapper form {
+        padding: 30% 14%;
+    }
+
+    .contacts .contacts_wrapper .form .inputs {
+        align-items: center;
+    }
+
 }
 
 
@@ -349,7 +475,7 @@ body {
     }
 }
 
-@media screen and (min-width: 360px) and (max-width: 665px) {
+@media screen and (min-width: 350px) and (max-width: 665px) {
     .footer .footer_wrapper {
         display: none;
     }
