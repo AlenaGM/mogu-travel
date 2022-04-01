@@ -359,6 +359,15 @@ input[type="range"]::-moz-range-thumb{
     position: absolute;
 }
 
+/*Спойлер*/
+
+.filter__item {
+    display: none;
+}
+
+.filter__item._visible {
+    display: flex;
+}
 
 /*Блок карточек туров на сайте*/
 
