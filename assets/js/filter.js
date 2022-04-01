@@ -446,16 +446,11 @@ if (menuLinks.length > 0) {
 
 //СПОЙЛЕР (Аленин Вариант)
 const spoilers = document.querySelectorAll('.filter__subtitle_wrapper');
-console.log(spoilers);
 
 spoilers.forEach(spoiler => {
-
     spoiler.addEventListener('click', function addVisible() {
-        if (spoiler.nextElementSibling.classList.contains('_visible')) {
-        spoiler.nextElementSibling.classList.remove('_visible');
-        } else {
-        spoiler.nextElementSibling.classList.add('_visible');
-        }
+        spoiler.nextElementSibling.classList.toggle('_visible');
+        spoiler.classList.toggle('minus');
     });
 });
 

@@ -142,7 +142,6 @@ body._lock {
     cursor: pointer;
 }
 
-
 .sidebar-filter_open {
     height: 2px;
     width: 16px;
@@ -152,7 +151,8 @@ body._lock {
     position: relative;
 }
 
-.sidebar-filter_open:after {
+.sidebar-filter_open:after,
+.minus span:after {
     content: "";
     height: 2px;
     width: 16px;
@@ -367,6 +367,10 @@ input[type="range"]::-moz-range-thumb{
 
 .filter__item._visible {
     display: flex;
+}
+
+.minus span{
+    background: "";
 }
 
 /*Блок карточек туров на сайте*/
