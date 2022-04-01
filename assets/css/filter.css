@@ -650,24 +650,27 @@
             padding: 40px 0px 40px 40px;
             margin: 0px 0px 40px 0px;
         }
-        .hidden {
-            display: none;
-        }
-        .sidebar-filter_close.plus {
-            height: 2px;
-            width: 16px;
-            background: #0499DD;
-            border-radius: 40px;
-            cursor: pointer;
-            position: relative;
-        }
-        .sidebar-filter_close.plus:after {
-            content: "";
-            height: 2px;
-            width: 16px;
-            background: #0499DD;
-            border-radius: 40px;
-            position: absolute;
-            transform: rotate(90deg);
-        }
+    }
+    
+    .hidden {
+        display: none;
+    }
+    
+    .sidebar-filter_close.plus {
+        height: 2px;
+        width: 16px;
+        background: #0499DD;
+        border-radius: 40px;
+        cursor: pointer;
+        position: relative;
+    }
+    
+    .sidebar-filter_close.plus:after {
+        content: "";
+        height: 2px;
+        width: 16px;
+        background: #0499DD;
+        border-radius: 40px;
+        position: absolute;
+        transform: rotate(90deg);
     }
