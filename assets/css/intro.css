@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Pacifico&display=swap');
 
 /* Позиционирование ---------------- */
 
@@ -71,7 +71,6 @@ body {
 
 .header {
     background: url(../img/cite.jpg) 50% /cover no-repeat;
-    background-color: #ff7d7d;
     grid-area: header;
     padding-top: 15px;
     display: grid;
@@ -116,16 +115,67 @@ body {
 
 .header__title {
     grid-area: header__title;
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     font-family: 'Montserrat', sans-serif;
-    color: white;
+    width: fit-content;
+}
+
+.header__title_up {
+    font-family: 'Montserrat', sans-serif;
     font-size: 36px;
     font-weight: 700;
     line-height: 44px;
     letter-spacing: 0em;
-    text-align: center;
-    align-items: center;
+    text-align: left;
+    color: white;
 }
+
+.header__title_mid {
+    font-family: 'Pacifico';
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0em;
+    text-align: left;
+    color:#FFC700;
+    align-self: center;
+}
+
+.header__title_down {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 72px;
+    font-weight: 900;
+    padding-top: 15px;
+    line-height: 65px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: transparent;
+    -webkit-text-stroke: 2px #FFFFFF;
+}
+
+.header__title_button {
+    margin-top: 90px;
+    background: linear-gradient(92.71deg, #0499DD 0%, #17C1BC 100%);
+    border-radius: 60px;
+    color: rgba(255, 255, 255, 1);
+    padding: 16px 50px;
+    border: 0;
+    width: 230px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.header__title_button a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}
+
 
 /*-------БУРГЕР------------*/
 @media screen and (max-width: 767px) {
@@ -253,26 +303,84 @@ body {
         font-size: 14px;
     }
 
-    .header__title {
+    .header__title_up {
+        font-family: 'Montserrat', sans-serif;
         font-size: 48px;
-        line-height: 58px;
+        font-weight: 700;
+        line-height: 44px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: white;
     }
+
+    .header__title_mid {
+        font-family: 'Pacifico';
+        font-size: 36px;
+        font-weight: 400;
+        line-height: 14px;
+        letter-spacing: 0em;
+        text-align: left;
+        color:#FFC700;
+        align-self: center;
+    }
+
+    .header__title_down {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 96px;
+        font-weight: 900;
+        line-height: 85px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: transparent;
+        -webkit-text-stroke: 2px #FFFFFF;
+    }
+
 }
 
 /*-------ДЕСКТОПЫ------------*/
 @media screen and (min-width: 913px){
 
-    .header__title {
+    .header__title_up {
+        font-family: 'Montserrat', sans-serif;
         font-size: 72px;
+        font-weight: 700;
         line-height: 88px;
+        letter-spacing: 0em;
         text-align: left;
+        color: white;
+    }
+
+    .header__title_mid {
+        font-family: 'Pacifico';
+        font-size: 52px;
+        font-weight: 400;
+        line-height: 4px;
+        letter-spacing: 0em;
+        text-align: left;
+        color:#FFC700;
+        align-self: flex-end;
+    }
+
+    .header__title_down {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 96px;
+        font-weight: 900;
+        line-height: 117px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: transparent;
+        -webkit-text-stroke: 2px #FFFFFF;
+    }
+
+    .header__title_button {
+        margin-top: 60px;
+        width: 230px;
     }
 }
 
 
 
 /* Main ---------------------- */
-
 .main {
     grid-area: main;
     display: grid;
@@ -738,7 +846,8 @@ body {
     color: #FFFFFF;
 }
 
-.contacts .contacts_wrapper .form .inputs>input[type="button"] {
+.contacts .contacts_wrapper .form .inputs>input[type="button"],
+.header .header__title>input[type="button"] {
     background: linear-gradient(92.71deg, #0499DD 0%, #17C1BC 100%);
     border-radius: 60px;
     color: rgba(255, 255, 255, 1);
