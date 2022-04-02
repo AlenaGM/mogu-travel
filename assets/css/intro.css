@@ -7,12 +7,6 @@ body {
     width: 100%;
     height: 100%;
     margin: 0;
-    /* padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-    outline: none; */
 }
 
 *,
@@ -109,12 +103,41 @@ body {
     cursor: pointer;
 }
 
-.menu__link:hover{
+.menu__link:hover {
     color: #FFC700;
 }
 
 .header__title {
     grid-area: header__title;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    position: relative;
+}
+
+.header__title .header__title_media {
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__title .header__title_media>a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 32px;
+    width: 32px;
+    margin: 4px 0;
+}
+
+.header__title .header__title_inner {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -140,7 +163,7 @@ body {
     line-height: 14px;
     letter-spacing: 0em;
     text-align: left;
-    color:#FFC700;
+    color: #FFC700;
     align-self: center;
 }
 
@@ -180,7 +203,7 @@ body {
 /*-------БУРГЕР------------*/
 @media screen and (max-width: 767px) {
 
-    .menu__burger{
+    .menu__burger {
         z-index: 5;
         display: grid;
         align-items: center;
@@ -205,7 +228,7 @@ body {
 
     .menu__burger::before,
     .menu__burger::after {
-        content:"";
+        content: "";
     }
 
     .menu__burger::before {
@@ -280,9 +303,9 @@ body {
 }
 
 /*-------ПЛАНШЕТЫ------------*/
-@media screen and (min-width: 767px){
+@media screen and (min-width: 767px) {
 
-    .menu__burger{
+    .menu__burger {
         display: none;
     }
 
@@ -320,7 +343,7 @@ body {
         line-height: 14px;
         letter-spacing: 0em;
         text-align: left;
-        color:#FFC700;
+        color: #FFC700;
         align-self: center;
     }
 
@@ -338,7 +361,7 @@ body {
 }
 
 /*-------ДЕСКТОПЫ------------*/
-@media screen and (min-width: 913px){
+@media screen and (min-width: 913px) {
 
     .header__title_up {
         font-family: 'Montserrat', sans-serif;
@@ -357,7 +380,7 @@ body {
         line-height: 4px;
         letter-spacing: 0em;
         text-align: left;
-        color:#FFC700;
+        color: #FFC700;
         align-self: flex-end;
     }
 
@@ -403,7 +426,7 @@ body {
     display: grid;
     grid-template: 1fr/ minmax(1rem, 1fr) minmax(auto, 1120px) minmax(1rem, 1fr);
     grid-template-areas:
-    ". container__slider container__slider";
+        ". container__slider container__slider";
 }
 
 * {

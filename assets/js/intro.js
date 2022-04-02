@@ -1,3 +1,4 @@
+
 // --- JS код ддя раздела "Остались вопросы?" --- //
 const form = document.getElementById('form');
 const userName = document.getElementById('userName');
@@ -6,7 +7,8 @@ const email = document.getElementById('email');
 const submit = document.getElementById('btn');
 
 
-function check() {
+function check() { 
+
     // очистка сообщений об ошибках
     let errorMessages = document.querySelectorAll('.error');
     for (let error of errorMessages) {
@@ -14,7 +16,7 @@ function check() {
     }
 
     // проверка валидности введеной информации в input
-    let isValid = true; // валидна ли форма
+    let isValid = true; // валидна ли форма 
 
     if(!userName.checkValidity()) {
         isValid = false;
@@ -29,8 +31,8 @@ function check() {
     if(!email.checkValidity()) {
         isValid = false;
         document.getElementsByClassName('emailError')[0].style.display = 'block';
-    }
-
+    }  
+    
     return isValid;
 }
 
@@ -70,7 +72,7 @@ const productContainers = [...document.querySelectorAll('.product-container')];
             preBtn[i].addEventListener('click', () => {
                 item.scrollLeft -= containerWidth;
             })
-        })
+        });
 
 //МЕНЮ-БУРГЕР
 
