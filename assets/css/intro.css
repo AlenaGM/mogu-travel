@@ -114,6 +114,35 @@ body {
     justify-content: center;
     align-items: flex-start;
     font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    position: relative;
+}
+
+.header__title .header__title_media {
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__title .header__title_media>a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 32px;
+    width: 32px;
+    margin: 4px 0;
+}
+
+.header__title .header__title_inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: 'Montserrat', sans-serif;
     width: fit-content;
 }
 
