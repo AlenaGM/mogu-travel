@@ -387,7 +387,6 @@ body {
         "contacts";
 }
 
-.about,
 .reviews {
     margin-bottom: 150px;
 }
@@ -589,8 +588,82 @@ body {
 /* О нас */
 .about {
     grid-area: about;
-
+    display: grid;
+    grid-template: 1fr/ minmax(1rem, 1fr) minmax(auto, 1120px) minmax(1rem, 1fr);
+    grid-template-areas:
+    "container__about container__about .";
+    background: #17C1BC;
+    margin-top: 150px;
 }
+
+.container__about {
+    grid-area: container__about;
+    background: url(../img/francelavandaabout.jpg) -200px 0px /cover no-repeat;
+    border-bottom-right-radius: 20px;  /*для нижнего правого угла*/
+    border-top-right-radius: 20px; /*для верхнего правого угла */
+    padding: 137px 0px;
+    opacity: .9;
+}
+
+.about__text {
+    color: #000000;
+    text-transform:capitalize;
+    line-height: 30px;
+    margin-bottom: 10px;
+}
+
+.about__image {
+    position: relative;
+    width: 100%;
+    margin-right: 210px;
+    opacity: .9;
+    border-bottom-right-radius: 20px;  /*для нижнего правого угла*/
+    border-top-right-radius: 20px; /*для верхнего правого угла */
+}
+
+.about__block {
+    top: 25%;
+    right: 10%;
+    width: 37%;
+    padding: 60px 60px 60px 80px;
+    background: #EDEDED;
+    border-radius: 10px;
+}
+
+.about__title {
+    color: #7594a3;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+/*
+   @media screen and (max-width: 1023px) {  /*для десктоп и планшета
+    .about__block {
+        width: 75%;
+        top: auto;
+        right: 0;
+        bottom: -74px;
+        padding: 25px;
+        margin-right: 25px;
+    }
+
+    .about__image {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) { /*адаптивность для мобильника
+    .about__block {
+        position: relative;
+        width: 100%;
+        bottom: 0;
+        padding: 25px;
+        margin-right: 25px;
+    }
+
+    .about {
+        margin-top: 20px;
+    }
+}*/
 
 /* Галерея */
 .gallery {

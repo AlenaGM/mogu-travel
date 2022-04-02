@@ -7,8 +7,8 @@ const email = document.getElementById('email');
 const submit = document.getElementById('btn');
 
 
-
 function check() { 
+
     // очистка сообщений об ошибках
     let errorMessages = document.querySelectorAll('.error');
     for (let error of errorMessages) {
