@@ -11,7 +11,6 @@
 </head>
 <body>
     <div class="wrapper">
-        <header class="header"></header>
         <main class="main">
 
             <!--  ==================Отзывы Алина===================== -->
@@ -64,16 +63,17 @@
             <div class="contacts">
                 <div class="contacts_bg">
                     <div class="contacts_wrapper">
-                        <form class="form" action="">
+                        <form class="form" id="form" action="">
                             <h2 class="title title_white">Остались вопросы?</h2>
                             <span>Оставь заявку и мы ответим</span>
                             <div class="inputs">
-                                <input id="userName" type="text" placeholder="Имя" />
-                                <div class="error">Имя может содержать только буквы</div>
-                                <input id="phone" type="tel" maxlength="16" placeholder="Телефон"/>
-                                <input id="" type="email" placeholder="Почта"/>
-                                <div class="error">Мы не уверены, что это почта</div>
-                                <input id="btn" type="button" value="Оставить заявку">
+                                <input id="userName" class="field" type="text" placeholder="Имя" pattern="[A-Za-zА-Яа-я\s]{2,40}$" required />
+                                <span class="error userNameError">Имя может содержать только буквы</span>
+                                <input id="phone" class="field" type="tel" placeholder="Телефон" pattern="[\+]?[\d]{10,16}$" required/>
+                                <span class="error phoneError">Вы не указали или указали неверно номер телефона</span>
+                                <input id="email" class="field" type="email" placeholder="Почта" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required/>
+                                <span class="error emailError">Вы не указали почту или введеные данные имеют неверный формат</span>
+                                <input id="btn" type="submit" value="Оставить заявку">
                             </div>
                         </form>
                     </div>
