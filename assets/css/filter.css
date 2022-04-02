@@ -161,7 +161,6 @@ body._lock {
 
 .sidebar-filter__container {
     font-family: 'Montserrat', sans-serif;
-
 }
 
 .filter__item {
@@ -337,14 +336,15 @@ input[type="range"]::-moz-range-thumb{
     cursor: pointer;
 }
 
-
 .reset__text {
     font-family: 'Montserrat', sans-serif;
     color: #282828;
     font-size: 12px;
     font-weight: 500;
     line-height: 15px;
+    padding-left: 6px;
 }
+
 .reset__text:hover {
     color: #0499dd;
 }
@@ -370,7 +370,6 @@ input[type="range"]::-moz-range-thumb{
 }
 
 /*Спойлер*/
-
 .filter__item {
     display: none;
 }
@@ -407,6 +406,7 @@ input[type="range"]::-moz-range-thumb{
 .excursion__item {
     width: 100%;
     display: flex;
+    flex-direction: column;
     background-color: white;
     box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.05);
     border-radius: 10px;
@@ -418,14 +418,13 @@ input[type="range"]::-moz-range-thumb{
 }
 
 .excursion__img img {
-    max-width: 238px;
-    height: 100%;
+    width: 100%;
     object-fit: cover;
-    border-radius: 10px 0 0 10px;
+    border-radius: 10px 10px 0 0px;
 }
 
 .excursion__card {
-    margin-left: 47px;
+    margin-left: 36px;
 }
 
 .excursion__category {
@@ -522,8 +521,8 @@ input[type="range"]::-moz-range-thumb{
     height: 40px;
     bottom: 27px;
     right: 284px;
-    transition: all .8;
     margin: 20px 0px 27px 8px;
+    cursor: pointer;
 }
 
 .click i:hover {
@@ -758,7 +757,16 @@ input[type="range"]::-moz-range-thumb{
         margin: 40px 40px 0px 40px;
     }
 
+    .excursion__item {
+        display: flex;
+        flex-direction: row;
+    }
 
+    .excursion__img img {
+        border-radius: 10px 0 0 10px;
+        width: 240px;
+        height: 100%;
+    }
 
     .footer {
         grid-area: footer;
@@ -867,6 +875,8 @@ input[type="range"]::-moz-range-thumb{
         grid-area: sidebar;
         padding: 0px 0px;
         margin: 40px 0px 80px 0px;
+        min-width: 310px;
+        border-radius: 10px;
     }
 
     .sidebar-filter__wrapper {
@@ -884,5 +894,4 @@ input[type="range"]::-moz-range-thumb{
         padding: 40px 0px 40px 40px;
         margin: 0px 0px 40px 0px;
     }
-
 }
