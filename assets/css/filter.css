@@ -102,7 +102,7 @@ body._lock {
     background: #ffffff;
     box-shadow:  0px 0px 40px rgba(0,0,0,0.05);
     border-radius: 10px;
-    padding-left: 35px;
+    padding: 35px;
 }
 
 .sidebar-filter__title{
@@ -112,13 +112,10 @@ body._lock {
     font-weight: 700;
     line-height: 17px;
     margin: 0;
-    padding-top: 25px;
-    padding-bottom: 30px;
 }
 
 .filter__subtitle_wrapper{
     display: flex;
-    width: 225px;
     padding-top: 40px;
     align-items: center;
     justify-content: space-between;
@@ -163,7 +160,6 @@ body._lock {
 }
 
 .sidebar-filter__container {
-    width: 225px;
     font-family: 'Montserrat', sans-serif;
 
 }
@@ -201,9 +197,12 @@ body._lock {
 .filter__price_inputs{
     width: 100%;
     display: flex;
-    justify-content: space-between;
-
 }
+
+.filter__price_inputs input:not(:last-of-type){
+    margin-right: 15px;
+}
+
 .filter__inputs {
     width: 105px;
     height: 30px;
@@ -285,8 +284,12 @@ input[type="range"]::-moz-range-thumb{
     padding-top: 20px;
 }
 
+.radio {
+    margin-right: 10px;
+}
+
 .divider {
-    width: 225px;
+    width: 100%;
     height: 1px;
     margin-top: 40px;
     background-color: #ededed;
@@ -315,7 +318,7 @@ input[type="range"]::-moz-range-thumb{
 }
 
 .filter__subtitle_wrapper{
-    padding-top: 12px;
+    padding-top: 40px;
 
 }
 
@@ -858,7 +861,7 @@ input[type="range"]::-moz-range-thumb{
     }
 
     .sidebar-filter__wrapper {
-        max-height: 1100px;
+        height: fit-content;
     }
 
     .excursions {
