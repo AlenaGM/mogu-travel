@@ -678,7 +678,7 @@ body {
     max-width: 112px;
 }
 
-@media screen and (min-width: 666px) and (max-width: 768px) {
+@media screen and (min-width: 664px) and (max-width: 768px) {
     .footer .footer_wrapper {
         padding: 30px 9%;
     }
@@ -699,7 +699,7 @@ body {
     }
 }
 
-@media screen and (min-width: 350px) and (max-width: 665px) {
+@media screen and (min-width: 350px) and (max-width: 663px) {
     .footer .footer_wrapper {
         display: none;
     }
