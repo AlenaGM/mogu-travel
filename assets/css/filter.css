@@ -164,9 +164,8 @@ body._lock {
 
 }
 
-.filter__movement_radio, .filter__persons_radio, .filter__duration_radio {
+.filter__item {
     display: flex;
-    flex-direction: column;
     padding-top: 20px;
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
@@ -176,16 +175,23 @@ body._lock {
     color: #282828;
 }
 
-.filter__place_radio{
+.filter__item label:not(:last-of-type) {
+    margin-right: 20px;
+}
+
+.filter__place_radio div{
     display: flex;
     flex-direction: column;
-    padding-top: 20px;
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
     line-height: 15px;
     color: #282828;
+}
+
+.filter__place_radio div:not(:last-of-type){
+    margin-right: 40px;
 }
 
 .filter__price_range{
@@ -284,8 +290,9 @@ input[type="range"]::-moz-range-thumb{
     padding-top: 20px;
 }
 
-.radio {
-    margin-right: 10px;
+.filter__item label input {
+    margin-right: 6px;
+    margin-top: 2px;
 }
 
 .divider {
@@ -751,6 +758,11 @@ input[type="range"]::-moz-range-thumb{
         margin: 40px 40px 0px 40px;
     }
 
+    .filter__item {
+        display: flex;
+        flex-direction: row;
+    }
+
     .footer {
         grid-area: footer;
         width: 100%;
@@ -862,6 +874,11 @@ input[type="range"]::-moz-range-thumb{
 
     .sidebar-filter__wrapper {
         height: fit-content;
+    }
+
+    .filter__item {
+        display: flex;
+        flex-direction: column;
     }
 
     .excursions {
