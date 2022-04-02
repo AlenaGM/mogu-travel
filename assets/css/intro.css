@@ -405,7 +405,6 @@ body {
     grid-template: 1fr/ minmax(1rem, 1fr) minmax(auto, 1120px) minmax(1rem, 1fr);
     grid-template-areas:
     ". container__slider container__slider";
-    overflow: hidden;
 }
 
 * {
@@ -422,6 +421,7 @@ body {
     grid-area: container__slider;
     display: flex;
     flex-wrap: wrap;
+    overflow: hidden;
 }
 
 .excursions__title {
@@ -435,6 +435,19 @@ body {
     text-align: left;
     margin: 150px 0px 40px 0px;
 }
+
+@media screen and (max-width: 912px) {
+    .excursions__title {
+        margin: 100px 0px 40px 0px;
+    }
+}
+
+@media screen and (max-width: 766px) {
+    .excursions__title {
+        margin: 60px 0px 40px 0px;
+    }
+}
+
 
 .product {
     position: relative;
@@ -465,11 +478,10 @@ body {
     flex: 0 0 auto;
     width: 250px;
     height: 600px;
-    margin-right: 40px;
 }
 
 .product-card:not(:first-of-type) {
-    margin-right: 40px;
+    margin-left: 40px;
 }
 
 .product-image {
@@ -581,8 +593,6 @@ body {
     opacity: 1;
 }
 
-
-
 /* О нас */
 .about {
     grid-area: about;
@@ -658,6 +668,61 @@ body {
 .gallery__img8 {
     grid-column: 4/6;
     grid-row: 2/4;
+}
+
+@media screen and (max-width: 912px) {
+    .gallery__img6 {
+        display: none;
+    }
+
+    .gallery__img7 {
+        display: none;
+    }
+
+    .gallery__img8 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 766px) {
+    .gallery__img1 {
+        grid-column: 1/3;
+        grid-row: 3/4;
+    }
+
+    .gallery__img2 {
+        display: none;
+    }
+
+    .gallery__img3 {
+        display: none;
+    }
+
+    .gallery__img4 {
+        display: none;
+    }
+
+    .gallery__img5 {
+        grid-column: 1/2;
+        grid-row: 1/3;
+    }
+
+    .gallery__img6 {
+        display: block;
+        grid-column: 2/3;
+        grid-row: 2/3
+    }
+
+    .gallery__img7 {
+        display: block;
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+
+    .gallery__img8 {
+        grid-column: 4/6;
+        grid-row: 2/4;
+    }
 }
 
 /* Отзывы */
