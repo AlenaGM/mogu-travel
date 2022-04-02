@@ -403,171 +403,187 @@ body {
 /* Популярные экскурсии */
 .slider {
     grid-area: slider;
+    display: grid;
+    grid-template: 1fr/ minmax(1rem, 1fr) minmax(auto, 1120px) minmax(1rem, 1fr);
+    grid-template-areas:
+    ". container__slider container__slider";
     overflow: hidden;
 }
 
 * {
-            margin: 0;
-            padding: 0;
-            font-family: "Mulish", sans-serif;
-        }
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+    letter-spacing: 0em;
+    text-align: left;
+}
 
-        .container__slider {
+.container__slider {
+    grid-area: container__slider;
+    display: flex;
+    flex-wrap: wrap;
+}
 
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+.excursions__title {
+    font-family: 'Montserrat', sans-serif;
+    color: #0499DD;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 150px 0px 40px 0px;
+}
 
-        }
+.product {
+    position: relative;
+    overflow: hidden;
+}
 
-        .name {
-            color: #0499DD;
-            justify-content: center;
-        }
+.product-category {
+    padding: 0 10vw;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    text-transform: capitalize;
+}
 
-        .product {
-            position: relative;
-            overflow: hidden;
-            padding: 20px;
-        }
+.product-container {
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
 
-        .product-category {
-            padding: 0 10vw;
-            font-size: 30px;
-            font-weight: 500;
-            margin-bottom: 40px;
-            text-transform: capitalize;
-        }
+.product-container::-webkit-scrollbar {
+    display: none;
+}
 
-        .product-container {
-            padding: 0 10vw;
-            display: flex;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-        }
+.product-card {
+    flex: 0 0 auto;
+    width: 250px;
+    height: 600px;
+    margin-right: 40px;
+}
 
-        .product-container::-webkit-scrollbar {
-            display: none;
-        }
+.product-card:not(:first-of-type) {
+    margin-right: 40px;
+}
 
-        .product-card {
-            flex: 0 0 auto;
-            width: 250px;
-            height: 600px;
-            margin-right: 40px;
-        }
+.product-image {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    border-radius: 10px 10px 0px 0px;
+    overflow: hidden;
+}
 
-        .product-image {
-            position: relative;
-            width: 100%;
-            height: 350px;
-            overflow: hidden;
-        }
+.product-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-        .product-thumb {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+.discount-tag {
+    position: absolute;
+    background: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    color: #ff7d7d;
+    right: 10px;
+    top: 20px;
+    text-transform: capitalize;
+}
 
-        .discount-tag {
-            position: absolute;
-            background: #fff;
-            padding: 5px;
-            border-radius: 5px;
-            color: #ff7d7d;
-            right: 10px;
-            top: 10px;
-            text-transform: capitalize;
-        }
+.card-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    width: 90%;
+    border: none;
+    outline: none;
+    background: #fff;
+    border-radius: 5px;
+    transition: 0.5s;
+    cursor: pointer;
+    opacity: 0;
+}
 
-        .card-btn {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 10px;
-            width: 90%;
-            border: none;
-            outline: none;
-            background: #fff;
-            border-radius: 5px;
-            transition: 0.5s;
-            cursor: pointer;
-            opacity: 0;
-        }
+.product-card:hover .card-btn {
+    opacity: 1;
+}
 
-        .product-card:hover .card-btn {
-            opacity: 1;
-        }
+.card-btn:hover {
+    background: linear-gradient(92.71deg, #0499DD 0%, #17C1BC 100%);
+    color: rgba(255, 255, 255, 1);
+}
 
-        .card-btn:hover {
-            background: #ff7d7d;
-            color: #fff;
-        }
+.product-info {
+    width: 100%;
+    height: 100px;
+    padding-top: 10px;
+}
 
-        .product-info {
-            width: 100%;
-            height: 100px;
-            padding-top: 10px;
-        }
+.product-brand {
+    text-transform: uppercase;
+    font-size: larger;
+}
 
-        .product-brand {
-            text-transform: uppercase;
-            font-size: larger;
+.product__type {
+    padding: 10px 0px 10px 0px;
+    font-style: italic;
+}
 
-        }
+.product-short-description {
+    width: 100%;
+    min-height: 100%;
+    line-height: 20px;
+    overflow: hidden;
+    opacity: 0.5;
+    margin: 5px 0;
+}
 
-        .product__type {
-            padding: 10px 0px 10px 0px;
-            font-style: italic;
+.pre-btn,
+.nxt-btn {
+    border: none;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+    background: transparent;
+    cursor: pointer;
+    z-index: 8;
+}
 
-        }
+.pre-btn {
+    left: 0px;
+    transform: rotate(180deg);
+}
 
-        .product-short-description {
-            width: 100%;
-            min-height: 100%;
-            line-height: 20px;
-            overflow: hidden;
-            opacity: 0.5;
-            margin: 5px 0;
-        }
+.nxt-btn {
+    right: 0;
+}
+
+.pre-btn img,
+.nxt-btn img {
+    opacity: 0.4;
+}
+
+.pre-btn:hover img,
+.nxt-btn:hover img {
+    opacity: 1;
+}
 
 
-        .pre-btn,
-        .nxt-btn {
-            border: none;
-            width: 10vw;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
-            cursor: pointer;
-            z-index: 8;
-        }
-
-        .pre-btn {
-            left: 0;
-            transform: rotate(180deg);
-        }
-
-        .nxt-btn {
-            right: 0;
-        }
-
-        .pre-btn img,
-        .nxt-btn img {
-            opacity: 0.2;
-        }
-
-        .pre-btn:hover img,
-        .nxt-btn:hover img {
-            opacity: 1;
-
-        }
 
 /* О нас */
 .about {
