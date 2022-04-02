@@ -523,12 +523,6 @@ for (const input of inputs) {
     });
 }
 
-buttonShow.addEventListener("click", function excursionType() {
-
-
-
-});
-
 let resetText = document.querySelector(".reset__text");
 console.log(resetText);
 
