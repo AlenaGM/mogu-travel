@@ -27,7 +27,7 @@ body {
     display: grid;
     /* min-height: 100%; */
     grid-template-columns: 1fr;
-    grid-template-rows: minmax(789px, auto) 1fr minmax(173px, auto);
+    grid-template-rows: minmax(100vh, auto) 1fr minmax(173px, auto);
     grid-template-areas:
         "header"
         "main"
@@ -70,8 +70,206 @@ body {
 /* Header -------------------- */
 
 .header {
+    background: url(../img/cite.jpg) 50% /cover no-repeat;
+    background-color: #ff7d7d;
     grid-area: header;
+    padding-top: 15px;
+    display: grid;
+    grid-template: minmax(60px, auto) 1fr/ minmax(1rem, 1fr) minmax(auto, 40px) minmax(auto, 1080px) minmax(1rem, 1fr);
+    grid-template-areas:
+        ". header__logo header__menu ."
+        ". header__title header__title ."
 }
+
+.header__logo {
+    grid-area: header__logo;
+    position: relative;
+    z-index: 5;
+    width: 40px;
+    align-items: center;
+}
+
+.header__img {
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.header__menu {
+    grid-area: header__menu;
+    display: grid;
+    align-content: center;
+}
+
+.menu__link {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-weight: 500;
+    line-height: 17px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.menu__link:hover{
+    color: #FFC700;
+}
+
+.header__title {
+    grid-area: header__title;
+    display: grid;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 44px;
+    letter-spacing: 0em;
+    text-align: center;
+    align-items: center;
+}
+
+/*-------БУРГЕР------------*/
+@media screen and (max-width: 767px) {
+
+    .menu__burger{
+        z-index: 5;
+        display: grid;
+        align-items: center;
+        justify-self: end;
+        width: 40px;
+        height: 26px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .menu__burger span,
+    .menu__burger::before,
+    .menu__burger::after {
+        left: 0;
+        position: absolute;
+        height: 12%;
+        width: 100%;
+        transition: all 0.3s ease 0s;
+        background-color: #FFFFFF;
+        border-radius: 20px;
+    }
+
+    .menu__burger::before,
+    .menu__burger::after {
+        content:"";
+    }
+
+    .menu__burger::before {
+        top: 0;
+    }
+
+    .menu__burger::after {
+        bottom: 0;
+    }
+
+    .menu__burger::after {
+        bottom: 0;
+    }
+
+    .menu__burger span {
+        top: 50%;
+        transform: scale(1) translate(0px, -50%);
+    }
+
+    .menu__burger._active span {
+        transform: scale(0) translate(0px, -50%);
+    }
+
+    .menu__burger._active::before {
+        top: 50%;
+        transform: rotate(-45deg) translate(0px, -50%);
+    }
+
+    .menu__burger._active::after {
+        bottom: 50%;
+        transform: rotate(45deg) translate(0px, 50%);
+    }
+
+    .menu__body {
+        position: fixed;
+        top: 0;
+        left: -120%;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 150px 30px 30px 30px;
+        transition: left 0.3s ease 0s;
+        overflow: auto;
+    }
+
+    .menu__body._active {
+        left: 0;
+    }
+
+    .menu__list {
+        display: flex;
+        flex-direction: column;
+        padding-inline-start: 0px;
+        margin-left: -40px;
+        align-self: center;
+        align-items: center;
+    }
+
+    .menu__list li {
+        list-style-type: none;
+        flex-wrap: wrap;
+        margin: 0px 0px 60px 0px;
+    }
+
+    .menu__list li:last-child {
+        margin-bottom: 0px;
+    }
+
+    .menu__link {
+        font-size: 24px;
+    }
+}
+
+/*-------ПЛАНШЕТЫ------------*/
+@media screen and (min-width: 767px){
+
+    .menu__burger{
+        display: none;
+    }
+
+    .menu__list {
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: end;
+        align-items: center;
+        padding-inline-start: 0px;
+        list-style-type: none;
+    }
+
+    .menu__list li {
+        margin: 0px 0px 0px 20px;
+    }
+
+    .menu__link {
+        font-size: 14px;
+    }
+
+    .header__title {
+        font-size: 48px;
+        line-height: 58px;
+    }
+}
+
+/*-------ДЕСКТОПЫ------------*/
+@media screen and (min-width: 913px){
+
+    .header__title {
+        font-size: 72px;
+        line-height: 88px;
+        text-align: left;
+    }
+}
+
+
 
 /* Main ---------------------- */
 
