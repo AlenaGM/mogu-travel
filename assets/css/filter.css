@@ -758,10 +758,7 @@ input[type="range"]::-moz-range-thumb{
         margin: 40px 40px 0px 40px;
     }
 
-    .filter__item {
-        display: flex;
-        flex-direction: row;
-    }
+
 
     .footer {
         grid-area: footer;
@@ -876,7 +873,9 @@ input[type="range"]::-moz-range-thumb{
         height: fit-content;
     }
 
-    .filter__item {
+
+
+    .filter__item._visible {
         display: flex;
         flex-direction: column;
     }
@@ -885,6 +884,5 @@ input[type="range"]::-moz-range-thumb{
         padding: 40px 0px 40px 40px;
         margin: 0px 0px 40px 0px;
     }
-
 
 }
