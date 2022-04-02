@@ -43,17 +43,6 @@
             <aside class="sidebar sidebar-filter">
                 <div class="sidebar-filter__wrapper">
                     <h3 class="sidebar-filter__title">Фильтры</h3>
-                    <div class="sidebar-filter__movement sidebar-filter__container">
-                        <div class="filter__subtitle_wrapper minus">
-                            <h4 class="sidebar-filter__subtitle">Способ передвижения</h4>
-                            <span class="sidebar-filter_close"></span>
-                        </div>
-                        <div class="filter__movement_radio filter__item">
-                        <label for=""><input type="radio" value="bus" name="type"/>Автобусные</label>
-                        <label for=""><input type="radio" value="foot" name="type"/>Пешеходные</label>
-                        </div>
-                        <div class="divider"></div>
-                    </div>
                     <div class="sidebar-filter__price sidebar-filter__container ">
                         <div class="filter__subtitle_wrapper minus">
                             <h4 class="sidebar-filter__subtitle price__title">Стоимость</h4>
@@ -73,6 +62,17 @@
                                 <input type="range" class="filter__range_min" min="0" max="8000" id="pricerangemin" value="1600" step="100">
                                 <input type="range" class="filter__range_max" min="0" max="8000" id="pricerangemax" value="4000" step="100">
                             </div>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="sidebar-filter__movement sidebar-filter__container">
+                        <div class="filter__subtitle_wrapper minus">
+                            <h4 class="sidebar-filter__subtitle">Способ передвижения</h4>
+                            <span class="sidebar-filter_close"></span>
+                        </div>
+                        <div class="filter__movement_radio filter__item">
+                        <label for=""><input type="radio" value="bus" name="type"/>Автобусные</label>
+                        <label for=""><input type="radio" value="foot" name="type"/>Пешеходные</label>
                         </div>
                         <div class="divider"></div>
                     </div>
