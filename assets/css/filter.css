@@ -601,10 +601,11 @@ input[type="range"]::-moz-range-thumb{
         left: -120%;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.9);
+        background-color: rgba(0, 0, 0);
         padding: 150px 30px 30px 30px;
         transition: left 0.3s ease 0s;
         overflow: auto;
+        z-index: 4;
     }
 
     .menu__body._active {
