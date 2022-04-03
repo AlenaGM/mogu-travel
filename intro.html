@@ -34,7 +34,17 @@
                 </nav>
             </div>
             <div class="header__title">
+
+                
                 <div class="header__title_inner">
+                    <!-- в коде нет заголовка первого уровня. Напрашивается в этом блоке 
+                    Я бы сделала так 
+
+                    <h1 class="header__title_up">ПУТЕШЕСТВУЙ <span class="header__title_mid">вместе с</span><span class="header__title_down">MOGU TRAVEL</span></h1>
+
+                    придется исправить стили у header__title_mid, точнее изменить позиционирование, но так будет правильнее.
+                -->
+
                     <div class="header__title_up">ПУТЕШЕСТВУЙ</div>
                     <div class="header__title_mid">вместе с</div>
                     <div class="header__title_down">MOGU TRAVEL</div>
@@ -55,6 +65,8 @@
         <div class="slider">
             <div class="container__slider">
                 <h2 class="excursions__title">Популярние экскурсии</h2>
+                <!-- стрелку не видно, в таких случаях делают светлую подложку под стреклой
+                и стрелка по уровню совпадает с кнопкой, лучше исправить -->
                 <section class="product">
                     <button class="pre-btn"><img src="./assets/img/arrow.png" alt="1"></button>
                     <button class="nxt-btn"><img src="./assets/img/arrow.png" alt="2"></button>
@@ -238,8 +250,9 @@
         <!--  ==================Галерея===================== -->
         <div class="gallery">
             <h2 class="gallery__title excursions__title">Галерея</h2>
-
             <div class="container__gallery">
+                <!-- Можно лучше:  стоит давать осмысленные alt="img2", иначе человек, который не видит, а исследует сайты через устройство воспроизведения будет слышать только img1 img2 и т.д.
+                лучше сделать описание, например pictures of france-->
                 <img class="gallery__img1" src="./assets/img/301-750x410.jpeg" alt="img1">
                 <img class="gallery__img2" src="./assets/img/55.jpeg" alt="img2">
                 <img class="gallery__img3" src="assets/img/03.jpeg" alt="img3">
@@ -329,6 +342,7 @@
                     <li><a href="filter.html">Экскурсии</a></li>
                     <li><a href="#">Личный кабинет</a></li>
                 </ul>
+                <!-- не очень практика дублировать так контакты, лучше настраивать все через стили и медиазапросы. И да, я знаю какая это боль =( ) -->
                 <ul class="contacts">
                     <li>
                         <img src="/assets/img/whats_up_logo.svg" alt="What's Up"><a href="https://wa.me/+33142967000" target="_blank">+33 1 42 96 70 00</a></li>
@@ -380,3 +394,22 @@
     <script src="assets/js/intro.js"></script>
 </body>
 </html>
+
+
+<!-- резюме по верстке и стилям. 
+Работа очень крутая. Адаптивность - отлично! Все тянется где надо, не ломается где не надо, все блоки выдерживают переполнение.
+Практически все или по БЭМ или очень близко к нему. 
+использованы и грид и флекс - это огонь! 
+Нравится структура и чистота кода.  
+Сайт отлично смотрится как на мобильной версии, так и на огромных экранах. 2000 на 1500 разрешение ставила, ничего не ломается. 
+Все замечания критические и не очень оставила в коде. Посмотрите. 
+
+А про то, что код проходит валидацию вы и так знаете =) 
+
+работа очень много весит, когда вы не пользуетесь сборщиками - стоит прогонять картинки и свгшки через оптимизатор файлов. Это снизит их вес. 
+вот два, которыми я пользуюсь: 
+1) https://tinypng.com/ расторвые картинки
+2) https://jakearchibald.github.io/svgomg/ векторные svg 
+
+не заполнено описание README.md На него работодатели будут смотреть в первую очередь. Жалко, что вы отложили его на потом. Потом придется оформлять все их сразу. 
+-->

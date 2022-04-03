@@ -143,7 +143,10 @@ let json = `[{
 document.addEventListener("DOMContentLoaded", function () {
     let excursions = JSON.parse(json);
     let excursionsContent = "";
-    for (let excursion of excursions) {
+    console.log(excursions);
+    //Надо исправить: цикл предпологает такое написание for (excursion of excursions) {
+    //https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/for...of
+    for (excursion of excursions) {
         excursionsContent +=
             `<div class="excursion__item">
             <div class= "excursion__img">
@@ -184,6 +187,7 @@ const rangeInput = document.querySelectorAll(".filter__price_rande input"),
 console.log(`rangeInput = ${rangeInput}`);
 console.log(`priceInput=  ${priceInput}`);
 console.log(`progress =${progress}`);
+//стоит убирать консоль логи =) 
 
 let priceGap = 1000;
 
@@ -252,7 +256,7 @@ priceInput0.addEventListener('input', function () {
 });
 
 
- //Логика работы фильтра
+//Логика работы фильтра
 
 let buttonShow = document.getElementById("show");
 console.log(`buttonShow=${buttonShow}`);
@@ -635,5 +639,6 @@ spoilers.forEach(spoiler => {
     });
 });
 
-
+//С логикой все ок. Обычно так и работает, или необходимые варианты отрисовываются заново (как у вас), или ненужные прячутся. 
+// Что не нравится. То, что у вас много дублирующего кода, такой код надо прятать в функцию и переиспользовать ее. Везде, где происходит отрисовка карточек - должна быть функция, а не дублирование кода. Вот и все, что я могу улучшить =) 
 

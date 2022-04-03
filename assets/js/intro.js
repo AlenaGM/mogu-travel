@@ -16,7 +16,7 @@ function check() {
 
     // проверка валидности введеной информации в input
     let isValid = true; // валидна ли форма
-
+    //Хорошее решение! 
     if(!userName.checkValidity()) {
         isValid = false;
         document.getElementsByClassName('userNameError')[0].style.display = 'block';
@@ -73,7 +73,7 @@ const productContainers = [...document.querySelectorAll('.product-container')];
         });
 
 // НИЖНИЙ СЛАЙДЕР (по мотивам верхнего)
-
+//Очень изящное решение 
 const cardContainers = [...document.querySelectorAll('.reviews-cards_wrapper')];
         const nextBtn = [...document.querySelectorAll('.arrow__right')];
         const prevBtn = [...document.querySelectorAll('.arrow__left')];
@@ -99,6 +99,7 @@ const bodyMenu = document.querySelector('.menu__body');
 const menuLinks = document.querySelectorAll('.menu__link')
 
 if (burgerMenu) {
+    //переменная е нигде не применяется в функции
     burgerMenu.addEventListener('click', function (e) {
         document.body.classList.toggle('_lock');
         burgerMenu.classList.toggle('_active');
@@ -119,3 +120,4 @@ if (menuLinks.length > 0) {
         }
     }
 }
+// Все очень классно, что бы сделать код еще лучше, стоит вынести переменные на самый верх, а все обработчики события переместить вниз. Круто получилось!  
