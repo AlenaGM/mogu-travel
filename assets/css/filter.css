@@ -378,10 +378,6 @@ input[type="range"]::-moz-range-thumb{
     display: flex;
 }
 
-.minus span{
-    background: "";
-}
-
 /*Блок карточек туров на сайте*/
 
 .excursions {
@@ -504,7 +500,6 @@ input[type="range"]::-moz-range-thumb{
     line-height: 40px;
     text-align: center;
     color: white;
-    transition: all .8;
     background: linear-gradient(92.71deg, #0499DD 0%, #17C1BC 100%);
     text-decoration: none;
 }

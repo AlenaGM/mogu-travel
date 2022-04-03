@@ -11,7 +11,7 @@ let json = `[{
     "capacity": "10",
     "destination": "monmartre",
     "date": "",
-    "image": "assets/img/monmartre.jpg"
+    "image": "assets/img/monmartre.jpeg"
 }, {
     "name": "Лион с первого взгляда",
     "code": "lyon",
