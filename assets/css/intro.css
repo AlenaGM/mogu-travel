@@ -967,6 +967,7 @@ body {
 
 .arrow__left img, .arrow__right img {
     height: 100%;
+    cursor: pointer;
 }
 
 .reviews {
