@@ -889,11 +889,16 @@ body {
 /* Отзывы */
 .reviews {
     grid-area: reviews;
+    display: grid;
     overflow: hidden;
+    grid-template-columns: minmax(1rem, 1fr) minmax(auto, 1120px) minmax(1rem, 1fr);
+    grid-template-areas:
+        ". reviews_wrapper reviews_wrapper";
 }
 
 .reviews_wrapper {
-    margin-left: 11%;
+    grid-area: reviews_wrapper;
+    display: grid;
 }
 
 .reviews-cards_wrapper {
@@ -960,7 +965,7 @@ body {
 
 @media screen and (max-width: 768px) {
     .reviews_wrapper {
-        margin-left: 10.4%;
+        margin-left: 60px;
     }
 
     .block {
@@ -984,7 +989,7 @@ body {
 
 @media screen and (max-width: 609px) {
     .reviews_wrapper {
-        margin-left: 24px;
+        margin-left: 0px;
     }
 
     .block {
