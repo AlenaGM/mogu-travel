@@ -460,9 +460,19 @@ body {
     margin: 150px 0px 40px 0px;
 }
 
+@media screen and (max-width: 912px) {
+    .container__slider {
+        margin-left: 60px;
+    }
+}
+
 @media screen and (max-width: 766px) {
     .excursions__title {
         margin: 80px 0px 40px 0px;
+    }
+
+    .container__slider {
+        margin-left: 0px;
     }
 }
 
@@ -963,7 +973,7 @@ body {
     margin-bottom: 150px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 912px) {
     .reviews_wrapper {
         margin-left: 60px;
     }
@@ -987,7 +997,7 @@ body {
     }
 }
 
-@media screen and (max-width: 609px) {
+@media screen and (max-width: 766px) {
     .reviews_wrapper {
         margin-left: 0px;
     }
