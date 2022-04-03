@@ -7,7 +7,7 @@ const email = document.getElementById('email');
 const submit = document.getElementById('btn');
 
 
-function check() { 
+function check() {
 
     // очистка сообщений об ошибках
     let errorMessages = document.querySelectorAll('.error');
@@ -16,7 +16,7 @@ function check() {
     }
 
     // проверка валидности введеной информации в input
-    let isValid = true; // валидна ли форма 
+    let isValid = true; // валидна ли форма
 
     if(!userName.checkValidity()) {
         isValid = false;
@@ -31,8 +31,8 @@ function check() {
     if(!email.checkValidity()) {
         isValid = false;
         document.getElementsByClassName('emailError')[0].style.display = 'block';
-    }  
-    
+    }
+
     return isValid;
 }
 
@@ -54,8 +54,7 @@ submit.addEventListener('click', function (event) {
 });
 
 
-
-// -----------------------------------------------------------------
+// ВЕРХНИЙ СЛАЙДЕР
 
 const productContainers = [...document.querySelectorAll('.product-container')];
         const nxtBtn = [...document.querySelectorAll('.nxt-btn')];
@@ -73,6 +72,26 @@ const productContainers = [...document.querySelectorAll('.product-container')];
                 item.scrollLeft -= containerWidth;
             })
         });
+
+// НИЖНИЙ СЛАЙДЕР (по мотивам верхнего)
+
+const cardContainers = [...document.querySelectorAll('.reviews-cards_wrapper')];
+        const nextBtn = [...document.querySelectorAll('.arrow__right')];
+        const prevBtn = [...document.querySelectorAll('.arrow__left')];
+
+        cardContainers.forEach((item, i) => {
+            let containerDimensions = item.getBoundingClientRect();
+            let containerWidth = containerDimensions.width;
+
+            nextBtn[i].addEventListener('click', () => {
+                item.scrollLeft += containerWidth;
+            })
+
+            prevBtn[i].addEventListener('click', () => {
+                item.scrollLeft -= containerWidth;
+            })
+        });
+
 
 //МЕНЮ-БУРГЕР
 
