@@ -1,28 +1,204 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/filter.css">
-    <link rel="shortcut icon" href="#" type="img/png">
-    <title>НАЗВАНИЕ</title>
+    <script src="https://kit.fontawesome.com/4d945f1e23.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="assets/img/logo-color.png" type="img/png">
+    <title>Mogu Travel</title>
 </head>
+
 <body>
     <div class="wrapper">
-        <header class="header"></header>
-        <main class="main">
-            <div class="rating__items">
-                <input type ="radio" class="rating__item" value="bus" name="type"></input> <input type ="radio" class="rating__item" value="plane" name="type"></input>
-                <input type ="radio" class="rating__item" value="foot" name="type"></input>
+        <header class="header">
+            <a href="#" class="header__logo">
+                <img class="header__img" src="assets/img/logo-white.svg" alt="Company logo">
+            </a>
+            <div class="header__menu menu">
+                <div class="menu__burger">
+                    <span></span>
+                </div>
+                <nav class="menu__body">
+                    <ul class="menu__list">
+                        <li>
+                            <a class="menu__link" href="intro.html">Главная</a>
+                        </li>
+                        <li>
+                            <a class="menu__link" href="#">Экскурсии</a>
+                        </li>
+                        <li>
+                            <a class="menu__link" href="#">Личный кабинет</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-            <button id="show">Показать</button>
-            <div class="excursions_container" id="excursions_container">
+            <div class="header__title">Наши экскурсии</div>
+        </header>
+        <main class="main">
+            <!-- Блок боковые фильтры туров на сайте -->
+            <aside class="sidebar sidebar-filter">
+                <div class="sidebar-filter__wrapper">
+                    <h3 class="sidebar-filter__title">Фильтры</h3>
+                    <div class="sidebar-filter__price sidebar-filter__container ">
+                        <div class="filter__subtitle_wrapper minus">
+                            <h4 class="sidebar-filter__subtitle price__title">Стоимость</h4>
+                            <span class="sidebar-filter_close"></span>
+                        </div>
+                        <div class="filter__price_range filter__item">
+                            <div class="filter__price_inputs">
+                                <input type="number" class="filter__inputs input-min"
+                                        id="pricemin" value="1600">
+                                <input type="number" class="filter__inputs input-max"
+                                        id="pricemax" value="4000">
+                            </div>
+                            <div class="filter__price_slider">
+                                <div class="progress"></div>
+                            </div>
+                            <div class="filter__price_rande">
+                                <input type="range" class="filter__range_min" min="0" max="8000" id="pricerangemin" value="1600" step="100">
+                                <input type="range" class="filter__range_max" min="0" max="8000" id="pricerangemax" value="4000" step="100">
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="sidebar-filter__movement sidebar-filter__container">
+                        <div class="filter__subtitle_wrapper minus">
+                            <h4 class="sidebar-filter__subtitle">Способ передвижения</h4>
+                            <span class="sidebar-filter_close"></span>
+                        </div>
+                        <div class="filter__movement_radio filter__item">
+                        <label for="bus"><input type="radio" id="bus" value="bus" name="type"/>Автобусные</label>
+                        <label for="foot"><input type="radio" id="foot" value="foot" name="type"/>Пешеходные</label>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="sidebar-filter__persons sidebar-filter__container ">
+                        <div class="filter__subtitle_wrapper minus">
+                            <h4 class="sidebar-filter__subtitle persons__title">Количество человек</h4>
+                            <span class="sidebar-filter_close"></span>
+                        </div>
+                        <div class="filter__persons_radio filter__item">
+                            <label for="5pers"><input type="radio" id="5pers" name="radio" value="5">до 5</label>
+                            <label for="10pers"><input type="radio" id="10pers" name="radio" value="10">до 10</label>
+                            <label for="manypers"><input type="radio" id="manypers" name="radio" value="15">больше 10</label>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="sidebar-filter__place sidebar-filter__container ">
+                        <div class="filter__subtitle_wrapper minus">
+                            <h4 class="sidebar-filter__subtitle place__title">Место</h4>
+                            <span class="sidebar-filter_close"></span>
+                        </div>
+                        <div class="filter__place_radio filter__item">
+                            <div>
+                                <label class="radio" for="monmartre"><input type="radio" name="radio1" id="monmartre" value="monmartre">Монмарт</label>
+                                <label class="radio" for="lyon"><input type="radio" name="radio1" id="lyon" value="lyon">Лион</label>
+                                <label class="radio" for="strasbourg"><input type="radio" name="radio1" id="strasbourg" value="strasbourg">Страсбург</label>
+                                <label class="radio" for="colmar"><input type="radio" name="radio1" id="colmar" value="colmar">Кольмар</label>
+                                <label class="radio" for="marseilles"><input type="radio" name="radio1" id="marseilles" value="marseilles">Марсель</label>
+                            </div>
+                            <div>
+                                <label class="radio" for="montpellier"><input type="radio" name="radio1" id="montpellier" value="montpellier">Монпелье</label>
+                                <label class="radio" for="versailles"><input type="radio" name="radio1" id="versailles" value="versailles">Версаль</label>
+                                <label class="radio" for="rouen"><input type="radio" name="radio1" id="rouen" value="rouen">Руан</label>
+                                <label class="radio" for="paris"><input type="radio" name="radio1" id="paris" value="paris">Париж</label>
+                                <label class="radio" for="nice"><input type="radio" name="radio1" id="nice" value="nice">Ницца</label>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="sidebar-filter__duration sidebar-filter__container ">
+                        <div class="filter__subtitle_wrapper minus">
+                            <h4 class="sidebar-filter__subtitle duration__title">Длительность</h4>
+                            <span class="sidebar-filter_close"></span>
+                        </div>
+                        <div class="filter__duration_radio filter__item">
+                            <label for="2hours"><input type="radio" name="radio2" id="2hours" value="2">2 ч.</label>
+                            <label for="3hours"><input type="radio" name="radio2" id="3hours" value="3">3 ч.</label>
+                            <label for="4hours"><input type="radio" name="radio2" id="4hours" value="4">4 ч.</label>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="sidebar-filter__show sidebar-filter__container ">
+                        <!-- <button class="btn__show" id="show">Показать</button> -->
+                    </div>
+                    <div class="sidebar-filter__reset sidebar-filter__container">
+                        <div class="filter__reset">
+                            <div class="reset-checkbox"></div>
+                            <div class="reset__text">Сбросить фильтры</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <div class="excursions">
+                <h1 class="excursions__title">Наши туры</h1>
+                <div class="excursions__container" id="excursions__container">
+                </div>
             </div>
         </main>
-        <div class="footer"></div>
+        <div class="footer">
+            <!-- для Desktop -->
+            <div class="footer_wrapper">
+                <img class="logo_color" src="/assets/img/footer_logo_color.svg" alt="logo" />
+                <div class="menu_wrapper">
+                <ul class="menu" >
+                    <li><a href="intro.html">Главная</a></li>
+                    <li><a href="#">Экскурсии</a></li>
+                    <li><a href="#">Личный кабинет</a></li>
+                </ul>
+                <ul class="contacts">
+                    <li>
+                        <img src="/assets/img/whats_up_logo.svg" alt="What's Up"><a href="https://wa.me/+33142967000" target="_blank">+33 1 42 96 70 00</a></li>
+                    <li>
+                        <img src="/assets/img/telegram_logo.svg" alt="Telegram"><a href="https://telegram.im/@USERNAME" target="_blank">+33 1 42 96 70 00</a></li>
+                    <li>
+                        <img src="/assets/img/telegram_logo.svg" alt="Telegram"><a href="https://telegram.im/@USERNAME" target="_blank">Mogu Travel бот</a></li>
+                </ul>
+                <ul class="social">
+                    <li>
+                        <img src="/assets/img/mail_logo.svg" alt="mail"><a href="mailto:office@mogutravel.com">office@mogutravel.com</a></li>
+                    <li class="socialIcons">
+                        <a href="https://vk.com" target="_blank"><img src="/assets/img/vkontakte_logo.svg" alt="Vkontakte"></a>
+                        <a href="https://www.instagram.com" target="_blank"><img src="/assets/img/instagram_logo.svg" alt="Instagram"></a>
+                        <a href="https://m.facebook.com/login/?locale2=ru_RU" target="_blank"><img src="/assets/img/facebook_logo.svg" alt="Facebook"></a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+
+            <!-- для mobile -->
+            <div class="footer_wrapper_mobile">
+                <img class="logo_color" src="/assets/img/footer_logo_color.svg" alt="logo" />
+                <div class="socialIcons">
+                    <a href="https://vk.com" target="_blank"><img src="/assets/img/vkontakte_logo.svg" alt="Vkontakte"></a>
+                    <a href="https://www.instagram.com" target="_blank"><img src="/assets/img/instagram_logo.svg" alt="Instagram"></a>
+                    <a href="https://m.facebook.com/login/?locale2=ru_RU" target="_blank"><img src="/assets/img/facebook_logo.svg" alt="Facebook"></a>
+                </div>
+                <div class="menu_wrapper">
+                    <ul class="menu" >
+                        <li><a href="intro.html">Главная</a></li>
+                        <li><a href="#">Экскурсии</a></li>
+                        <li><a href="#">Личный кабинет</a></li>
+                    </ul>
+                    <ul class="contacts">
+                        <li>
+                            <img src="/assets/img/whats_up_logo.svg" alt="What's Up"><a href="https://wa.me/+33142967000" target="_blank">+33 1 42 96 70 00</a></li>
+                        <li>
+                            <img src="/assets/img/telegram_logo.svg" alt="Telegram"><a href="https://telegram.im/@USERNAME" target="_blank">+33 1 42 96 70 00</a></li>
+                        <li>
+                            <img src="/assets/img/telegram_logo.svg" alt="Telegram"><a href="https://telegram.im/@USERNAME" target="_blank">Mogu Travel бот</a></li>
+                            <li>
+                                <img src="/assets/img/mail_logo.svg" alt="mail"><a href="mailto:office@mogutravel.com">office@mogutravel.com</a></li>
+                        </ul>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="assets/js/filter.js"></script>
 </body>
+
 </html>
