@@ -1036,7 +1036,7 @@ body {
 
 .contacts .contacts_bg {
     background-position: center;
-    background-image: url(/assets/img/contacts_background_new.jpeg);
+    background-image: url(../img/contacts_background_new.jpeg);
     height: 0;
     min-height: 640px;
     display: block;
