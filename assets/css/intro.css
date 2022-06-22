@@ -426,9 +426,9 @@ body {
 .slider {
     grid-area: slider;
     display: grid;
-    grid-template: 1fr/ minmax(1rem, 1fr) minmax(auto, 1120px) minmax(1rem, 1fr);
+    grid-template: 1fr/ minmax(1rem, 1fr) minmax(auto, 1120px) minmax(1rem, 1fr) 1fr;
     grid-template-areas:
-        ". container__slider container__slider";
+        ". container__slider container__slider .";
 }
 
 * {
@@ -901,9 +901,9 @@ body {
     grid-area: reviews;
     display: grid;
     overflow: hidden;
-    grid-template-columns: minmax(1rem, 1fr) minmax(auto, 1120px) minmax(1rem, 1fr);
+    grid-template-columns: minmax(1rem, 1fr) minmax(auto, 1120px) minmax(1rem, 1fr) 1fr;
     grid-template-areas:
-        ". reviews_wrapper reviews_wrapper";
+        ". reviews_wrapper reviews_wrapper .";
 }
 
 .reviews_wrapper {
