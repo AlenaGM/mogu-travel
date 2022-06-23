@@ -457,6 +457,28 @@ body {
     margin: 150px 0px 40px 0px;
 }
 
+.excursions-slider {
+    width: 108px;
+    margin-left: 40px;
+    display: flex;
+    gap: 30px;
+    height: 43px;
+}
+
+.excursions-slider_arrow {
+    width: 24px;
+    height: 43px;
+}
+
+.pre-btn {
+    transform: rotate(180deg);
+}
+
+.pre-btn img, .nxt-btn img {
+    height: 100%;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 912px) {
     .container__slider {
         margin-left: 60px;
@@ -581,7 +603,7 @@ body {
     margin: 5px 0;
 }
 
-.pre-btn,
+/* .pre-btn,
 .nxt-btn {
     border: none;
     height: 100%;
@@ -594,7 +616,7 @@ body {
     background: transparent;
     cursor: pointer;
     z-index: 2;
-}
+} */
 
 .pre-btn {
     left: 0px;
@@ -608,11 +630,13 @@ body {
 .pre-btn img,
 .nxt-btn img {
     opacity: 0.4;
+    padding: 5px;
 }
 
 .pre-btn:hover img,
 .nxt-btn:hover img {
     opacity: 1;
+    transform: scale(1.1);
 }
 
 /* О нас */
@@ -948,8 +972,9 @@ body {
 }
 
 .reviews-slider {
+    margin-left: 40px;
     display: flex;
-    gap: 10px;
+    gap: 30px;
     height: 43px;
 }
 
@@ -965,6 +990,18 @@ body {
 .arrow__left img, .arrow__right img {
     height: 100%;
     cursor: pointer;
+}
+
+.arrow__left img,
+.arrow__right img {
+    opacity: 0.4;
+    padding: 5px;
+}
+
+.arrow__left:hover img,
+.arrow__right:hover img {
+    opacity: 1;
+    transform: scale(1.1);
 }
 
 .reviews {
@@ -1222,6 +1259,7 @@ body {
 }
 
 .footer .footer_wrapper .menu_wrapper .social .socialIcons {
+    max-width: 112px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
