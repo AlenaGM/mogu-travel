@@ -140,39 +140,43 @@ let json = `[{
     "image": "assets/img/nice.jpeg"
 }]`
 
-document.addEventListener("DOMContentLoaded", function () {
-    let excursions = JSON.parse(json);
-    let excursionsContent = "";
-    for (let excursion of excursions) {
-        excursionsContent +=
-            `<div class="excursion__item">
-            <div class= "excursion__img">
-                <img src="${excursion.image}" alt="${excursion.code}"></img>
-            </div>
-            <div class= "excursion__card">
-                <p class= "excursion__category">${excursion.categoryname}</p>
-                <h2 class="excursion__title" id="${excursion.code}">${excursion.name}</h2>
-                <div class="excursion__info">
-                    <div class= "info__price">
-                        <i class="fa-solid fa-coins"></i>
-                        <div class= "priceadult">${excursion.priceadult}</div>
-                        <i class="fa-solid fa-coins"></i>
-                        <div class= "pricechild"> ${excursion.pricechild}</div>
-                        <i class="fa-regular fa-clock"></i>
-                        <div class= "duration">${excursion.duration}</div>
-                    </div>
-                    <div class= "info__ticket">
-                        <p class= "adult">Взрослый билет</p>
-                        <p class= "child">Детский билет</p>
-                    </div>
-                    <div class="description">${excursion.description}</div>
-                    <div class="container">
-                        <a class="more" href="#">Подробнее</a>
-                        <button class="click"><i class="fa-regular fa-heart"></i></button>
-                    </div>
+function cardCreation(obj){
+    excursionsContent +=
+    `<div class="excursion__item">
+        <div class= "excursion__img">
+            <img src="${obj.image}" alt="${obj.code}"></img>
+        </div>
+        <div class= "excursion__card">
+            <p class= "excursion__category">${obj.categoryname}</p>
+            <h2 class="excursion__title" id="${obj.code}">${obj.name}</h2>
+            <div class="excursion__info">
+                <div class= "info__price">
+                    <i class="fa-solid fa-coins"></i>
+                    <div class= "priceadult">${obj.priceadult}</div>
+                    <i class="fa-solid fa-coins"></i>
+                    <div class= "pricechild"> ${obj.pricechild}</div>
+                    <i class="fa-regular fa-clock"></i>
+                    <div class= "duration">${obj.duration}</div>
+                </div>
+                <div class= "info__ticket">
+                    <p class= "adult">Взрослый билет</p>
+                    <p class= "child">Детский билет</p>
+                </div>
+                <div class="description">${obj.description}</div>
+                <div class="container">
+                    <a class="more" href="#">Подробнее</a>
+                    <button class="click"><i class="fa-regular fa-heart"></i></button>
                 </div>
             </div>
-        </div>`
+        </div>
+    </div>`;
+    return excursionsContent;
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    let excursions = JSON.parse(json);
+    for (let excursion of excursions) {
+        cardCreation(excursion);
     }
     document.getElementById("excursions__container").innerHTML = excursionsContent;
 });
@@ -280,35 +284,7 @@ for (const input of inputs) {
         for (let excursion of result) {
             if (+`${excursion.priceadult}` >= +priceInput0.value) {
                 result1 = result.filter((x) => x.priceadult >= priceInput0.value);
-                excursionsContent +=
-                    `<div class="excursion__item">
-                        <div class= "excursion__img">
-                            <img src="${excursion.image}" alt="${excursion.code}"></img>
-                        </div>
-                        <div class= "excursion__card">
-                            <p class= "excursion__category">${excursion.categoryname}</p>
-                            <h2 class="excursion__title" id="${excursion.code}">${excursion.name}</h2>
-                            <div class="excursion__info">
-                                <div class= "info__price">
-                                    <i class="fa-solid fa-coins"></i>
-                                    <div class= "priceadult">${excursion.priceadult}</div>
-                                    <i class="fa-solid fa-coins"></i>
-                                    <div class= "pricechild"> ${excursion.pricechild}</div>
-                                    <i class="fa-regular fa-clock"></i>
-                                    <div class= "duration">${excursion.duration}</div>
-                                </div>
-                                <div class= "info__ticket">
-                                    <p class= "adult">Взрослый билет</p>
-                                    <p class= "child">Детский билет</p>
-                                </div>
-                                <div class="description">${excursion.description}</div>
-                                <div class="container">
-                                    <a class="more" href="#">Подробнее</a>
-                                    <button class="click"><i class="fa-regular fa-heart"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>`
+                cardCreation(excursion);
             }
             document.getElementById("excursions__container").innerHTML = excursionsContent;
         }
@@ -318,35 +294,7 @@ for (const input of inputs) {
                 result2 = result1.filter((x) => x.category === radio.value);
                 excursionsContent = "";
                 for (let excursion of result2) {
-                    excursionsContent +=
-                        `<div class="excursion__item">
-                    <div class= "excursion__img">
-                        <img src="${excursion.image}" alt="${excursion.code}"></img>
-                    </div>
-                    <div class= "excursion__card">
-                        <p class= "excursion__category">${excursion.categoryname}</p>
-                        <h2 class="excursion__title" id="${excursion.code}">${excursion.name}</h2>
-                        <div class="excursion__info">
-                            <div class= "info__price">
-                                <i class="fa-solid fa-coins"></i>
-                                <div class= "priceadult">${excursion.priceadult}</div>
-                                <i class="fa-solid fa-coins"></i>
-                                <div class= "pricechild"> ${excursion.pricechild}</div>
-                                <i class="fa-regular fa-clock"></i>
-                                <div class= "duration">${excursion.duration}</div>
-                            </div>
-                            <div class= "info__ticket">
-                                <p class= "adult">Взрослый билет</p>
-                                <p class= "child">Детский билет</p>
-                            </div>
-                            <div class="description">${excursion.description}</div>
-                            <div class="container">
-                                <a class="more" href="#">Подробнее</a>
-                                <button class="click"><i class="fa-regular fa-heart"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>`
+                cardCreation(excursion);
                 }
                 document.getElementById("excursions__container").innerHTML = excursionsContent;
             }
@@ -357,35 +305,7 @@ for (const input of inputs) {
                 result3 = result2.filter((x) => x.capacity === radio2.value);
                 excursionsContent = "";
                 for (let excursion of result3) {
-                    excursionsContent +=
-                        `<div class="excursion__item">
-                        <div class= "excursion__img">
-                            <img src="${excursion.image}" alt="${excursion.code}"></img>
-                        </div>
-                        <div class= "excursion__card">
-                            <p class= "excursion__category">${excursion.categoryname}</p>
-                            <h2 class="excursion__title" id="${excursion.code}">${excursion.name}</h2>
-                            <div class="excursion__info">
-                                <div class= "info__price">
-                                    <i class="fa-solid fa-coins"></i>
-                                    <div class= "priceadult">${excursion.priceadult}</div>
-                                    <i class="fa-solid fa-coins"></i>
-                                    <div class= "pricechild"> ${excursion.pricechild}</div>
-                                    <i class="fa-regular fa-clock"></i>
-                                    <div class= "duration">${excursion.duration}</div>
-                                </div>
-                                <div class= "info__ticket">
-                                    <p class= "adult">Взрослый билет</p>
-                                    <p class= "child">Детский билет</p>
-                                </div>
-                                <div class="description">${excursion.description}</div>
-                                <div class="container">
-                                    <a class="more" href="#">Подробнее</a>
-                                    <button class="click"><i class="fa-regular fa-heart"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>`
+                    cardCreation(excursion);
                 }
                 document.getElementById("excursions__container").innerHTML = excursionsContent;
             }
@@ -396,35 +316,7 @@ for (const input of inputs) {
                 result4 = result3.filter((x) => x.destination === radio3.value);
                 excursionsContent = "";
                 for (let excursion of result4) {
-                    excursionsContent +=
-                        `<div class="excursion__item">
-                        <div class= "excursion__img">
-                            <img src="${excursion.image}" alt="${excursion.code}"></img>
-                        </div>
-                        <div class= "excursion__card">
-                            <p class= "excursion__category">${excursion.categoryname}</p>
-                            <h2 class="excursion__title" id="${excursion.code}">${excursion.name}</h2>
-                            <div class="excursion__info">
-                                <div class= "info__price">
-                                    <i class="fa-solid fa-coins"></i>
-                                    <div class= "priceadult">${excursion.priceadult}</div>
-                                    <i class="fa-solid fa-coins"></i>
-                                    <div class= "pricechild"> ${excursion.pricechild}</div>
-                                    <i class="fa-regular fa-clock"></i>
-                                    <div class= "duration">${excursion.duration}</div>
-                                </div>
-                                <div class= "info__ticket">
-                                    <p class= "adult">Взрослый билет</p>
-                                    <p class= "child">Детский билет</p>
-                                </div>
-                                <div class="description">${excursion.description}</div>
-                                <div class="container">
-                                    <a class="more" href="#">Подробнее</a>
-                                    <button class="click"><i class="fa-regular fa-heart"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>`
+                    cardCreation(excursion);
                 }
                 document.getElementById("excursions__container").innerHTML = excursionsContent;
             }
@@ -434,35 +326,7 @@ for (const input of inputs) {
                 result5 = result4.filter((x) => x.duration === radio4.value);
                 excursionsContent = "";
                 for (let excursion of result5) {
-                    excursionsContent +=
-                        `<div class="excursion__item">
-                        <div class= "excursion__img">
-                            <img src="${excursion.image}" alt="${excursion.code}"></img>
-                        </div>
-                        <div class= "excursion__card">
-                            <p class= "excursion__category">${excursion.categoryname}</p>
-                            <h2 class="excursion__title" id="${excursion.code}">${excursion.name}</h2>
-                            <div class="excursion__info">
-                                <div class= "info__price">
-                                    <i class="fa-solid fa-coins"></i>
-                                    <div class= "priceadult">${excursion.priceadult}</div>
-                                    <i class="fa-solid fa-coins"></i>
-                                    <div class= "pricechild"> ${excursion.pricechild}</div>
-                                    <i class="fa-regular fa-clock"></i>
-                                    <div class= "duration">${excursion.duration}</div>
-                                </div>
-                                <div class= "info__ticket">
-                                    <p class= "adult">Взрослый билет</p>
-                                    <p class= "child">Детский билет</p>
-                                </div>
-                                <div class="description">${excursion.description}</div>
-                                <div class="container">
-                                    <a class="more" href="#">Подробнее</a>
-                                    <button class="click"><i class="fa-regular fa-heart"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>`
+                    cardCreation(excursion);
                 }
                 document.getElementById("excursions__container").innerHTML = excursionsContent;
             }
@@ -496,11 +360,11 @@ resetText.addEventListener("click", () => {
         }
     }
 
-    let excursions = JSON.parse(json);
     let excursionsContent = "";
+    let excursions = JSON.parse(json);
     for (let excursion of excursions) {
         excursionsContent +=
-            `<div class="excursion__item">
+        `<div class="excursion__item">
             <div class= "excursion__img">
                 <img src="${excursion.image}" alt="${excursion.code}"></img>
             </div>
@@ -527,7 +391,7 @@ resetText.addEventListener("click", () => {
                     </div>
                 </div>
             </div>
-        </div>`
+        </div>`;
     }
     document.getElementById("excursions__container").innerHTML = excursionsContent;
 
