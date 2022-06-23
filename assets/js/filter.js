@@ -165,7 +165,6 @@ function cardCreation(obj){
                 <div class="description">${obj.description}</div>
                 <div class="container">
                     <a class="more" href="#">Подробнее</a>
-                    <button class="click"><i class="fa-regular fa-heart"></i></button>
                 </div>
             </div>
         </div>
@@ -387,7 +386,6 @@ resetText.addEventListener("click", () => {
                     <div class="description">${excursion.description}</div>
                     <div class="container">
                         <a class="more" href="#">Подробнее</a>
-                        <button class="click"><i class="fa-regular fa-heart"></i></button>
                     </div>
                 </div>
             </div>
