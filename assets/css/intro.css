@@ -69,10 +69,12 @@ body {
   grid-area: header;
   padding-top: 15px;
   display: grid;
-  grid-template: minmax(60px, auto) 1fr / minmax(1rem, 1fr) minmax(auto, 40px) minmax(
+  grid-template:
+    minmax(60px, auto) 1fr / minmax(1rem, 1fr) minmax(auto, 40px) minmax(
       auto,
       1080px
-    ) minmax(1rem, 1fr);
+    )
+    minmax(1rem, 1fr);
   grid-template-areas:
     ". header__logo header__menu ."
     ". header__title header__title .";
@@ -599,21 +601,6 @@ body {
   margin: 5px 0;
 }
 
-/* .pre-btn,
-.nxt-btn {
-    border: none;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
-    background: transparent;
-    cursor: pointer;
-    z-index: 2;
-} */
-
 .pre-btn {
   left: 0px;
   transform: rotate(180deg);
@@ -811,7 +798,6 @@ body {
   object-fit: cover;
   border-radius: 5px;
   width: 100%;
-  height: 100%;
 }
 
 .gallery__img1 {
@@ -914,10 +900,9 @@ body {
   grid-area: reviews;
   display: grid;
   overflow: hidden;
-  grid-template-columns: minmax(1rem, 1fr) minmax(auto, 1120px) minmax(
-      1rem,
-      1fr
-    ) 1fr;
+  grid-template-columns:
+    minmax(1rem, 1fr) minmax(auto, 1120px) minmax(1rem, 1fr)
+    1fr;
   grid-template-areas: ". reviews_wrapper reviews_wrapper .";
 }
 
