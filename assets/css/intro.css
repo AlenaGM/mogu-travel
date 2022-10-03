@@ -896,6 +896,12 @@ body {
   }
 }
 
+@media screen and (max-width: 450px) {
+  .gallery {
+    display: none;
+  }
+}
+
 /* Отзывы */
 .reviews {
   grid-area: reviews;
