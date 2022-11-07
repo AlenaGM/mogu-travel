@@ -1,6 +1,6 @@
 # Tutorial
 
-Application for finding excursions in France.
+Application for finding excursions in France. 
 
 _3rd Group Project in [ITGirlSchool]_<br><br>
 
