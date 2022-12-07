@@ -1,4 +1,4 @@
-# Tutorial
+# Mogu-Travel Agency web-site
 
 Application for finding excursions in France. 
 
