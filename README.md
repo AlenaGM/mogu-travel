@@ -16,7 +16,7 @@ Host the parent directory on the webserver
 <code><img height="25" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png"></code>
 
 ## Result:
-[Mogu-Travel]
+[Mogu Travel]
 
 ## Our Team
 [![Contributors](https://contrib.rocks/image?repo=AlenaGM/Mogu-Travel)](https://github.com/AlenaGM/Mogu-Travel/graphs/contributors)
@@ -29,4 +29,4 @@ Host the parent directory on the webserver
   
 
    [ITGirlSchool]: <https://itgirlschool.com/en>
-   [Mogu-Travel]: <https://gulkovva19.github.io/Mogu-Travel/>
+   [Mogu Travel]: <https://gulkovva19.github.io/mogu-travel/>
