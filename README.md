@@ -29,4 +29,4 @@ Host the parent directory on the webserver
   
 
    [ITGirlSchool]: <https://itgirlschool.com/en>
-   [Mogu Travel]: <https://gulkovva19.github.io/mogu-travel/>
+   [Mogu Travel]: <https://alenagm.github.io/mogu-travel/>
