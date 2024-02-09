@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="stylesheet" href="assets/css/intro.css" />
     <link rel="shortcut icon" href="assets/img/logo_color.png" type="img/png" />
     <title>Mogu Travel</title>
   </head>
   <body>
     <div class="wrapper">
-      <header class="header">
+      <header class="header header_intro">
         <a href="#" class="header__logo">
           <img
             class="header__img"
@@ -38,8 +39,8 @@
             <div class="header__title_up">ПУТЕШЕСТВУЙ</div>
             <div class="header__title_mid">вместе с</div>
             <div class="header__title_down">MOGU TRAVEL</div>
-            <div class="header__title_button">
-              <a href="filter.html">К экскурсиям → </a>
+            <div class="header__title_button button button_big">
+              <a href="filter.html">К экскурсиям</a>
             </div>
           </div>
           <div class="header__title_media">
@@ -58,316 +59,343 @@
         </div>
       </header>
       <main class="main">
-        <!--  ==================Слайдер===================== -->
-        <div class="slider">
-          <div class="container__slider">
-            <h2 class="excursions__title">Популярние экскурсии</h2>
-            <!-- <section class="product"> -->
-            <!-- <button class="pre-btn"><img src="./assets/img/arrow.png" alt="1"></button>
-                    <button class="nxt-btn"><img src="./assets/img/arrow.png" alt="2"></button> -->
-            <div class="product-container">
-              <div class="product-card">
-                <div class="product-image">
-                  <span class="discount-tag">
-                    &#9201; 3 часа &#128176; 5500
-                  </span>
-                  <img
-                    src="./assets/img/monmartre.jpeg"
-                    class="product-thumb"
-                    alt=""
-                  />
-                  <button class="card-btn">Подробнее</button>
+        <section class="excursions">
+          <h2 class="excursions__title">Популярние экскурсии</h2>
+          <div class="excursions__container">
+            <div class="excursion__card">
+              <div class="excursion__image">
+                <span class="excursion__discount-tag">
+                  &#9201; 3 часа &#128176; 5500
+                </span>
+                <img
+                  src="./assets/img/monmartre.jpeg"
+                  class="excursion__thumb"
+                  alt=""
+                />
+                <button class="excursion__button button">Подробнее</button>
+              </div>
+              <div class="excursion__info">
+                <div class="excursion__info_title">
+                  <h3 class="excursion__info_brand">Прогулки по Монмартру</h3>
+                  <span class="excursion__info_type"
+                    >&#128694; Экскурсия пешком</span
+                  >
                 </div>
-                <div class="product-info">
-                  <h3 class="product-brand">Прогулки по Монмартру</h3>
-                  <p class="product__type">&#128694; Экскурсия пешком</p>
-                  <p class="product-short-description">
-                    Район Монмартр, расположенный на одноименном холме,
-                    значительно отличается от других кварталов Парижа и своей
-                    историей, и атмосферой. В далеком прошлом здесь была
-                    небольшая деревня и женский монастырь.
-                  </p>
+                <div class="excursion__info_description">
+                  Район Монмартр, расположенный на одноименном холме,
+                  значительно отличается от других кварталов Парижа и своей
+                  историей, и атмосферой. В далеком прошлом здесь была небольшая
+                  деревня и женский монастырь.
                 </div>
               </div>
-
-              <div class="product-card">
-                <div class="product-image">
-                  <span class="discount-tag"
-                    >&#9201; 4 часа &#128176; 5000</span
+            </div>
+            <div class="excursion__card">
+              <div class="excursion__image">
+                <span class="excursion__discount-tag">
+                  &#9201; 4 часа &#128176; 5000
+                </span>
+                <img
+                  src="./assets/img/lyon.jpeg"
+                  class="excursion__thumb"
+                  alt=""
+                />
+                <button class="excursion__button button">Подробнее</button>
+              </div>
+              <div class="excursion__info">
+                <div class="excursion__info_title">
+                  <h3 class="excursion__info_brand">Лион с первого взгляда</h3>
+                  <span class="excursion__info_type"
+                    >&#128694; Экскурсия пешком</span
                   >
-                  <img
-                    src="./assets/img/lyon.jpeg"
-                    class="product-thumb"
-                    alt=""
-                  />
-                  <button class="card-btn">Подробнее</button>
                 </div>
-                <div class="product-info">
-                  <h3 class="product-brand">Лион с первого взгляда</h3>
-                  <p class="product__type">&#128694; Экскурсия пешком</p>
-                  <p class="product-short-description">
-                    Лион подкупит вас старинными базиликами и площадями, видами
-                    с холма Фурвьер и набережной реки Сона, умением жить красиво
-                    и превращать гастрономию в религию. Вы увидите главные и
-                    секретные уголки города и поймете его девиз — «Only Lyon»."
-                  </p>
+                <div class="excursion__info_description">
+                  Лион подкупит вас старинными базиликами и площадями, видами с
+                  холма Фурвьер и набережной реки Сона, умением жить красиво и
+                  превращать гастрономию в религию. Вы увидите главные и
+                  секретные уголки города и поймете его девиз — «Only Lyon»."
                 </div>
               </div>
-
-              <div class="product-card">
-                <div class="product-image">
-                  <span class="discount-tag"
-                    >&#9201; 2 часа &#128176; 3000</span
-                  >
-                  <img
-                    src="assets/img/strasbourg.jpeg"
-                    class="product-thumb"
-                    alt=""
-                  />
-                  <button class="card-btn">Подробнее</button>
-                </div>
-                <div class="product-info">
-                  <h3 class="product-brand">
+            </div>
+            <div class="excursion__card">
+              <div class="excursion__image">
+                <span class="excursion__discount-tag">
+                  &#9201; 2 часа &#128176; 3000
+                </span>
+                <img
+                  src="./assets/img/strasbourg.jpeg"
+                  class="excursion__thumb"
+                  alt=""
+                />
+                <button class="excursion__button button">Подробнее</button>
+              </div>
+              <div class="excursion__info">
+                <div class="excursion__info_title">
+                  <h3 class="excursion__info_brand">
                     Страсбург: Франция с немецким акцентом
                   </h3>
-                  <p class="product__type">&#128652; Экскурсия на автобусе</p>
-                  <p class="product-short-description">
-                    За 2 часа вас ни раз восхитит красота архитектуры
-                    Страсбурга. Вы увидите, какие пышные дворцы строили потомки
-                    знаменитых фамилий. И насколько простыми, но в то же время
-                    практичными, были дома ремесленников.
-                  </p>
+                  <span class="excursion__info_type"
+                    >&#128652; Экскурсия на автобусе</span
+                  >
+                </div>
+                <div class="excursion__info_description">
+                  За 2 часа вас ни раз восхитит красота архитектуры Страсбурга.
+                  Вы увидите, какие пышные дворцы строили потомки знаменитых
+                  фамилий. И насколько простыми, но в то же время практичными,
+                  были дома ремесленников.
                 </div>
               </div>
-
-              <div class="product-card">
-                <div class="product-image">
-                  <span class="discount-tag"
-                    >&#9201; 2 часа &#128176; 3500</span
+            </div>
+            <div class="excursion__card">
+              <div class="excursion__image">
+                <span class="excursion__discount-tag">
+                  &#9201; 2 часа &#128176; 3500
+                </span>
+                <img
+                  src="./assets/img/colmar.jpeg"
+                  class="excursion__thumb"
+                  alt=""
+                />
+                <button class="excursion__button button">Подробнее</button>
+              </div>
+              <div class="excursion__info">
+                <div class="excursion__info_title">
+                  <h3 class="excursion__info_brand">
+                    По сказочным улочкам Кольмара
+                  </h3>
+                  <span class="excursion__info_type"
+                    >&#128694; Экскурсия пешком</span
                   >
-                  <img
-                    src="./assets/img/colmar.jpeg"
-                    class="product-thumb"
-                    alt=""
-                  />
-                  <button class="card-btn">Подробнее</button>
                 </div>
-                <div class="product-info">
-                  <h3 class="product-brand">По сказочным улочкам Кольмара</h3>
-                  <p class="product__type">&#128694; Экскурсия пешком</p>
-                  <p class="product-short-description">
-                    В Кольмаре кажется, что вы попали в волшебную сказку или на
-                    идеальную открытку — это притягательная неизведанная Европа!
-                    Во время прогулки вы увидите главные достопримечательности,
-                    узнаете о переплетении прошлого и настоящего, реального и
-                    воображаемого.
-                  </p>
+                <div class="excursion__info_description">
+                  В Кольмаре кажется, что вы попали в волшебную сказку или на
+                  идеальную открытку — это притягательная неизведанная Европа!
+                  Во время прогулки вы увидите главные достопримечательности,
+                  узнаете о переплетении прошлого и настоящего, реального и
+                  воображаемого.
                 </div>
               </div>
-
-              <div class="product-card">
-                <div class="product-image">
-                  <span class="discount-tag"
-                    >&#9201; 3 часа &#128176; 5000</span
+            </div>
+            <div class="excursion__card">
+              <div class="excursion__image">
+                <span class="excursion__discount-tag">
+                  &#9201; 3 часа &#128176; 5000
+                </span>
+                <img
+                  src="./assets/img/marseilles.jpeg"
+                  class="excursion__thumb"
+                  alt=""
+                />
+                <button class="excursion__button button">Подробнее</button>
+              </div>
+              <div class="excursion__info">
+                <div class="excursion__info_title">
+                  <h3 class="excursion__info_brand">
+                    Правда и выдумки о Марселе
+                  </h3>
+                  <span class="excursion__info_type"
+                    >&#128652; Экскурсия на автобусе</span
                   >
-                  <img
-                    src="./assets/img/marseilles.jpeg"
-                    class="product-thumb"
-                    alt=""
-                  />
-                  <button class="card-btn">Подробнее</button>
                 </div>
-                <div class="product-info">
-                  <h3 class="product-brand">Правда и выдумки о Марселе</h3>
-                  <p class="product__type">&#128652; Экскурсия на автобусе</p>
-                  <p class="product-short-description">
-                    Марсель настолько разнообразен и непостижим, что жители и
-                    гости города создают собственные образы этого места. На
-                    экскурсии вы поймете, что из этого — правда, что —
-                    предубеждение, а что — местная легенда. Ощутите загадочность
-                    города, совместившего в себе французские, итальянские и
-                    восточные традиции.
-                  </p>
+                <div class="excursion__info_description">
+                  Марсель настолько разнообразен и непостижим, что жители и
+                  гости города создают собственные образы этого места. На
+                  экскурсии вы поймете, что из этого — правда, что —
+                  предубеждение, а что — местная легенда. Ощутите загадочность
+                  города, совместившего в себе французские, итальянские и
+                  восточные традиции.
                 </div>
               </div>
-
-              <div class="product-card">
-                <div class="product-image">
-                  <span class="discount-tag"
-                    >&#9201; 2 часа &#128176; 4000</span
-                  >
-                  <img
-                    src="./assets/img/montpellier.jpeg"
-                    class="product-thumb"
-                    alt=""
-                  />
-                  <button class="card-btn">Подробнее</button>
-                </div>
-                <div class="product-info">
-                  <h3 class="product-brand">
+            </div>
+            <div class="excursion__card">
+              <div class="excursion__image">
+                <span class="excursion__discount-tag">
+                  &#9201; 2 часа &#128176; 4000
+                </span>
+                <img
+                  src="./assets/img/montpellier.jpeg"
+                  class="excursion__thumb"
+                  alt=""
+                />
+                <button class="excursion__button button">Подробнее</button>
+              </div>
+              <div class="excursion__info">
+                <div class="excursion__info_title">
+                  <h3 class="excursion__info_brand">
                     Монпелье — открыть настоящую Южную Францию
                   </h3>
-                  <p class="product__type">&#128694; Экскурсия пешком</p>
-                  <p class="product-short-description">
-                    Гуляя по малоизвестному Монпелье, вы узнаете о его богатом
-                    торговом, духовном и интеллектуальном прошлом, увидите
-                    старейшие еврейские бани, первый ботанический сад страны и
-                    факультет, на котором учился Нострадамус, попробуете местные
-                    деликатесы и дополните представление об обаятельном Юге
-                    Франции.
-                  </p>
+                  <span class="excursion__info_type"
+                    >&#128694; Экскурсия пешком</span
+                  >
+                </div>
+                <div class="excursion__info_description">
+                  Гуляя по малоизвестному Монпелье, вы узнаете о его богатом
+                  торговом, духовном и интеллектуальном прошлом, увидите
+                  старейшие еврейские бани, первый ботанический сад страны и
+                  факультет, на котором учился Нострадамус, попробуете местные
+                  деликатесы и дополните представление об обаятельном Юге
+                  Франции.
                 </div>
               </div>
-
-              <div class="product-card">
-                <div class="product-image">
-                  <span class="discount-tag"
-                    >&#9201; 4 часа &#128176; 6000</span
+            </div>
+            <div class="excursion__card">
+              <div class="excursion__image">
+                <span class="excursion__discount-tag">
+                  &#9201; 4 часа &#128176; 6000
+                </span>
+                <img
+                  src="./assets/img/versailles.jpeg"
+                  class="excursion__thumb"
+                  alt=""
+                />
+                <button class="excursion__button button">Подробнее</button>
+              </div>
+              <div class="excursion__info">
+                <div class="excursion__info_title">
+                  <h3 class="excursion__info_brand">Многоликий Версаль</h3>
+                  <span class="excursion__info_type"
+                    >&#128652; Экскурсия на автобусе</span
                   >
-                  <img
-                    src="./assets/img/versailles.jpeg"
-                    class="product-thumb"
-                    alt=""
-                  />
-                  <button class="card-btn">Подробнее</button>
                 </div>
-                <div class="product-info">
-                  <h3 class="product-brand">Многоликий Версаль</h3>
-                  <p class="product__type">&#128652; Экскурсия на автобусе</p>
-                  <p class="product-short-description">
-                    Версаль — это не только знаменитый королевский дворец и
-                    живописные сады, но и улочки антикваров, ухоженные дома,
-                    изысканные бутики, уютные кондитерские и оживленные рынки. Я
-                    помогу раскрыть все грани этого удивительного города и
-                    понять, что значит «дышать воздухом Версаля
-                  </p>
+                <div class="excursion__info_description">
+                  Версаль — это не только знаменитый королевский дворец и
+                  живописные сады, но и улочки антикваров, ухоженные дома,
+                  изысканные бутики, уютные кондитерские и оживленные рынки. Я
+                  помогу раскрыть все грани этого удивительного города и понять,
+                  что значит «дышать воздухом Версаля Франции.
                 </div>
               </div>
-
-              <div class="product-card">
-                <div class="product-image">
-                  <span class="discount-tag"
-                    >&#9201; 2 часа &#128176; 7000</span
-                  >
-                  <img
-                    src="./assets/img/rouen.jpeg"
-                    class="product-thumb"
-                    alt=""
-                  />
-                  <button class="card-btn">Подробнее</button>
-                </div>
-                <div class="product-info">
-                  <h3 class="product-brand">
+            </div>
+            <div class="excursion__card">
+              <div class="excursion__image">
+                <span class="excursion__discount-tag">
+                  &#9201; 2 часа &#128176; 7000
+                </span>
+                <img
+                  src="./assets/img/rouen.jpeg"
+                  class="excursion__thumb"
+                  alt=""
+                />
+                <button class="excursion__button button">Подробнее</button>
+              </div>
+              <div class="excursion__info">
+                <div class="excursion__info_title">
+                  <h3 class="excursion__info_brand">
                     Руан — средневековые врата в Нормандию
                   </h3>
-                  <p class="product__type">&#128694; Экскурсия пешком</p>
-                  <p class="product-short-description">
-                    В многогранном Руане каждый находит что-то свое, «для души».
-                    И я вам в этом помогу. Вы не только услышите множество
-                    любопытных фактов о бесстрашных викингах, отважной Жанне
-                    д’Арк и тайной символике готических соборов, но и увидите
-                    места, которые любили Клод Моне и Гюстав Флобер.
-                  </p>
-                </div>
-              </div>
-
-              <div class="product-card">
-                <div class="product-image">
-                  <span class="discount-tag"
-                    >&#9201; 2 часа &#128176; 3000</span
+                  <span class="excursion__info_type"
+                    >&#128694; Экскурсия пешком</span
                   >
-                  <img
-                    src="./assets/img/paris.jpeg"
-                    class="product-thumb"
-                    alt=""
-                  />
-                  <button class="card-btn">Подробнее</button>
                 </div>
-                <div class="product-info">
-                  <h3 class="product-brand">Ежедневная прогулка по Парижу</h3>
-                  <p class="product__type">&#128694; Экскурсия пешком</p>
-                  <p class="product-short-description">
-                    На нашей дружеской прогулке вы познакомитесь с нетривиальной
-                    историей Парижа, окунетесь в романтическую атмосферу города
-                    и взглянете на него глазами местных жителей. Мы не только
-                    прогуляемся по достопримечательностям, с которых начинается
-                    Париж, но и расскажем о жизни в столице, о французском
-                    менталитете и самых вкусных местах города!
-                  </p>
-                </div>
-              </div>
-
-              <div class="product-card">
-                <div class="product-image">
-                  <span class="discount-tag"
-                    >&#9201; 3 часа &#128176; 4000</span
-                  >
-                  <img
-                    src="./assets/img/nice.jpeg"
-                    class="product-thumb"
-                    alt=""
-                  />
-                  <button class="card-btn">Подробнее</button>
-                </div>
-                <div class="product-info">
-                  <h3 class="product-brand">Ницца: любовь с первого взгляд</h3>
-                  <p class="product__type">&#128694; Экскурсия пешком</p>
-                  <p class="product-short-description">
-                    Любовь к городу, как и любовь вообще, — сложное,
-                    многосоставное чувство. Я покажу Ниццу такой, какой её любят
-                    местные жители и обожают приезжие. Вы убедитесь, что здесь
-                    царит обеспеченность — вовсе не публики, давно облюбовавшей
-                    Французскую ривьеру, но богатство истории и культуры.
-                  </p>
+                <div class="excursion__info_description">
+                  В многогранном Руане каждый находит что-то свое, «для души». И
+                  я вам в этом помогу. Вы не только услышите множество
+                  любопытных фактов о бесстрашных викингах, отважной Жанне д’Арк
+                  и тайной символике готических соборов, но и увидите места,
+                  которые любили Клод Моне и Гюстав Флобер.
                 </div>
               </div>
             </div>
-            <!-- </section> -->
-            <div class="excursions-slider">
-              <div class="excursions-slider_arrow pre-btn">
-                <img src="assets/img/arrow-right.png" alt="arrow" />
+            <div class="excursion__card">
+              <div class="excursion__image">
+                <span class="excursion__discount-tag">
+                  &#9201; 2 часа &#128176; 3000
+                </span>
+                <img
+                  src="./assets/img/paris.jpeg"
+                  class="excursion__thumb"
+                  alt=""
+                />
+                <button class="excursion__button button">Подробнее</button>
               </div>
-              <div class="excursions-slider_arrow nxt-btn">
-                <img src="assets/img/arrow-right.png" alt="arrow" />
+              <div class="excursion__info">
+                <div class="excursion__info_title">
+                  <h3 class="excursion__info_brand">
+                    Ежедневная прогулка по Парижу
+                  </h3>
+                  <span class="excursion__info_type"
+                    >&#128694; Экскурсия пешком</span
+                  >
+                </div>
+                <div class="excursion__info_description">
+                  На нашей дружеской прогулке вы познакомитесь с нетривиальной
+                  историей Парижа, окунетесь в романтическую атмосферу города и
+                  взглянете на него глазами местных жителей. Мы не только
+                  прогуляемся по достопримечательностям, с которых начинается
+                  Париж, но и расскажем о жизни в столице, о французском
+                  менталитете и самых вкусных местах города!
+                </div>
               </div>
-              <div class="excursions-slider_scroll-bar"></div>
+            </div>
+            <div class="excursion__card">
+              <div class="excursion__image">
+                <span class="excursion__discount-tag">
+                  &#9201; 3 часа &#128176; 4000
+                </span>
+                <img
+                  src="./assets/img/nice.jpeg"
+                  class="excursion__thumb"
+                  alt=""
+                />
+                <button class="excursion__button button">Подробнее</button>
+              </div>
+              <div class="excursion__info">
+                <div class="excursion__info_title">
+                  <h3 class="excursion__info_brand">
+                    Ницца: любовь с первого взгляда
+                  </h3>
+                  <span class="excursion__info_type"
+                    >&#128694; Экскурсия пешком</span
+                  >
+                </div>
+                <div class="excursion__info_description">
+                  Любовь к городу, как и любовь вообще, — сложное,
+                  многосоставное чувство. Я покажу Ниццу такой, какой её любят
+                  местные жители и обожают приезжие. Вы убедитесь, что здесь
+                  царит обеспеченность — вовсе не публики, давно облюбовавшей
+                  Французскую ривьеру, но богатство истории и культуры.
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <!--  ==================О нас===================== -->
-        <div class="about">
-          <div class="container__about">
+          <div class="excursions__controls controls">
+            <div class="controls_arrow pre-btn">
+              <img src="assets/img/arrow-right.png" alt="arrow" />
+            </div>
+            <div class="controls_arrow nxt-btn">
+              <img src="assets/img/arrow-right.png" alt="arrow" />
+            </div>
+          </div>
+        </section>
+        <section class="about">
+          <div class="about__image">
             <img
-              class="about__image"
               src="./assets/img/francelavandaabout.jpg"
               alt="lavender field"
             />
-            <div class="about__block">
-              <h2 class="about__title">О нас</h2>
-              <p class="about__text">
-                Мы стремимся не просто сделать индивидуально подобранную
-                программу для ваших путешествий по Франции, а подарить вам
-                редкие запоминающиеся моменты и неповторимые личные впечатления.
-              </p>
-              <p class="about__text">
-                Мы черпаем свое вдохновение в неповторимом богатстве французской
-                культуры, во многовековых традициях французских мастеров и
-                ремесленников, в неиссякаемой энергии творческого процесса.
-              </p>
-              <p class="about__text">
-                Наши ценности и стандарты – это творческий подход и стремление к
-                высокому качеству. Именно они позволяют нам создавать экскурсии,
-                исключительность, стиль и оригинальность которых сопоставимы
-                только с лучшими французскими винами…
-              </p>
-            </div>
           </div>
-        </div>
-        <!--  ==================Галерея===================== -->
-        <div class="gallery">
-          <h2 class="gallery__title excursions__title">Галерея</h2>
-
-          <div class="container__gallery">
+          <div class="about__block">
+            <h2 class="about__title">О нас</h2>
+            <p class="about__text">
+              Мы стремимся не просто сделать индивидуально подобранную программу
+              для ваших путешествий по Франции, а подарить вам редкие
+              запоминающиеся моменты и неповторимые личные впечатления.
+            </p>
+            <p class="about__text">
+              Мы черпаем свое вдохновение в неповторимом богатстве французской
+              культуры, во многовековых традициях французских мастеров и
+              ремесленников, в неиссякаемой энергии творческого процесса.
+            </p>
+            <p class="about__text">
+              Наши ценности и стандарты – это творческий подход и стремление к
+              высокому качеству. Именно они позволяют нам создавать экскурсии,
+              исключительность, стиль и оригинальность которых сопоставимы
+              только с лучшими французскими винами…
+            </p>
+          </div>
+        </section>
+        <section class="gallery">
+          <h2 class="gallery__title">Галерея</h2>
+          <div class="gallery__container">
             <img
               class="gallery__img1"
               src="./assets/img/301-750x410.jpeg"
@@ -381,257 +409,213 @@
             <img class="gallery__img7" src="./assets/img/07.jpeg" alt="img7" />
             <img class="gallery__img8" src="./assets/img/08.jpeg" alt="img8" />
           </div>
-        </div>
-        <!--  ==================Отзывы===================== -->
-        <div class="reviews">
-          <div class="reviews_wrapper">
-            <h2 class="reviews_title title excursions__title">Отзывы</h2>
-            <div class="reviews-cards_wrapper">
-              <div class="reviews-card reviews-card__one block">
-                <img
-                  src="assets/img/marseilles.jpeg"
-                  alt="#"
-                  class="reviews-photo"
-                />
-                <div class="reviews-text">
-                  <p class="reviews-card_name">Mariya, Азербайджан</p>
-                  <p class="reviews_text">
+        </section>
+        <section class="reviews">
+            <h2 class="reviews__title">Отзывы</h2>
+            <div class="reviews__container">
+              <div class="reviews__card">
+                <div class="reviews__image">
+                  <img
+                    src="assets/img/marseilles.jpeg"
+                    alt="#"
+                  />
+                </div>
+                <div class="reviews__info">
+                  <h3 class="reviews__info_name">Mariya, Азербайджан</h3>
+                  <div class="reviews__info_text">
                     Потрясающий колоритный город! Я влюбилась в Марсель! Это
                     обилие белого цвета, мавританский стиль в Европе, соборы,
                     Набережная, Нотр Дам де ла Гард, виды на город, эта
                     атмосфера Средиземноморья! Рыба, кстати, в том самом Нотр
                     Дам де ла Гард очень вкусная!
-                  </p>
+                  </div>
                 </div>
               </div>
-              <div class="reviews-card reviews-card__two block">
-                <img src="assets/img/nice.jpeg" alt="#" class="reviews-photo" />
-                <div class="reviews-text">
-                  <p class="reviews-card_name">Marel, Эстония</p>
-                  <p class="reviews_text">
-                    Исполнение мечты - путешествие во Францию. Лазурный берег
-                    покорил мое ♥.<br />
-                    Как же долго я хотела побывать во Франции! Эта мечта не
-                    давала мне покоя целых 20 лет, и вот, в 2019 я смогла ее
-                    осуществить - с супругом мы провели июльский отдых в Ницце.
-                  </p>
+              <div class="reviews__card">
+                <div class="reviews__image">
+                  <img
+                    src="assets/img/nice.jpeg"
+                    alt="#"
+                  />
+                </div>
+                <div class="reviews__info">
+                  <h3 class="reviews__info_name">Marel, Эстония</h3>
+                  <div class="reviews__info_text">
+                    Потрясающий колоритный город! Я влюбилась в Марсель! Это
+                    обилие белого цвета, мавританский стиль в Европе, соборы,
+                    Набережная, Нотр Дам де ла Гард, виды на город, эта
+                    атмосфера Средиземноморья! Рыба, кстати, в том самом Нотр
+                    Дам де ла Гард очень вкусная!
+                  </div>
                 </div>
               </div>
-              <div class="reviews-card reviews-card__three block">
-                <img
-                  src="assets/img/rouen.jpeg"
-                  alt="#"
-                  class="reviews-photo"
-                />
-                <div class="reviews-text">
-                  <p class="reviews-card_name">Елена, Казахстан</p>
-                  <p class="reviews-card_name">Helena, Казахстан</p>
-                  <p class="reviews_text">
+              <div class="reviews__card">
+                <div class="reviews__image">
+                  <img
+                    src="assets/img/rouen.jpeg"
+                    alt="#"
+                  />
+                </div>
+                <div class="reviews__info">
+                  <h3 class="reviews__info_name">Helena, Казахстан</h3>
+                  <div class="reviews__info_text">
                     Всегда хотелось увидеть своими глазами шикарнейший собор
                     Руана — Собор Руанской Богоматери. И вот этот час настал.
                     Поверьте, это того стоит. По моему мнению он просто
                     шикарный, как будто из кружев сделан. Да и в самом Руане
                     есть что посмотреть…
-                  </p>
+                  </div>
                 </div>
               </div>
-              <div class="reviews-card reviews-card__four block">
-                <img
-                  src="assets/img/strasbourg.jpeg"
-                  alt="#"
-                  class="reviews-photo"
-                />
-                <div class="reviews-text">
-                  <p class="reviews-card_name">Larabi, Литва</p>
-                  <p class="reviews_text">
+              <div class="reviews__card">
+                <div class="reviews__image">
+                  <img
+                    src="assets/img/strasbourg.jpeg"
+                    alt="#"
+                  />
+                </div>
+                <div class="reviews__info">
+                  <h3 class="reviews__info_name">Larabi, Литва</h3>
+                  <div class="reviews__info_text">
                     Много раз Страсбург переходил от Германии к Франции и
                     наоборот. И всё-таки для меня он — Франция, местами даже
                     было ощущение Парижа. В Страсбурге. мы ещё не были. Отзывы
                     были от восторженных до негативных. В негативные отзывы
                     верить не хотелось, хотелось в сказочную Францию. Вот и
                     решили: едем.
-                  </p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="reviews-slider">
-              <div class="reviews-slider_arrow arrow__left">
-                <img src="assets/img/arrow-right.png" alt="arrow" />
-              </div>
-              <div class="reviews-slider_arrow arrow__right">
-                <img src="assets/img/arrow-right.png" alt="arrow" />
-              </div>
-              <div class="reviews-slider_scroll-bar"></div>
+          <div class="reviews__controls controls">
+            <div class="controls_arrow pre-btn">
+              <img src="assets/img/arrow-right.png" alt="arrow" />
             </div>
-          </div>
-        </div>
-        <!-- Раздел Остались вопросы? -->
-        <div class="contacts">
-          <div class="contacts_bg">
-            <div class="contacts_wrapper">
-              <form class="form" id="form" action="#">
-                <h2 class="title title_white">Остались вопросы?</h2>
-                <span>Оставь заявку и мы ответим</span>
-                <div class="inputs">
+            <div class="controls_arrow nxt-btn">
+              <img src="assets/img/arrow-right.png" alt="arrow" />
+            </div>
+        </section>
+        <section class="contacts">
+            <div class="contacts__form_wrapper">
+              <form class="contacts__form form" id="form" action="#">
+                <h2 class="form__title">Остались вопросы?
+                  <span class="form__subtitle">Оставь заявку и мы ответим</span>
+                </h2>
+                <div class="form__inputs">
                   <input
-                    id="userName"
-                    class="field"
-                    type="text"
-                    placeholder="Имя"
-                    pattern="[A-Za-zА-Яа-я\s]{2,40}$"
-                    required
-                  />
-                  <span class="error userNameError"
-                    >Имя может содержать только буквы</span
-                  >
-                  <input
-                    id="phone"
-                    class="field"
-                    type="tel"
-                    placeholder="Телефон"
-                    pattern="[\+]?[\d]{10,16}$"
-                    required
-                  />
-                  <span class="error phoneError"
-                    >Вы не указали или указали неверно номер телефона</span
-                  >
-                  <input
-                    id="email"
-                    class="field"
-                    type="email"
-                    placeholder="Почта"
-                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                    required
-                  />
-                  <span class="error emailError"
-                    >Вы не указали почту или введеные данные имеют неверный
-                    формат</span
-                  >
-                  <input id="btn" type="submit" value="Оставить заявку" />
+                  id="userName"
+                  class="field"
+                  type="text"
+                  placeholder="Имя"
+                  pattern="[A-Za-zА-Яа-я\s]{2,40}$"
+                  required
+                />
+                <span class="form__inputs_error userNameError"
+                  >Имя может содержать только буквы</span
+                >
+                <input
+                  id="phone"
+                  class="field"
+                  type="tel"
+                  placeholder="Телефон"
+                  pattern="[\+]?[\d]{10,16}$"
+                  required
+                />
+                <span class="form__inputs_error phoneError"
+                  >Вы не указали или указали неверно номер телефона</span
+                >
+                <input
+                  id="email"
+                  class="field"
+                  type="email"
+                  placeholder="Почта"
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                  required
+                />
+                <span class="form__inputs_error emailError"
+                  >Вы не указали почту или введеные данные имеют неверный
+                  формат</span>
                 </div>
+                <button id="btn" class="form__button button button_big" type="submit">Оставить заявку</button>
               </form>
             </div>
-          </div>
-        </div>
+        </section>
       </main>
-
-      <div class="footer">
-        <!-- для Desktop -->
-        <div class="footer_wrapper">
+      <footer class="footer">
+        <a href="index.html" class="footer__logo">
           <img
-            class="logo_color"
             src="assets/img/footer_logo_color.svg"
-            alt="logo"
+            alt="Company logo"
           />
-          <div class="menu_wrapper">
-            <ul class="menu">
-              <li><a href="#">Главная</a></li>
-              <li><a href="filter.html">Экскурсии</a></li>
-            </ul>
-            <ul class="contacts">
-              <li>
-                <img src="assets/img/whats_up_logo.svg" alt="What's Up" /><a
-                  href="https://wa.me/+33142967000"
-                  target="_blank"
-                  >+33 1 42 96 70 00</a
-                >
-              </li>
-              <li>
-                <img src="assets/img/telegram_logo.svg" alt="Telegram" /><a
-                  href="https://telegram.im/@USERNAME"
-                  target="_blank"
-                  >+33 1 42 96 70 00</a
-                >
-              </li>
-              <li>
-                <img src="assets/img/telegram_logo.svg" alt="Telegram" /><a
-                  href="https://telegram.im/@USERNAME"
-                  target="_blank"
-                  >Mogu Travel бот</a
-                >
-              </li>
-            </ul>
-            <ul class="social">
-              <li>
-                <img src="assets/img/mail_logo.svg" alt="mail" /><a
-                  href="mailto:office@mogutravel.com"
-                  >office@mogutravel.com</a
-                >
-              </li>
-              <li class="socialIcons">
-                <a href="https://vk.com" target="_blank"
-                  ><img src="assets/img/vkontakte_logo.svg" alt="Vkontakte"
-                /></a>
-                <a href="https://www.instagram.com" target="_blank"
-                  ><img src="assets/img/instagram_logo.svg" alt="Instagram"
-                /></a>
-                <a
-                  href="https://m.facebook.com/login/?locale2=ru_RU"
-                  target="_blank"
-                  ><img src="assets/img/facebook_logo.svg" alt="Facebook"
-                /></a>
-              </li>
-            </ul>
-          </div>
+        </a>
+        <div class="footer__social">
+          <a href="https://vk.com" target="_blank"
+            ><img src="assets/img/vkontakte_logo.svg" alt="Vkontakte"
+          /></a>
+          <a href="https://www.instagram.com" target="_blank"
+            ><img src="assets/img/instagram_logo.svg" alt="Instagram"
+          /></a>
+          <a href="https://m.facebook.com/login/?locale2=ru_RU" target="_blank"
+            ><img src="assets/img/facebook_logo.svg" alt="Facebook"
+          /></a>
         </div>
-
-        <!-- для mobile -->
-        <div class="footer_wrapper_mobile">
-          <img
-            class="logo_color"
-            src="assets/img/footer_logo_color.svg"
-            alt="logo"
-          />
-          <div class="socialIcons">
-            <a href="https://vk.com" target="_blank"
-              ><img src="assets/img/vkontakte_logo.svg" alt="Vkontakte"
-            /></a>
-            <a href="https://www.instagram.com" target="_blank"
-              ><img src="assets/img/instagram_logo.svg" alt="Instagram"
-            /></a>
-            <a
-              href="https://m.facebook.com/login/?locale2=ru_RU"
-              target="_blank"
-              ><img src="assets/img/facebook_logo.svg" alt="Facebook"
-            /></a>
-          </div>
-          <div class="menu_wrapper">
-            <ul class="menu">
-              <li><a href="#">Главная</a></li>
-              <li><a href="filter.html">Экскурсии</a></li>
-            </ul>
-            <ul class="contacts">
-              <li>
-                <img src="assets/img/whats_up_logo.svg" alt="What's Up" /><a
-                  href="https://wa.me/+33142967000"
-                  target="_blank"
-                  >+33 1 42 96 70 00</a
-                >
-              </li>
-              <li>
-                <img src="assets/img/telegram_logo.svg" alt="Telegram" /><a
-                  href="https://telegram.im/@USERNAME"
-                  target="_blank"
-                  >+33 1 42 96 70 00</a
-                >
-              </li>
-              <li>
-                <img src="assets/img/telegram_logo.svg" alt="Telegram" /><a
-                  href="https://telegram.im/@USERNAME"
-                  target="_blank"
-                  >Mogu Travel бот</a
-                >
-              </li>
-              <li>
-                <img src="assets/img/mail_logo.svg" alt="mail" /><a
-                  href="mailto:office@mogutravel.com"
-                  >office@mogutravel.com</a
-                >
-              </li>
-            </ul>
-          </div>
+        <div class="footer__menu">
+          <ul class="menu">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="filter.html">Экскурсии</a></li>
+          </ul>
+          <ul class="tels">
+            <li>
+              <img src="assets/img/whats_up_logo.svg" alt="What's Up" /><a
+                href="https://wa.me/+33142967000"
+                target="_blank"
+                >+33 1 42 96 70 00</a
+              >
+            </li>
+            <li>
+              <img src="assets/img/telegram_logo.svg" alt="Telegram" /><a
+                href="https://telegram.im/@USERNAME"
+                target="_blank"
+                >+33 1 42 96 70 00</a
+              >
+            </li>
+            <li>
+              <img src="assets/img/telegram_logo.svg" alt="Telegram" /><a
+                href="https://telegram.im/@USERNAME"
+                target="_blank"
+                >Mogu Travel бот</a
+              >
+            </li>
+            <li class="social_mail">
+              <img src="assets/img/mail_logo.svg" alt="mail" /><a
+                href="mailto:office@mogutravel.com"
+                >office@mogutravel.com</a
+              >
+            </li>
+          </ul>
+          <ul class="footer__social_big">
+            <li>
+              <img src="assets/img/mail_logo.svg" alt="mail" /><a
+                href="mailto:office@mogutravel.com"
+                >office@mogutravel.com</a
+              >
+            </li>
+            <li class="footer__social_big-icons">
+              <a href="https://vk.com" target="_blank"
+                ><img src="assets/img/vkontakte_logo.svg" alt="Vkontakte"
+              /></a>
+              <a href="https://www.instagram.com" target="_blank"
+                ><img src="assets/img/instagram_logo.svg" alt="Instagram"
+              /></a>
+              <a
+                href="https://m.facebook.com/login/?locale2=ru_RU"
+                target="_blank"
+                ><img src="assets/img/facebook_logo.svg" alt="Facebook"
+              /></a>
+            </li>
+          </ul>
         </div>
-      </div>
+      </footer>
     </div>
     <script src="assets/js/intro.js"></script>
   </body>

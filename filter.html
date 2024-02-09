@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/filter.css" />
     <script
       src="https://kit.fontawesome.com/4d945f1e23.js"
       crossorigin="anonymous"
@@ -15,7 +16,7 @@
 
   <body>
     <div class="wrapper">
-      <header class="header">
+      <header class="header header_filter">
         <a href="index.html" class="header__logo">
           <img src="assets/img/logo-white.svg" alt="Company logo" />
         </a>
@@ -34,7 +35,7 @@
             </ul>
           </nav>
         </div>
-        <h1 class="header__title">Наши экскурсии</h1>
+        <h1 class="header__title header__title_filter">Наши экскурсии</h1>
       </header>
       <main class="main">
         <aside class="sidebar">
@@ -192,119 +193,79 @@
         </div>
       </main>
       <footer class="footer">
-        <!-- для Desktop -->
-        <div class="footer_wrapper">
+        <a href="index.html" class="footer__logo">
           <img
-            class="logo_color"
+            class="footer__img"
             src="assets/img/footer_logo_color.svg"
-            alt="logo"
+            alt="Company logo"
           />
-          <div class="menu_wrapper">
-            <ul class="menu">
-              <li><a href="#">Главная</a></li>
-              <li><a href="filter.html">Экскурсии</a></li>
-            </ul>
-            <ul class="contacts">
-              <li>
-                <img src="assets/img/whats_up_logo.svg" alt="What's Up" /><a
-                  href="https://wa.me/+33142967000"
-                  target="_blank"
-                  >+33 1 42 96 70 00</a
-                >
-              </li>
-              <li>
-                <img src="assets/img/telegram_logo.svg" alt="Telegram" /><a
-                  href="https://telegram.im/@USERNAME"
-                  target="_blank"
-                  >+33 1 42 96 70 00</a
-                >
-              </li>
-              <li>
-                <img src="assets/img/telegram_logo.svg" alt="Telegram" /><a
-                  href="https://telegram.im/@USERNAME"
-                  target="_blank"
-                  >Mogu Travel бот</a
-                >
-              </li>
-            </ul>
-            <ul class="social">
-              <li>
-                <img src="assets/img/mail_logo.svg" alt="mail" /><a
-                  href="mailto:office@mogutravel.com"
-                  >office@mogutravel.com</a
-                >
-              </li>
-              <li class="socialIcons">
-                <a href="https://vk.com" target="_blank"
-                  ><img src="assets/img/vkontakte_logo.svg" alt="Vkontakte"
-                /></a>
-                <a href="https://www.instagram.com" target="_blank"
-                  ><img src="assets/img/instagram_logo.svg" alt="Instagram"
-                /></a>
-                <a
-                  href="https://m.facebook.com/login/?locale2=ru_RU"
-                  target="_blank"
-                  ><img src="assets/img/facebook_logo.svg" alt="Facebook"
-                /></a>
-              </li>
-            </ul>
-          </div>
+        </a>
+        <div class="footer__social">
+          <a href="https://vk.com" target="_blank"
+            ><img src="assets/img/vkontakte_logo.svg" alt="Vkontakte"
+          /></a>
+          <a href="https://www.instagram.com" target="_blank"
+            ><img src="assets/img/instagram_logo.svg" alt="Instagram"
+          /></a>
+          <a href="https://m.facebook.com/login/?locale2=ru_RU" target="_blank"
+            ><img src="assets/img/facebook_logo.svg" alt="Facebook"
+          /></a>
         </div>
-        <!-- для mobile -->
-        <div class="footer_wrapper_mobile">
-          <img
-            class="logo_color"
-            src="assets/img/footer_logo_color.svg"
-            alt="logo"
-          />
-          <div class="socialIcons">
-            <a href="https://vk.com" target="_blank"
-              ><img src="assets/img/vkontakte_logo.svg" alt="Vkontakte"
-            /></a>
-            <a href="https://www.instagram.com" target="_blank"
-              ><img src="assets/img/instagram_logo.svg" alt="Instagram"
-            /></a>
-            <a
-              href="https://m.facebook.com/login/?locale2=ru_RU"
-              target="_blank"
-              ><img src="assets/img/facebook_logo.svg" alt="Facebook"
-            /></a>
-          </div>
-          <div class="menu_wrapper">
-            <ul class="menu">
-              <li><a href="#">Главная</a></li>
-              <li><a href="filter.html">Экскурсии</a></li>
-            </ul>
-            <ul class="contacts">
-              <li>
-                <img src="assets/img/whats_up_logo.svg" alt="What's Up" /><a
-                  href="https://wa.me/+33142967000"
-                  target="_blank"
-                  >+33 1 42 96 70 00</a
-                >
-              </li>
-              <li>
-                <img src="assets/img/telegram_logo.svg" alt="Telegram" /><a
-                  href="https://telegram.im/@USERNAME"
-                  target="_blank"
-                  >+33 1 42 96 70 00</a
-                >
-              </li>
-              <li>
-                <img src="assets/img/telegram_logo.svg" alt="Telegram" /><a
-                  href="https://telegram.im/@USERNAME"
-                  target="_blank"
-                  >Mogu Travel бот</a
-                >
-              </li>
-              <li>
-                <img src="assets/img/mail_logo.svg" alt="mail" /><a
-                  href="mailto:office@mogutravel.com"
-                  >office@mogutravel.com</a
-                >
-              </li>
-            </ul>
-          </div>
+        <div class="footer__menu">
+          <ul class="menu">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="filter.html">Экскурсии</a></li>
+          </ul>
+          <ul class="tels">
+            <li>
+              <img src="assets/img/whats_up_logo.svg" alt="What's Up" /><a
+                href="https://wa.me/+33142967000"
+                target="_blank"
+                >+33 1 42 96 70 00</a
+              >
+            </li>
+            <li>
+              <img src="assets/img/telegram_logo.svg" alt="Telegram" /><a
+                href="https://telegram.im/@USERNAME"
+                target="_blank"
+                >+33 1 42 96 70 00</a
+              >
+            </li>
+            <li>
+              <img src="assets/img/telegram_logo.svg" alt="Telegram" /><a
+                href="https://telegram.im/@USERNAME"
+                target="_blank"
+                >Mogu Travel бот</a
+              >
+            </li>
+            <li class="social_mail">
+              <img src="assets/img/mail_logo.svg" alt="mail" /><a
+                href="mailto:office@mogutravel.com"
+                >office@mogutravel.com</a
+              >
+            </li>
+          </ul>
+          <ul class="footer__social_big">
+            <li>
+              <img src="assets/img/mail_logo.svg" alt="mail" /><a
+                href="mailto:office@mogutravel.com"
+                >office@mogutravel.com</a
+              >
+            </li>
+            <li class="footer__social_big-icons">
+              <a href="https://vk.com" target="_blank"
+                ><img src="assets/img/vkontakte_logo.svg" alt="Vkontakte"
+              /></a>
+              <a href="https://www.instagram.com" target="_blank"
+                ><img src="assets/img/instagram_logo.svg" alt="Instagram"
+              /></a>
+              <a
+                href="https://m.facebook.com/login/?locale2=ru_RU"
+                target="_blank"
+                ><img src="assets/img/facebook_logo.svg" alt="Facebook"
+              /></a>
+            </li>
+          </ul>
         </div>
       </footer>
     </div>
