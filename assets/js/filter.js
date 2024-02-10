@@ -279,6 +279,7 @@ function declOfNum(n, text_arr) {
   return text_arr[2];
 }
 
+// eslint-disable-next-line no-unused-vars
 function checkquantity() {
   personsInp.value = Math.trunc(personsInp.value);
   if (personsInp.value < 1) personsInp.value = 1;
@@ -325,6 +326,7 @@ function setArea() {
   range.style.right = 100 - (rangeInputMax.value / sliderMaxValue) * 100 + "%";
 }
 
+// eslint-disable-next-line no-unused-vars
 function setMinPrice() {
   let minPrice = parseInt(priceInputMin.value);
   if (minPrice < sliderMinValue) {
@@ -334,6 +336,7 @@ function setMinPrice() {
   slideMin();
 }
 
+// eslint-disable-next-line no-unused-vars
 function setMaxPrice() {
   let maxPrice = parseInt(priceInputMax.value);
   if (maxPrice > sliderMaxValue) {

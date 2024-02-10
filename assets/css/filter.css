@@ -66,8 +66,8 @@
   grid-template-areas:
     ". sidebar ."
     ". excursions .";
-  padding: 60px 0;
   align-items: start;
+  margin: 60px 0 150px;
 }
 
 @media screen and (min-width: 1024px) {
@@ -78,7 +78,7 @@
       1fr / minmax(1.5rem, 1fr) minmax(auto, 295px)
       minmax(auto, 825px) minmax(1.5rem, 1fr);
     grid-template-areas: ". sidebar excursions .";
-    padding: 40px 0;
+    margin: 150px 0;
   }
 }
 
@@ -148,12 +148,12 @@
   color: var(--color-black);
   font-weight: 500;
   font-size: 12px;
-  padding: 40px 0px;
+  padding: 20px 0px;
   border-bottom: solid 1px var(--color-gray);
 }
 
 .filter__item:first-of-type {
-  padding: 32px 0px 40px;
+  padding: 32px 0px 20px;
 }
 
 .filter__item_subtitle {
@@ -177,7 +177,6 @@
 .filter__item_spoiler::before {
   height: 2px;
   width: 16px;
-  border-radius: 40px;
   background: var(--color-primary);
 }
 
@@ -220,10 +219,6 @@
 
 .filter-input:not(:last-of-type) {
   margin-right: 16px;
-}
-
-.filter-price {
-  flex-direction: column;
 }
 
 .filter__price_inputs {
@@ -283,9 +278,6 @@ input[type="range"]::-moz-range-thumb {
   background-color: var(--color-primary);
 }
 
-.filter-range {
-}
-
 .filter__quantity {
   flex-direction: row;
   align-items: center;
@@ -332,14 +324,18 @@ input[type="number"] {
   display: inline-flex;
 }
 
-.filter__destination {
-}
 .filter__destination select {
   width: 100%;
   max-width: 225px;
   text-align: left;
 }
-.filter__duration {
+
+.filter__price_inputs input,
+.filter__destination select,
+.filter__destination select option {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
 }
 
 /** ---- Excursions Section ---- **/
@@ -425,6 +421,13 @@ input[type="number"] {
   margin-right: 5px;
 }
 
+.excursion__info_price div {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--color-primary);
+}
+
 .excursion__info_price span {
   color: var(--color-black);
   font-size: 10px;
@@ -436,7 +439,7 @@ input[type="number"] {
   font-size: 13px;
   font-weight: 500;
   border-left: 3px solid var(--color-primary);
-  padding-left: 24px;
+  padding-left: 20px;
   margin-bottom: 40px;
 }
 

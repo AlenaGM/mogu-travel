@@ -51,7 +51,7 @@ html {
 body {
   min-width: 350px;
   color: var(--color-black);
-  background-color: var(--color-light-gray);
+  background-color: #fbfbfb;
   line-height: 1.6;
   font-family: var(--font-text);
   font-size: 16px;
@@ -123,14 +123,13 @@ h3 {
   line-height: 1.2;
   font-weight: 700;
   font-size: 18px;
-  margin: 0px 0px 2px;
 }
 
 .button {
   display: flex;
   height: 40px;
   min-width: 160px;
-  border-radius: 60px;
+  border-radius: 40px;
   background: var(--gradient);
   align-items: center;
   justify-content: center;
@@ -262,7 +261,7 @@ h3 {
     position: relative;
     justify-self: end;
     width: 40px;
-    height: 26px;
+    height: 27px;
     align-items: center;
     cursor: pointer;
     z-index: 5;
@@ -434,7 +433,7 @@ section {
   flex-wrap: wrap;
 }
 
-.menu {
+.footer__menu .menu {
   padding-right: 40px;
   margin-bottom: 20px;
 }
