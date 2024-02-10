@@ -1,25 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Pacifico&display=swap");
 
-/* ---- VARIABLES ---- */
-:root {
-  --color-white: #ffffff;
-  --color-light-gray: #fbfbfb;
-  --color-gray: #d4d4d4;
-  --color-black: #282828;
-
-  --color-primary: #0499dd;
-  --color-secondary: #ffc700;
-
-  --color-hover: var(--color-secondary);
-
-  --box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.05);
-  --border: 1px solid #ededed;
-  --gradient: linear-gradient(93deg, #0499dd 0%, #17c1bc 100%);
-
-  --font-text: "Montserrat", sans-serif;
-  --font-accent: "Pacifico";
-}
-
 /* ---- FILTER PAGE STYLES ---- */
 /** ---- Header Section ---- **/
 @media screen and (max-width: 767px) {
@@ -84,16 +64,16 @@
 
 .sidebar {
   grid-area: sidebar;
-  background: var(--color-white);
+  background: #ffffff;
   border-radius: 10px;
-  box-shadow: var(--box-shadow);
+  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.05);
   margin: 0px 0px 60px;
-  padding: 24px 36px;
+  padding: 24px 32px;
 }
 
 .sidebar__title {
   font-family: var(--font-title);
-  color: var(--color-primary);
+  color: #0499dd;
   font-size: 14px;
   font-weight: 700;
 }
@@ -108,7 +88,7 @@
   display: flex;
   justify-content: center;
   font-size: 12px;
-  color: var(--color-primary);
+  color: #0499dd;
   margin: 20px 0px 12px;
 }
 
@@ -118,19 +98,19 @@
   justify-content: center;
   gap: 5px;
   margin: 0px 0px 20px;
-  color: var(--color-black);
+  color: #282828;
   font-size: 12px;
   font-weight: 500;
   cursor: pointer;
 }
 
 .sidebar__reset i {
-  color: var(--color-gray);
+  color: #d4d4d4;
   transition: color 0.3s;
 }
 
 .sidebar__reset:hover i {
-  color: var(--color-primary);
+  color: #0499dd;
   transition: color 0.3s;
 }
 
@@ -144,12 +124,12 @@
 .filter__item {
   display: flex;
   flex-direction: column;
-  font-family: var(--font-text);
-  color: var(--color-black);
+  font-family: "Montserrat", sans-serif;
+  color: #282828;
   font-weight: 500;
   font-size: 12px;
   padding: 20px 0px;
-  border-bottom: solid 1px var(--color-gray);
+  border-bottom: solid 1px #d4d4d4;
 }
 
 .filter__item:first-of-type {
@@ -164,7 +144,7 @@
 }
 
 .filter__item_subtitle h4 {
-  color: var(--color-black);
+  color: #282828;
   font-size: 14px;
   font-weight: 700;
 }
@@ -177,7 +157,7 @@
 .filter__item_spoiler::before {
   height: 2px;
   width: 16px;
-  background: var(--color-primary);
+  background: #0499dd;
 }
 
 .filter__item_spoiler::before {
@@ -212,8 +192,8 @@
 .filter-input {
   text-align: center;
   padding: 8px 12px;
-  background: var(--color-white);
-  border: 1px solid var(--color-gray);
+  background: #ffffff;
+  border: 1px solid #d4d4d4;
   border-radius: 40px;
 }
 
@@ -235,7 +215,7 @@
   width: 100%;
   height: 5px;
   margin: 30px 0;
-  background-color: var(--color-gray);
+  background-color: #d4d4d4;
 }
 
 .filter__price_range input {
@@ -252,8 +232,8 @@ input[type="range"]::-webkit-slider-thumb {
   height: 25px;
   width: 25px;
   border-radius: 50%;
-  border: 3px solid var(--color-white);
-  background: var(--color-white);
+  border: 3px solid #ffffff;
+  background: #ffffff;
   pointer-events: auto;
   appearance: none;
   cursor: pointer;
@@ -264,8 +244,8 @@ input[type="range"]::-moz-range-thumb {
   height: 25px;
   width: 25px;
   border-radius: 50%;
-  border: 3px solid var(--color-white);
-  background: var(--color-white);
+  border: 3px solid #ffffff;
+  background: #ffffff;
   pointer-events: auto;
   -moz-appearance: none;
   cursor: pointer;
@@ -275,7 +255,7 @@ input[type="range"]::-moz-range-thumb {
 .filter-slider-track {
   height: 100%;
   position: absolute;
-  background-color: var(--color-primary);
+  background-color: #0499dd;
 }
 
 .filter__quantity {
@@ -304,7 +284,7 @@ input[type="number"] {
 }
 
 .filter__quantity span {
-  color: var(--color-primary);
+  color: #0499dd;
   cursor: pointer;
 }
 
@@ -340,13 +320,13 @@ input[type="number"] {
 
 /** ---- Excursions Section ---- **/
 .excursions {
-  background-color: var(--color-light-gray);
+  background-color: #fbfbfb;
   grid-area: excursions;
 }
 
 .excursions__title {
   font-family: var(--font-title);
-  color: var(--color-primary);
+  color: #0499dd;
   font-weight: 700;
   font-size: 24px;
   text-align: left;
@@ -363,9 +343,10 @@ input[type="number"] {
   flex-direction: column;
   position: relative;
   width: 100%;
-  background-color: var(--color-white);
-  box-shadow: var(--box-shadow);
+  background-color: #ffffff;
+  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.05);
   border-radius: 10px;
+  overflow-x: hidden;
 }
 
 .excursion__img {
@@ -382,18 +363,18 @@ input[type="number"] {
 .excursion__card {
   display: flex;
   flex-direction: column;
-  padding: 24px 40px;
+  padding: 24px 32px;
 }
 
 .excursion__category {
-  color: var(--color-secondary);
+  color: #ffc700;
   font-size: 13px;
   font-weight: 500;
   margin-bottom: 2px;
 }
 
 .excursion__title {
-  color: var(--color-black);
+  color: #282828;
   font-size: 18px;
   font-weight: 700;
   margin: 0px 0px 20px;
@@ -406,7 +387,7 @@ input[type="number"] {
 }
 
 .excursion__info_price {
-  color: var(--color-primary);
+  color: #0499dd;
   font-size: 18px;
   font-weight: 700;
   text-align: left;
@@ -425,20 +406,20 @@ input[type="number"] {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 18px;
-  color: var(--color-primary);
+  color: #0499dd;
 }
 
 .excursion__info_price span {
-  color: var(--color-black);
+  color: #282828;
   font-size: 10px;
   font-weight: 500;
 }
 
 .excursion__description {
-  color: var(--color-black);
-  font-size: 13px;
+  color: #282828;
+  font-size: 12px;
   font-weight: 500;
-  border-left: 3px solid var(--color-primary);
+  border-left: 3px solid #0499dd;
   padding-left: 20px;
   margin-bottom: 40px;
 }
@@ -458,6 +439,12 @@ input[type="number"] {
     border-radius: 10px 0 0 10px;
     width: 100%;
     height: 100%;
+  }
+
+  .excursion__card {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 40px;
   }
 
   .excursion__description {

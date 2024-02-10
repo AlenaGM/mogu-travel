@@ -1,25 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Pacifico&display=swap");
 
-/* ---- VARIABLES ---- */
-:root {
-  --color-white: #ffffff;
-  --color-light-gray: #fbfbfb;
-  --color-gray: #d4d4d4;
-  --color-black: #282828;
-
-  --color-primary: #0499dd;
-  --color-secondary: #ffc700;
-
-  --color-hover: var(--color-secondary);
-
-  --box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.05);
-  --border: 1px solid #ededed;
-  --gradient: linear-gradient(93deg, #0499dd 0%, #17c1bc 100%);
-
-  --font-text: "Montserrat", sans-serif;
-  --font-accent: "Pacifico";
-}
-
 /* ---- FILTER PAGE STYLES ---- */
 /** ---- Header Section ---- **/
 .header {
@@ -86,7 +66,7 @@
 }
 
 .header__title_media a:hover {
-  transform: scale(1.4);
+  transform: scale(1.3);
   transition: transform 0.3s;
 }
 
@@ -180,8 +160,8 @@
   grid-template: 300px 1fr / 1fr;
   min-width: 300px;
   border-radius: 10px;
-  border: var(--border);
-  background: var(--color-white);
+  border: 1px solid #ededed;
+  background: #ffffff;
 }
 
 .excursion__image {
@@ -226,10 +206,10 @@
 .excursion__info_title {
   margin: 0px 0px 20px;
   text-align: center;
+  overflow: hidden;
 }
 
 .excursion__info_brand {
-  color: var(--color-black);
   font-size: 18px;
   font-weight: 700;
   margin: 0px 0px 2px;
@@ -243,7 +223,7 @@
 
 .excursion__info_description {
   width: 100%;
-  line-height: 20px;
+  font-size: 14px;
 }
 
 /*** About Us ---- ***/
@@ -255,6 +235,7 @@
       1fr
     );
   align-items: center;
+  overflow-x: hidden;
 }
 
 .about__image {
@@ -284,16 +265,16 @@
   padding: 42px 30px;
   background: #ededed;
   border-radius: 10px;
+  right: 0;
   width: 100%;
   max-width: 380px;
   z-index: 2;
 }
 
 .about__text {
-  font-family: var(--font-text);
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  line-height: 17px;
   text-align: left;
 }
 
@@ -350,6 +331,7 @@
   border-radius: 5px;
   width: 100%;
   height: 100%;
+  max-width: 100%;
 }
 
 .gallery__img1 {
@@ -524,7 +506,7 @@
   display: grid;
   grid-template: auto 1fr / 1fr;
   border-radius: 10px;
-  border: var(--border);
+  border: 1px solid #ededed;
   background: #ededed;
   min-width: 280px;
   padding: 24px;
@@ -544,12 +526,15 @@
   border-radius: 10px;
 }
 
+.reviews__info {
+  overflow-x: hidden;
+}
+
 .reviews__info_name {
   margin-bottom: 20px;
 }
 
 .reviews__info_text {
-  line-height: 15px;
   font-size: 12px;
 }
 
@@ -575,7 +560,6 @@
   }
 
   .reviews__info_text {
-    line-height: 17px;
     font-size: 14px;
   }
 }
@@ -599,10 +583,6 @@
     position: relative;
     width: 245px;
     height: 245px;
-  }
-
-  .reviews__info_text {
-    line-height: 20px;
   }
 }
 
@@ -652,15 +632,16 @@
   width: 100%;
   height: 100%;
   display: grid;
+  overflow-x: hidden;
 }
 
 .form__title {
-  color: var(--color-white);
+  color: #ffffff;
 }
 
 .form__subtitle {
   display: block;
-  color: var(--color-secondary);
+  color: #ffc700;
   font-weight: 500;
   font-size: 14px;
 }
@@ -677,7 +658,7 @@
   display: none;
   font-weight: 400;
   font-size: 12px;
-  color: var(--color-secondary);
+  color: #ffc700;
 }
 
 .form__inputs > input[type="text"],
@@ -699,7 +680,7 @@
 .form__inputs > input[type="text"]::placeholder,
 .form__inputs > input[type="tel"]::placeholder,
 .form__inputs > input[type="email"]::placeholder {
-  color: var(--color-white);
+  color: #ffffff;
   font-size: 12px;
   font-weight: 500;
   font-family: "Montserrat", sans-serif;
