@@ -598,7 +598,7 @@
 .contacts {
   grid-area: contacts;
   background-position: center;
-  background-image: url(../img/contacts_background_new.jpeg);
+  background-image: url(../img/contacts_bg.webp);
   min-height: 640px;
   background-size: cover;
   position: relative;
@@ -695,8 +695,12 @@
 }
 
 .form__button {
-  margin: 80px 0px 0px;
+  margin: 80px 2px 2px;
   justify-self: left;
+}
+
+.form__button:hover {
+  transform: none;
 }
 
 @media screen and (max-width: 767px) {

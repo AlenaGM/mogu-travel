@@ -181,7 +181,7 @@ h3 {
 
 /** ---- HEADER SECTION STYLES ---- **/
 .header {
-  background: url(../img/cite.jpg) 50% / cover no-repeat;
+  background: url(../img/cite.webp) 50% / cover no-repeat;
 
   grid-area: header;
   display: grid;
@@ -202,7 +202,6 @@ h3 {
   position: relative;
   z-index: 5;
   width: 40px;
-  align-items: center;
   transition: transform 0.3s;
   cursor: pointer;
 }
@@ -214,6 +213,8 @@ h3 {
 
 .header__logo img {
   max-width: 100%;
+  width: 40px;
+  height: 57px;
   display: block;
   object-fit: cover;
 }
@@ -234,6 +235,17 @@ h3 {
   line-height: 100%;
   text-align: center;
   align-items: center;
+}
+
+.header__vkontakte {
+  width: 32px;
+  height: 32px;
+}
+
+.header__facebook,
+.header__instagram {
+  width: 30px;
+  height: 30px;
 }
 
 /* ---- MOBILE-MENU SECTION STYLES ---- */
@@ -400,6 +412,13 @@ section {
   transition: transform 0.3s;
 }
 
+.footer__logo img {
+  width: 80px;
+  height: 114px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
 .footer__logo:hover {
   transform: scale(1.1);
   transition: transform 0.3s;
@@ -446,27 +465,26 @@ section {
   margin-bottom: 8px;
 }
 
-.footer__social li > i,
-.footer__menu li > i,
-.footer__social_big li > i {
+.footer__social li > img,
+.footer__menu li > img,
+.footer__social_big li > img {
   margin-right: 5px;
+  width: 20px;
+  height: 20px;
 }
 
-.footer__social li > a,
-.footer__menu li > a,
-.footer__social_big li > a {
+.footer__menu .menu li a,
+.footer__social_big li a,
+.tels li a {
   color: #282828;
   text-decoration: none;
   cursor: pointer;
   transition: color 0.3s linear;
 }
 
-.footer__social li:hover,
-.footer__menu li:hover,
-.footer__social_big li:hover,
-.footer__social li a:hover,
-.footer__menu li a:hover,
-.footer__social_big li a:hover {
+.menu li:hover a,
+.footer__social_big li:hover a,
+.tels li:hover a {
   color: #ffc700;
   transition: color 0.3s linear;
   text-decoration: none;
@@ -483,6 +501,21 @@ section {
   transition: transform 0.3s;
 }
 
+.footer__vkontakte {
+  width: 38px;
+  height: 38px;
+}
+
+.footer__instagram {
+  width: 32px;
+  height: 32px;
+}
+
+.footer__facebook {
+  height: 30px;
+  width: 18px;
+}
+
 @media screen and (min-width: 768px) {
   .footer {
     grid-area: footer;
@@ -496,6 +529,13 @@ section {
 
   .footer__logo {
     grid-column: 2;
+  }
+
+  .footer__logo img {
+    width: 65px;
+    height: 93px;
+    max-width: 100%;
+    object-fit: contain;
   }
 
   .footer__menu {
@@ -534,6 +574,13 @@ section {
       minmax(1.5rem, 1fr);
     grid-template-rows: 1fr;
     padding: 1.5rem 0;
+  }
+
+  .footer__logo img {
+    width: 80px;
+    height: 114px;
+    max-width: 100%;
+    object-fit: contain;
   }
 
   .footer__menu {

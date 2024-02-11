@@ -224,15 +224,21 @@ function outputExcursions(excursions) {
           <h3 class="excursion__title" id="${n.code}">${n.name}</h3>
           <div class="excursion__info">
             <div class="excursion__info_price">
-              <div><i class="fa-solid fa-coins"></i>${n.priceadult}</div>
+              <div><img src="assets/img/coins.svg" alt="coins" />${
+                n.priceadult
+              }</div>
               <span>Взрослый билет</span>
             </div>
             <div class="excursion__info_price">
-              <div><i class="fa-solid fa-coins"></i> ${n.pricechild}</div>
+              <div><img src="assets/img/coins.svg" alt="coins" />${
+                n.pricechild
+              }</div>
               <span>Детский билет</span>
             </div>
             <div class="excursion__info_price">
-              <div><i class="fa-regular fa-clock"></i>${n.duration}</div>
+              <div><img src="assets/img/clock.svg" alt="clock" />${
+                n.duration
+              }</div>
             </div>
           </div>
           <div class="excursion__description">${n.description.slice(
