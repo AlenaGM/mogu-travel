@@ -3,7 +3,7 @@ const excursionsData = [
     name: "Прогулки по Монмартру",
     code: "monmartre",
     category: "foot",
-    categoryname: "Экскурсия пешкомЭкскурсия пешком",
+    categoryname: "Экскурсия пешком",
     priceadult: "5500",
     pricechild: "3000",
     duration: "3",

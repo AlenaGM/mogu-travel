@@ -254,8 +254,8 @@
   right: 100px;
 }
 
-.about__image img,
-.about__image picture {
+.about__image-pic,
+.about__image-pic {
   position: absolute;
   top: 0;
   right: 0;
