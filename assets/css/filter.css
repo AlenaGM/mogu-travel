@@ -143,7 +143,7 @@
   cursor: pointer;
 }
 
-.filter__item_subtitle h4 {
+.filter__item_subtitle h3 {
   color: #282828;
   font-size: 14px;
   font-weight: 700;
@@ -272,11 +272,6 @@ input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
-
-/* Firefox */
-input[type="number"] {
-  -moz-appearance: textfield;
 }
 
 #persons {

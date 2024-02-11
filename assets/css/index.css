@@ -14,7 +14,7 @@
   font-family: "Montserrat", sans-serif;
   color: white;
   text-align: left;
-  width: fit-content;
+  max-width: 340px;
 }
 
 .header__title_up {
@@ -30,7 +30,7 @@
   line-height: 14px;
   text-align: left;
   color: #ffc700;
-  align-self: center;
+  align-self: flex-end;
 }
 
 .header__title_down {
@@ -38,7 +38,6 @@
   font-weight: 900;
   line-height: 65px;
   padding-top: 15px;
-  padding-right: 50px;
   color: transparent;
   -webkit-text-stroke: 2px #ffffff;
 }
@@ -75,6 +74,10 @@
 }
 
 @media screen and (min-width: 768px) {
+  .header__title_inner {
+    max-width: 450px;
+  }
+
   .header__title_up {
     font-size: 48px;
   }
@@ -91,6 +94,10 @@
 }
 
 @media screen and (min-width: 1024px) {
+  .header__title_inner {
+    max-width: 760px;
+  }
+
   .header__title_up {
     font-size: 72px;
     line-height: 88px;
@@ -99,7 +106,7 @@
   .header__title_mid {
     font-size: 52px;
     line-height: 4px;
-    align-self: flex-end;
+    margin-right: 42px;
   }
 
   .header__title_down {
@@ -116,7 +123,6 @@
 .main {
   grid-area: main;
   display: grid;
-  grid-template-columns: 1fr;
   grid-template-areas:
     "excursions"
     "about"
