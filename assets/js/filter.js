@@ -372,7 +372,7 @@ const spoilers = document.querySelectorAll(".filter__item_subtitle");
 spoilers.forEach((spoiler) => {
   spoiler.addEventListener("click", function addVisible() {
     spoiler.parentElement.classList.toggle("_visible");
-    spoiler.lastElementChild.classList.toggle("_minus");
+    spoiler.lastElementChild.classList.toggle("_close");
   });
 });
 

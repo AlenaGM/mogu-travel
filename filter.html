@@ -8,8 +8,6 @@
       name="description"
       content="Planning a trip to France? Visit our Mogu-Travel Agency website to discover the best excursions. Developed as a team project at ITGirlSchool."
     />
-    <link rel="stylesheet" href="assets/css/styles.css" />
-    <link rel="stylesheet" href="assets/css/filter.css" />
     <link
       rel="preload"
       fetchpriority="high"
@@ -17,12 +15,8 @@
       href="/assets/img/cite.webp"
       type="image/webp"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&family=Pacifico&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/filter.css" />
     <link
       rel="apple-touch-icon"
       sizes="114x114"
@@ -81,7 +75,7 @@
             <div class="filter__item">
               <div class="filter__item_subtitle">
                 <h3>Стоимость</h3>
-                <span class="filter__item_spoiler"></span>
+                <span class="filter__item_spoiler">×</span>
               </div>
               <div class="filter__item_content filter__price">
                 <div class="filter__price_inputs">
@@ -124,7 +118,7 @@
             <div class="filter__item">
               <div class="filter__item_subtitle">
                 <h3>Сколько вас будет?</h3>
-                <span class="filter__item_spoiler"></span>
+                <span class="filter__item_spoiler">×</span>
               </div>
               <div class="filter__item_content filter__quantity">
                 <span onclick="changeQuantity('minus')">−</span>
@@ -143,7 +137,7 @@
             <div class="filter__item">
               <div class="filter__item_subtitle">
                 <h3>Способ передвижения</h3>
-                <span class="filter__item_spoiler"></span>
+                <span class="filter__item_spoiler">×</span>
               </div>
               <div class="filter__item_content filter__transport" id="type">
                 <label for="bus"
@@ -163,7 +157,7 @@
             <div class="filter__item">
               <div class="filter__item_subtitle">
                 <h3>Куда вы собираетесь?</h3>
-                <span class="filter__item_spoiler"></span>
+                <span class="filter__item_spoiler">×</span>
               </div>
               <div class="filter__item_content filter__destination">
                 <select id="dest" name="destination" class="filter-input">
@@ -184,7 +178,7 @@
             <div class="filter__item">
               <div class="filter__item_subtitle">
                 <h3>Длительность</h3>
-                <span class="filter__item_spoiler"></span>
+                <span class="filter__item_spoiler">×</span>
               </div>
               <div class="filter__item_content filter__duration" id="duration">
                 <label for="2hours"
@@ -216,7 +210,7 @@
           </div>
           <div class="sidebar__result" id="result"></div>
           <div class="sidebar__reset">
-            <i class="fa-solid fa-x"></i>
+            <span>×</span>
             Сбросить фильтры
           </div>
         </aside>

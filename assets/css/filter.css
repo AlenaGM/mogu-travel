@@ -103,12 +103,15 @@
   cursor: pointer;
 }
 
-.sidebar__reset i {
+.sidebar__reset span {
   color: #d4d4d4;
+
+  font-weight: 500;
+  font-size: 36px;
   transition: color 0.3s;
 }
 
-.sidebar__reset:hover i {
+.sidebar__reset:hover span {
   color: #0499dd;
   transition: color 0.3s;
 }
@@ -149,25 +152,14 @@
 }
 
 .filter__item_spoiler {
-  position: relative;
-}
-
-.filter__item_spoiler,
-.filter__item_spoiler::before {
-  height: 2px;
-  width: 16px;
-  background: #0499dd;
-}
-
-.filter__item_spoiler::before {
-  content: "";
-  right: 0;
-  position: absolute;
-  transform: rotate(90deg);
+  color: #0499dd;
+  font-weight: 500;
+  font-size: 36px;
+  transform: rotate(45deg);
   transition: all 0.3s ease 0s;
 }
 
-.filter__item_spoiler._minus::before {
+.filter__item_spoiler._close {
   transform: rotate(0deg);
 }
 
