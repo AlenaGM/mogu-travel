@@ -2,8 +2,8 @@
 
 /* ---- RESET BASE STYLES & BODY STYLES ---- */
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   border: none;
   font-weight: normal;
   position: relative;
@@ -20,8 +20,8 @@
 html,
 body {
   margin: 0;
-  min-width: 350px;
   width: 100vw;
+  min-width: 350px;
   min-height: 100vh;
 }
 
@@ -32,37 +32,38 @@ html {
 
 body {
   max-width: 1824px;
+  margin: 0 auto;
   color: #282828;
   background-color: #fbfbfb;
-  margin: 0 auto;
-  line-height: 120%;
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: normal;
+  line-height: 120%;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overscroll-behavior: none;
+  overflow-x: hidden;
 }
 
 body._lock {
-  overflow: hidden;
   position: fixed;
+  overflow: hidden;
 }
 
 .wrapper {
   display: grid;
   grid-template: auto 1fr minmax(173px, auto) / 1fr;
-  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.05);
   grid-template-areas:
     "header"
     "main"
     "footer";
+  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.05);
 }
 
 img {
-  vertical-align: top;
   max-width: 100%;
+  vertical-align: top;
 }
 
 h1,
@@ -88,36 +89,36 @@ h2 {
   font-weight: 700;
   font-size: 24px;
   color: #0499dd;
-  margin: 0px 0px 40px;
   line-height: 29px;
+  margin: 0px 0px 20px;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 768px) {
   h2 {
-    margin: 0px 0px 20px;
+    margin: 0px 0px 40px;
   }
 }
 
 h3 {
   font-family: "Montserrat", sans-serif;
-  color: #282828;
-  line-height: 22px;
   font-weight: 700;
   font-size: 18px;
+  color: #282828;
+  line-height: 22px;
 }
 
 .button {
   display: flex;
+  align-items: center;
+  justify-content: center;
   height: 40px;
   min-width: 160px;
   border-radius: 40px;
   background: linear-gradient(93deg, #0499dd 0%, #17c1bc 100%);
-  align-items: center;
-  justify-content: center;
   font-family: "Montserrat", sans-serif;
-  color: #ffffff;
-  font-size: 12px;
   font-weight: 700;
+  font-size: 12px;
+  color: #ffffff;
   text-align: center;
   text-decoration: none;
   transition: transform 0.3s;
@@ -138,9 +139,9 @@ h3 {
 
 .button_big a {
   font-family: "Montserrat", sans-serif;
-  color: #ffffff;
-  font-size: 14px;
   font-weight: 700;
+  font-size: 14px;
+  color: #ffffff;
   text-align: center;
   text-decoration: none;
 }
@@ -151,12 +152,12 @@ h3 {
 
 @media screen and (pointer: fine) {
   .controls {
-    width: 108px;
+    grid-column: 2;
     display: flex;
+    height: 43px;
+    width: 108px;
     gap: 30px;
     margin-top: 40px;
-    height: 43px;
-    grid-column: 2;
   }
 }
 
@@ -168,6 +169,15 @@ h3 {
 .controls_arrow img {
   width: 100%;
   height: 100%;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.controls_arrow img:hover,
+.controls_arrow img:hover {
+  opacity: 1;
+  transition: opacity 0.3s;
 }
 
 .pre-btn {
@@ -179,24 +189,11 @@ h3 {
   right: 0;
 }
 
-.pre-btn img,
-.nxt-btn img {
-  opacity: 0.4;
-  cursor: pointer;
-  transition: opacity 0.3s;
-}
-
-.pre-btn img:hover,
-.nxt-btn img:hover {
-  opacity: 1;
-  transition: opacity 0.3s;
-}
-
 /** ---- HEADER SECTION STYLES ---- **/
 .header {
-  background: url(../img/cite.webp) 50% / cover no-repeat;
   grid-area: header;
   display: grid;
+  background: url(../img/cite.webp) 50% / cover no-repeat;
   grid-template:
     minmax(60px, auto) 1fr / minmax(1.5rem, 1fr) minmax(auto, 40px) minmax(
       auto,
@@ -212,10 +209,10 @@ h3 {
 .header__logo {
   grid-area: header__logo;
   position: relative;
-  z-index: 5;
   width: 40px;
   transition: transform 0.3s;
   cursor: pointer;
+  z-index: 5;
 }
 
 .header__logo:hover {
@@ -224,18 +221,18 @@ h3 {
 }
 
 .header__logo img {
-  max-width: 100%;
-  width: 40px;
-  height: 57px;
   display: block;
+  width: 40px;
+  max-width: 100%;
+  height: 57px;
   object-fit: cover;
 }
 
 .header__menu {
   grid-area: header__menu;
   display: grid;
-  align-content: space-between;
   justify-items: end;
+  align-content: space-between;
   overflow: hidden;
 }
 
@@ -260,15 +257,15 @@ h3 {
   height: 30px;
 }
 
-/* ---- MOBILE-MENU SECTION STYLES ---- */
+/** ---- MOBILE-MENU SECTION STYLES ---- **/
 @media screen and (max-width: 767px) {
   .menu__burger {
     display: grid;
     position: relative;
+    align-items: center;
     justify-self: end;
     width: 40px;
     height: 27px;
-    align-items: center;
     cursor: pointer;
     z-index: 5;
   }
@@ -426,8 +423,8 @@ section {
 
 .footer__logo img {
   width: 80px;
-  height: 114px;
   max-width: 100%;
+  height: 114px;
   object-fit: contain;
 }
 
@@ -438,17 +435,17 @@ section {
 
 .footer__social {
   display: flex;
-  margin: 16px 0px 60px;
   justify-self: center;
-  gap: 8px;
   align-items: center;
+  gap: 8px;
+  margin: 16px 0px 60px;
   overflow: hidden;
 }
 
 .footer__menu {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
+  justify-content: space-between;
   overflow: hidden;
 }
 
@@ -465,10 +462,10 @@ section {
 .footer__social li,
 .footer__menu li,
 .footer__social_big li {
-  list-style-type: none;
   display: flex;
   align-items: center;
   color: #282828;
+  list-style-type: none;
 }
 
 .footer__social li:not(:last-of-type),
@@ -480,28 +477,28 @@ section {
 .footer__social li > img,
 .footer__menu li > img,
 .footer__social_big li > img {
-  margin-right: 5px;
   width: 20px;
   height: 20px;
+  margin-right: 5px;
 }
 
 .footer__menu .menu li a,
 .footer__social_big li a,
 .tels li a {
+  font-weight: 500;
+  font-size: 14px;
   color: #282828;
   text-decoration: none;
   cursor: pointer;
   transition: color 0.3s linear;
-  font-weight: 500;
-  font-size: 14px;
 }
 
 .menu li:hover a,
 .footer__social_big li:hover a,
 .tels li:hover a {
   color: #ffc700;
-  transition: color 0.3s linear;
   text-decoration: none;
+  transition: color 0.3s linear;
 }
 
 .footer__social li > a,
@@ -547,16 +544,16 @@ section {
 
   .footer__logo img {
     width: 65px;
-    height: 93px;
     max-width: 100%;
+    height: 93px;
     object-fit: contain;
   }
 
   .footer__menu {
     grid-column: 3;
-    padding-left: 40px;
-    gap: 40px;
     grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding-left: 40px;
   }
 
   .footer__social_big {
@@ -564,10 +561,10 @@ section {
   }
 
   .footer__social_big-icons {
-    gap: 8px;
-    margin-top: 16px;
     display: flex;
     align-items: center;
+    gap: 8px;
+    margin-top: 16px;
   }
 
   .footer__social {
@@ -592,16 +589,16 @@ section {
 
   .footer__logo img {
     width: 80px;
-    height: 114px;
     max-width: 100%;
+    height: 114px;
     object-fit: contain;
   }
 
   .footer__menu {
-    display: grid;
     grid-column: 3;
-    padding-left: 40px;
+    display: grid;
     gap: 0px;
     grid-template-columns: minmax(auto, 205px) repeat(2, 1fr);
+    padding-left: 40px;
   }
 }

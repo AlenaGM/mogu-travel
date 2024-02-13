@@ -142,10 +142,11 @@ const excursionsData = [
 ];
 
 const filters = document.querySelector("#filters");
-
 filters.addEventListener("change", filterExcursions);
 
+// EXCURSIONS' FILTER CORE FUNCTION
 function filterExcursions() {
+  //* 1- Collecting input values and assigning them to the variables
   const type = [...filters.querySelectorAll("#type input:checked")].map(
     (n) => n.value
   );
@@ -157,6 +158,7 @@ function filterExcursions() {
     (n) => n.value
   );
 
+  //* 2- Excursions filtering
   const filteredExcursions = excursionsData.filter(
     (n) =>
       (!type.length || type.includes(n.category)) &&
@@ -167,8 +169,7 @@ function filterExcursions() {
       (!costMax || costMax >= n.priceadult)
   );
 
-  console.log(filteredExcursions);
-
+  //* 3- Displaying the number of excursions found
   document.getElementById("result").textContent = declOfNum(
     filteredExcursions.length,
     [
@@ -181,25 +182,7 @@ function filterExcursions() {
   outputExcursions(filteredExcursions);
 }
 
-//reset filters
-document.querySelector(".sidebar__reset").addEventListener("click", () => {
-  filters.querySelector("#nbpers").value = 1;
-  filters.querySelector("#dest").value = "";
-  filters.querySelector("#pricemin").value = lowestPrice;
-  filters.querySelector("#pricemax").value = highestPrice;
-
-  let inputs = document.querySelectorAll("input");
-
-  for (const input of inputs) {
-    if (input.type == "checkbox" || input.type == "radio")
-      input.checked = false;
-  }
-
-  filterExcursions();
-
-  document.getElementById("result").textContent = "";
-});
-
+// RENDER EXCURSIONS
 function outputExcursions(excursions) {
   document.getElementById("excursions__container").innerHTML = excursions
     .map(
@@ -256,7 +239,8 @@ function outputExcursions(excursions) {
 
 outputExcursions(excursionsData);
 
-//nb pers input
+//SINGLE FILTERS FUNCTIONS:
+//* 1- Number of participants*
 let personsInp = document.querySelector("#nbpers");
 const maxCapacity = Math.max(...excursionsData.map((exc) => exc.capacity));
 
@@ -264,7 +248,6 @@ const maxCapacity = Math.max(...excursionsData.map((exc) => exc.capacity));
 function changeQuantity(type) {
   if (type === "minus") {
     personsInp.value == 1 ? (personsInp.value = 1) : personsInp.value--;
-    document.querySelector("#nbpers").value = personsInp.value;
   }
   if (type === "plus") {
     personsInp.value == maxCapacity
@@ -280,44 +263,34 @@ function changeQuantity(type) {
 
   filterExcursions();
 }
-
-function declOfNum(n, text_arr) {
-  n = Math.abs(n) % 100;
-  var n1 = n % 10;
-  if (n > 10 && n < 20) {
-    return text_arr[2];
-  }
-  if (n1 > 1 && n1 < 5) {
-    return text_arr[1];
-  }
-  if (n1 === 1) {
-    return text_arr[0];
-  }
-  return text_arr[2];
-}
-
-// eslint-disable-next-line no-unused-vars
-function checkquantity() {
+//** Prohibiting decimal, negative, and numbers exceeding the max capacity in the participants nb field.*/
+personsInp.addEventListener("change", function checkQuantity() {
   personsInp.value = Math.trunc(personsInp.value);
   if (personsInp.value < 1) personsInp.value = 1;
   if (personsInp.value > maxCapacity) personsInp.value = maxCapacity;
-}
-// PRICE RANGE SLIDER
+});
+
+//* 2- Price range slider *
 const highestPrice = Math.max(...excursionsData.map((exc) => exc.priceadult));
 const lowestPrice = Math.min(...excursionsData.map((exc) => exc.priceadult));
 
 document.querySelector("#rangemin").value = lowestPrice;
 document.querySelector("#rangemax").value = highestPrice;
 
-const rangeInputMin = document.querySelector("#rangemin"); //minval
-const rangeInputMax = document.querySelector("#rangemax"); //maxval
-const priceInputMin = document.querySelector("#pricemin"); //priceInputMin
-const priceInputMax = document.querySelector("#pricemax"); //priceInputMax
+const rangeInputMin = document.querySelector("#rangemin");
+const rangeInputMax = document.querySelector("#rangemax");
+const priceInputMin = document.querySelector("#pricemin");
+const priceInputMax = document.querySelector("#pricemax");
 const minGap = 0;
 const range = document.querySelector(".filter-slider-track");
 
 const sliderMinValue = parseInt(rangeInputMin.min);
 const sliderMaxValue = parseInt(rangeInputMax.max);
+
+rangeInputMin.addEventListener("input", slideMin);
+rangeInputMax.addEventListener("input", slideMax);
+priceInputMin.addEventListener("change", setMinPrice);
+priceInputMax.addEventListener("change", setMaxPrice);
 
 function slideMin() {
   let gap = parseInt(rangeInputMax.value) - parseInt(rangeInputMin.value);
@@ -339,11 +312,9 @@ function slideMax() {
 
 function setArea() {
   range.style.left = (rangeInputMin.value / sliderMaxValue) * 100 + "%";
-  console.log((rangeInputMin.value / sliderMaxValue) * 100);
   range.style.right = 100 - (rangeInputMax.value / sliderMaxValue) * 100 + "%";
 }
 
-// eslint-disable-next-line no-unused-vars
 function setMinPrice() {
   let minPrice = parseInt(priceInputMin.value);
   if (minPrice < sliderMinValue) {
@@ -353,7 +324,6 @@ function setMinPrice() {
   slideMin();
 }
 
-// eslint-disable-next-line no-unused-vars
 function setMaxPrice() {
   let maxPrice = parseInt(priceInputMax.value);
   if (maxPrice > sliderMaxValue) {
@@ -366,7 +336,26 @@ function setMaxPrice() {
 slideMin();
 slideMax();
 
-//СПОЙЛЕР
+// RESET FILTERS FUNCTION
+document.querySelector(".sidebar__reset").addEventListener("click", () => {
+  filters.querySelector("#nbpers").value = 1;
+  filters.querySelector("#dest").value = "";
+  filters.querySelector("#pricemin").value = lowestPrice;
+  filters.querySelector("#pricemax").value = highestPrice;
+
+  let inputs = document.querySelectorAll("input");
+
+  for (const input of inputs) {
+    if (input.type == "checkbox" || input.type == "radio")
+      input.checked = false;
+  }
+
+  filterExcursions();
+
+  document.getElementById("result").textContent = "";
+});
+
+//SPOILER
 const spoilers = document.querySelectorAll(".filter__item_subtitle");
 
 spoilers.forEach((spoiler) => {
@@ -376,8 +365,23 @@ spoilers.forEach((spoiler) => {
   });
 });
 
-//МЕНЮ-БУРГЕР
+//PLURAL FORM OF NOUNS
+function declOfNum(n, text_arr) {
+  n = Math.abs(n) % 100;
+  var n1 = n % 10;
+  if (n > 10 && n < 20) {
+    return text_arr[2];
+  }
+  if (n1 > 1 && n1 < 5) {
+    return text_arr[1];
+  }
+  if (n1 === 1) {
+    return text_arr[0];
+  }
+  return text_arr[2];
+}
 
+//BURGER-MENU
 const burgerMenu = document.querySelector(".menu__burger");
 const bodyMenu = document.querySelector(".menu__body");
 const menuLinks = document.querySelectorAll(".menu__link");

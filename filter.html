@@ -84,14 +84,12 @@
                     id="pricemin"
                     step="500"
                     class="filter-input filter-price"
-                    onchange="setMinPrice()"
                   />
                   <input
                     type="number"
                     id="pricemax"
                     step="500"
                     class="filter-input filter-price"
-                    onchange="setMaxPrice()"
                   />
                 </div>
                 <div class="filter__price_range">
@@ -102,7 +100,6 @@
                     class="filter-range"
                     min="0"
                     max="10000"
-                    oninput="slideMin()"
                   />
                   <input
                     type="range"
@@ -110,7 +107,6 @@
                     class="filter-range"
                     min="0"
                     max="10000"
-                    oninput="slideMax()"
                   />
                 </div>
               </div>
@@ -128,7 +124,6 @@
                   type="number"
                   min="1"
                   class="filter-input"
-                  onchange="checkquantity()"
                 />
                 <span onclick="changeQuantity('plus')">+</span>
                 <div id="persons">человек</div>

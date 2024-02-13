@@ -101,7 +101,7 @@
       <main class="main">
         <section class="excursions">
           <h2 class="excursions__title">Популярние экскурсии</h2>
-          <div class="excursions__container">
+          <div class="excursions__container slider-container">
             <div class="excursion__card">
               <div class="excursion__image">
                 <span class="excursion__discount-tag">
@@ -567,7 +567,7 @@
         </section>
         <section class="reviews">
           <h2 class="reviews__title">Отзывы</h2>
-          <div class="reviews__container">
+          <div class="reviews__container slider-container">
             <div class="reviews__card">
               <div class="reviews__image">
                 <picture>
@@ -607,11 +607,10 @@
               <div class="reviews__info">
                 <h3 class="reviews__info_name">Marel, Эстония</h3>
                 <div class="reviews__info_text">
-                  Потрясающий колоритный город! Я влюбилась в Марсель! Это
-                  обилие белого цвета, мавританский стиль в Европе, соборы,
-                  Набережная, Нотр Дам де ла Гард, виды на город, эта атмосфера
-                  Средиземноморья! Рыба, кстати, в том самом Нотр Дам де ла Гард
-                  очень вкусная!
+                  Исполнение мечты - путешествие во Францию. Лазурный берег
+                  покорил мое ♥. Как же долго я хотела побывать во Франции! Эта
+                  мечта не давала мне покоя целых 20 лет, и вот, в 2019 я смогла
+                  ее осуществить - с супругом мы провели июльский отдых в Ницце.
                 </div>
               </div>
             </div>
@@ -673,49 +672,66 @@
         </section>
         <section class="contacts">
           <div class="contacts__form_wrapper">
-            <form class="contacts__form form" id="form" action="#">
+            <form
+              class="contacts__form form"
+              method="post"
+              action="https://itgirlschool.com/form-handler"
+              enctype="multipart/form-data"
+              id="contactForm"
+              name="contactForm"
+              novalidate
+            >
               <h2 class="form__title">
                 Остались вопросы?
                 <span class="form__subtitle">Оставь заявку и мы ответим</span>
               </h2>
               <div class="form__inputs">
                 <input
-                  id="userName"
-                  class="field"
                   type="text"
+                  id="userName"
+                  name="userName"
+                  class="field"
+                  value=""
                   placeholder="Имя"
-                  pattern="[A-Za-zА-Яа-я\s]{2,40}$"
+                  minlength="1"
+                  maxlength="40"
+                  pattern="^[\-a-zA-Zа-яА-Я'\s]+$"
+                  autocomplete="given-name"
                   required
                 />
-                <span class="form__inputs_error userNameError"
-                  >Имя может содержать только буквы</span
-                >
+                <span class="form__inputs_error userName__Required"></span>
                 <input
-                  id="phone"
-                  class="field"
                   type="tel"
-                  placeholder="Телефон"
-                  pattern="[\+]?[\d]{10,16}$"
-                  required
-                />
-                <span class="form__inputs_error phoneError"
-                  >Вы не указали или указали неверно номер телефона</span
-                >
-                <input
-                  id="email"
+                  id="userPhone"
+                  name="userPhone"
                   class="field"
-                  type="email"
-                  placeholder="Почта"
-                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                  value=""
+                  placeholder="Телефон"
+                  minlength="3"
+                  maxlength="30"
+                  pattern="^[0-9\+]{1,}[0-9\-.\(\)\s]{3,29}$"
+                  autocomplete="tel"
                   required
                 />
-                <span class="form__inputs_error emailError"
-                  >Вы не указали почту или введеные данные имеют неверный
-                  формат</span
-                >
+                <span class="form__inputs_error userPhone__Required"></span>
+                <input
+                  type="email"
+                  id="userEmail"
+                  name="userEmail"
+                  class="field"
+                  value=""
+                  placeholder="Эл. почта"
+                  minlength="7"
+                  maxlength="254"
+                  pattern="^((([0-9A-Za-z]{1}[\-0-9A-z.]{0,30}[0-9A-Za-z]?)|([0-9А-Яа-я]{1}[\-0-9А-я.]{0,30}[0-9А-Яа-я]?))@([\-A-Za-z]{1,}\.){1,}[\-A-Za-z]{2,14})$"
+                  autocomplete="email"
+                  required
+                />
+                <span class="form__inputs_error userEmail__Required"></span>
               </div>
+              <div class="form__inputs_success" id="successMessage"></div>
               <button
-                id="btn"
+                id="formBtn"
                 class="form__button button button_big"
                 type="submit"
               >

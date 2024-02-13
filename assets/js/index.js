@@ -1,120 +1,156 @@
-// --- JS код ддя раздела "Остались вопросы?" --- //
-const form = document.getElementById('form');
-const userName = document.getElementById('userName');
-const phone = document.getElementById('phone');
-const email = document.getElementById('email');
-const submit = document.getElementById('btn');
+// CONTACT FORM VALIDATION AND SENDING
+const form = document.forms.contactForm;
 
+let inputs = document.querySelectorAll(".field");
+let errors;
 
-function check() { 
-    // очистка сообщений об ошибках
-    let errorMessages = document.querySelectorAll('.error');
-    for (let error of errorMessages) {
-        error.style.display = 'none';
-    }
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
 
-    // проверка валидности введеной информации в input
-    let isValid = true; // валидна ли форма
-
-    if(!userName.checkValidity()) {
-        isValid = false;
-        document.getElementsByClassName('userNameError')[0].style.display = 'block';
-    }
-
-    if(!phone.checkValidity()) {
-        isValid = false;
-        document.getElementsByClassName('phoneError')[0].style.display = 'block';
-    }
-
-    if(!email.checkValidity()) {
-        isValid = false;
-        document.getElementsByClassName('emailError')[0].style.display = 'block';
-    }
-
-    return isValid;
-}
-
-
-userName.addEventListener('blur', check);
-phone.addEventListener('blur', check);
-email.addEventListener('blur', check);
-
-
-submit.addEventListener('click', function (event) {
-    event.preventDefault();
-    event.stopPropagation();
-
-    let isValid = check();
-    if (isValid) {
-        alert(`Спасибо! Мы свяжемся с Вами в ближайшее время`);
-        form.reset();
-    }
+  checkAllInputs();
+  sendForm();
 });
 
+function checkAllInputs() {
+  errors = [];
 
-// ВЕРХНИЙ СЛАЙДЕР
+  for (let input of inputs) {
+    checkInputValidity(input);
+  }
+}
 
-const productContainers = [...document.querySelectorAll('.product-container')];
-        const nxtBtn = [...document.querySelectorAll('.nxt-btn')];
-        const preBtn = [...document.querySelectorAll('.pre-btn')];
+function checkInputValidity(input) {
+  let validity = input.validity;
 
-        productContainers.forEach((item, i) => {
-            let containerDimensions = item.getBoundingClientRect();
-            let containerWidth = containerDimensions.width;
+  if (validity.valueMissing) {
+    errors++;
 
-            nxtBtn[i].addEventListener('click', () => {
-                item.scrollLeft += containerWidth;
-            })
+    document.querySelector(
+      `.${input.id}__Required`
+    ).textContent = `Поле "${input.placeholder}" обязательно к заполнению`;
+  }
 
-            preBtn[i].addEventListener('click', () => {
-                item.scrollLeft -= containerWidth;
-            })
-        });
+  if (validity.patternMismatch) {
+    errors++;
 
-// НИЖНИЙ СЛАЙДЕР (по мотивам верхнего)
+    document.querySelector(
+      `.${input.id}__Required`
+    ).textContent = `Поле "${input.placeholder}" указано неверно`;
+  }
+}
 
-const cardContainers = [...document.querySelectorAll('.reviews-cards_wrapper')];
-        const nextBtn = [...document.querySelectorAll('.arrow__right')];
-        const prevBtn = [...document.querySelectorAll('.arrow__left')];
+function sendForm() {
+  const userContact = {
+    name: form.elements.userName.value,
+    email: form.elements.userEmail.value,
+    phone: form.elements.userPhone.value,
+  };
 
-        cardContainers.forEach((item, i) => {
-            let containerDimensions = item.getBoundingClientRect();
-            let containerWidth = containerDimensions.width;
+  const request = new Request("https://httpbin.org/post", {
+    method: "POST",
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+    body: JSON.stringify(userContact),
+  });
 
-            nextBtn[i].addEventListener('click', () => {
-                item.scrollLeft += containerWidth;
-            })
+  if (errors == 0) {
+    console.log("Оставлена новая заявка:", userContact);
 
-            prevBtn[i].addEventListener('click', () => {
-                item.scrollLeft -= containerWidth;
-            })
-        });
+    fetch(request)
+      .then((response) => {
+        if (response.status === 200) {
+          document.getElementById(
+            "successMessage"
+          ).textContent = `Спасибо! Мы свяжемся с Вами в ближайшее время`;
+          clearForm();
+          setTimeout(() => {
+            document.getElementById("successMessage").innerHTML = "";
+          }, "10000");
+        }
+      })
+      .catch((error) => {
+        console.log(error.message);
+        document.getElementById("successMessage").textContent =
+          "An error has occurred. Please try again later!";
+      });
+  }
+}
 
+function clearForm() {
+  inputs.forEach((input) => (input.value = ""));
 
-//МЕНЮ-БУРГЕР
+  document
+    .querySelectorAll(".form__inputs_error")
+    .forEach((element) => (element.textContent = ""));
+}
 
-const burgerMenu = document.querySelector('.menu__burger');
-const bodyMenu = document.querySelector('.menu__body');
-const menuLinks = document.querySelectorAll('.menu__link')
+// SINGLE-INPUT ERROR MESSAGES
+let namesRegex = /^[-a-zA-Zа-яА-Я'\s]+$/;
+let emailRegex =
+  /^((([0-9A-Za-z]{1}[-0-9A-z.]{0,30}[0-9A-Za-z]?)|([0-9А-Яа-я]{1}[-0-9А-я.]{0,30}[0-9А-Яа-я]?))@([-A-Za-z]{1,}\.){1,}[-A-Za-z]{2,14})$/;
+let phoneRegex = /^[0-9+]{1,}[0-9\-.()\s]{3,29}$/;
+
+for (const input of inputs) {
+  input.addEventListener("input", function () {
+    if (input.value != "") {
+      document.querySelector(`.${input.id}__Required`).textContent =
+        (input.id == "userName" && namesRegex.test(input.value)) ||
+        (input.type == "email" && emailRegex.test(input.value)) ||
+        (input.type == "tel" && phoneRegex.test(input.value))
+          ? (document.querySelector(`.${input.id}__Required`).textContent = ``)
+          : (document.querySelector(
+              `.${input.id}__Required`
+            ).textContent = `Поле "${input.placeholder}" указано неверно`);
+    } else {
+      document.querySelector(
+        `.${input.id}__Required`
+      ).textContent = `Поле "${input.placeholder}" не заполнено`;
+    }
+  });
+}
+
+// EXCURSIONS AND REVIEWS SLIDERS
+const sliderContainers = [...document.querySelectorAll(".slider-container")];
+const nxtBtn = [...document.querySelectorAll(".nxt-btn")];
+const preBtn = [...document.querySelectorAll(".pre-btn")];
+
+sliderContainers.forEach((item, i) => {
+  let containerDimensions = item.getBoundingClientRect();
+  let containerWidth = containerDimensions.width;
+
+  nxtBtn[i].addEventListener("click", () => {
+    item.scrollLeft += containerWidth;
+  });
+
+  preBtn[i].addEventListener("click", () => {
+    item.scrollLeft -= containerWidth;
+  });
+});
+
+//BURGER-MENU
+const burgerMenu = document.querySelector(".menu__burger");
+const bodyMenu = document.querySelector(".menu__body");
+const menuLinks = document.querySelectorAll(".menu__link");
 
 if (burgerMenu) {
-    burgerMenu.addEventListener('click', function (e) {
-        document.body.classList.toggle('_lock');
-        burgerMenu.classList.toggle('_active');
-        bodyMenu.classList.toggle('_active');
-    });
+  burgerMenu.addEventListener("click", function () {
+    document.body.classList.toggle("_lock");
+    burgerMenu.classList.toggle("_active");
+    bodyMenu.classList.toggle("_active");
+  });
 }
 
 if (menuLinks.length > 0) {
-    menuLinks.forEach(menuLink => {
-        menuLink.addEventListener('click', onMenuLinkClick)
-    });
+  menuLinks.forEach((menuLink) => {
+    menuLink.addEventListener("click", onMenuLinkClick);
+  });
+}
 
-    function onMenuLinkClick() {
-        if (burgerMenu.classList.contains('_active')) {
-            document.body.classList.remove('_lock');
-            burgerMenu.classList.remove('_active');
-            bodyMenu.classList.remove('_active');
-        }
-    }
+function onMenuLinkClick() {
+  if (burgerMenu.classList.contains("_active")) {
+    document.body.classList.remove("_lock");
+    burgerMenu.classList.remove("_active");
+    bodyMenu.classList.remove("_active");
+  }
 }

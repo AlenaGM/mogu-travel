@@ -105,7 +105,6 @@
 
 .sidebar__reset span {
   color: #d4d4d4;
-
   font-weight: 500;
   font-size: 36px;
   transition: color 0.3s;
@@ -126,8 +125,8 @@
 .filter__item {
   display: flex;
   flex-direction: column;
-  font-family: "Montserrat", sans-serif;
   color: #282828;
+  font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 12px;
   padding: 20px 0px;
@@ -164,8 +163,8 @@
 }
 
 .filter__item_content {
-  margin: 20px 0px 0px;
   display: none;
+  margin: 20px 0px 0px;
 }
 
 .filter__item._visible .filter__item_content {
@@ -222,25 +221,25 @@
 input[type="range"]::-webkit-slider-thumb {
   height: 25px;
   width: 25px;
+  background: #ffffff;
   border-radius: 50%;
   border: 3px solid #ffffff;
-  background: #ffffff;
+  box-shadow: 0 2px 9px -2px rgba(0, 0, 0, 0.25);
   pointer-events: auto;
   appearance: none;
   cursor: pointer;
-  box-shadow: 0 2px 9px -2px rgba(0, 0, 0, 0.25);
 }
 
 input[type="range"]::-moz-range-thumb {
   height: 25px;
   width: 25px;
+  background: #ffffff;
   border-radius: 50%;
   border: 3px solid #ffffff;
-  background: #ffffff;
+  box-shadow: 0 2px 9px -2px rgba(0, 0, 0, 0.25);
   pointer-events: auto;
   -moz-appearance: none;
   cursor: pointer;
-  box-shadow: 0 2px 9px -2px rgba(0, 0, 0, 0.25);
 }
 
 .filter-slider-track {
@@ -271,9 +270,9 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .filter__quantity span {
   color: #0499dd;
-  cursor: pointer;
   font-weight: 700;
   font-size: 18px;
+  cursor: pointer;
 }
 
 .filter__transport,
@@ -308,13 +307,13 @@ input[type="number"]::-webkit-inner-spin-button {
 
 /** ---- Excursions Section ---- **/
 .excursions {
-  background-color: #fbfbfb;
   grid-area: excursions;
+  background-color: #fbfbfb;
 }
 
 .excursions__title {
-  font-family: "Montserrat", sans-serif;
   color: #0499dd;
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 24px;
   text-align: left;
@@ -332,8 +331,8 @@ input[type="number"]::-webkit-inner-spin-button {
   position: relative;
   width: 100%;
   background-color: #ffffff;
-  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.05);
   border-radius: 10px;
+  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.05);
   overflow-x: hidden;
 }
 
@@ -391,12 +390,12 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .excursion__info_price div {
+  display: flex;
+  align-items: center;
+  color: #0499dd;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 18px;
-  color: #0499dd;
-  display: flex;
-  align-items: center;
 }
 
 .excursion__info_price div img {
@@ -427,8 +426,8 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .excursion__buttons {
-  margin-bottom: 16px;
   display: block;
+  margin-bottom: 16px;
 }
 
 @media screen and (min-width: 768px) {
@@ -438,9 +437,9 @@ input[type="number"]::-webkit-inner-spin-button {
   }
 
   .excursion__img img {
-    border-radius: 10px 0 0 10px;
     width: 100%;
     height: 100%;
+    border-radius: 10px 0 0 10px;
   }
 
   .excursion__card {
@@ -454,9 +453,9 @@ input[type="number"]::-webkit-inner-spin-button {
   }
 
   .excursion__buttons {
-    margin-bottom: 0;
     display: flex;
     align-items: flex-end;
+    margin-bottom: 0;
   }
 }
 

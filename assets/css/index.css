@@ -9,10 +9,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  max-width: 340px;
   font-family: "Montserrat", sans-serif;
   color: white;
   text-align: left;
-  max-width: 340px;
 }
 
 .header__title_up {
@@ -35,9 +35,9 @@
   font-size: 72px;
   font-weight: 900;
   line-height: 65px;
-  padding-top: 15px;
   color: transparent;
   -webkit-text-stroke: 2px #ffffff;
+  padding-top: 15px;
 }
 
 .header__title_media {
@@ -112,8 +112,8 @@
   }
 
   .header__title_button {
-    margin-top: 60px;
     width: 230px;
+    margin-top: 60px;
   }
 }
 
@@ -162,10 +162,10 @@
 .excursion__card {
   display: grid;
   grid-template: 300px 1fr / 1fr;
+  background: #ffffff;
   min-width: 300px;
   border-radius: 10px;
   border: 1px solid #ededed;
-  background: #ffffff;
 }
 
 .excursion__image {
@@ -177,12 +177,12 @@
 
 .excursion__discount-tag {
   position: absolute;
+  right: 16px;
+  top: 16px;
+  color: #e02139;
   background: #fff;
   padding: 2px 6px;
   border-radius: 10px;
-  color: #e02139;
-  right: 16px;
-  top: 16px;
   text-align: center;
   z-index: 2;
 }
@@ -245,11 +245,11 @@
 .about__image {
   grid-column: 1/3;
   position: relative;
+  right: 100px;
   width: 100%;
   height: auto;
-  z-index: 1;
   min-height: 704px;
-  right: 100px;
+  z-index: 1;
 }
 
 .about__image-pic,
@@ -267,12 +267,11 @@
   grid-column: 2/3;
   position: absolute;
   right: 0;
-  padding: 42px 30px;
-  background: #ededed;
-  border-radius: 10px;
-  right: 0;
   width: 100%;
   max-width: 380px;
+  background: #ededed;
+  padding: 42px 30px;
+  border-radius: 10px;
   z-index: 2;
 }
 
@@ -294,8 +293,8 @@
   }
 
   .about__block {
-    padding: 60px 40px;
     max-width: 494px;
+    padding: 60px 40px;
   }
 }
 
@@ -305,8 +304,8 @@
   }
 
   .about__block {
-    padding: 60px 80px;
     max-width: 542px;
+    padding: 60px 80px;
   }
 }
 
@@ -333,11 +332,10 @@
 
 .gallery__container img,
 .gallery__container picture {
-  object-fit: cover;
-  border-radius: 5px;
   width: 100%;
   height: 100%;
-  max-width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
 .gallery__img1 {
@@ -511,12 +509,12 @@
 .reviews__card {
   display: grid;
   grid-template: auto 1fr / 1fr;
-  border-radius: 10px;
-  border: 1px solid #ededed;
-  background: #ededed;
   min-width: 280px;
+  background: #ededed;
   padding: 24px;
   gap: 24px;
+  border: 1px solid #ededed;
+  border-radius: 10px;
 }
 
 .reviews__image {
@@ -533,11 +531,12 @@
 }
 
 .reviews__info {
-  overflow-x: hidden;
+  overflow-wrap: break-word;
 }
 
 .reviews__info_name {
   margin-bottom: 20px;
+  word-break: break-all;
 }
 
 .reviews__info_text {
@@ -546,8 +545,8 @@
 
 @media screen and (min-width: 768px) {
   .reviews__container {
-    display: grid;
     grid-column: 2/4;
+    display: grid;
     grid-template-columns: repeat(4, minmax(auto, 505px));
     grid-auto-rows: 1fr;
     gap: 24px;
@@ -572,8 +571,8 @@
 
 @media screen and (min-width: 1024px) {
   .reviews__container {
-    display: grid;
     grid-column: 2/4;
+    display: grid;
     grid-template-columns: repeat(4, minmax(auto, 740px));
     grid-auto-rows: 1fr;
     gap: 32px;
@@ -595,28 +594,28 @@
 /*** Contacts ---- ***/
 .contacts {
   grid-area: contacts;
-  background-position: center;
-  background-image: url(../img/contacts_bg.webp);
-  min-height: 640px;
-  background-size: cover;
   position: relative;
   display: grid;
   grid-template: 1fr / minmax(1.5rem, 1fr) minmax(auto, 1120px) minmax(
       1.5rem,
       1fr
     );
+  min-height: 640px;
+  background-image: url(../img/contacts_bg.webp);
+  background-position: center;
+  background-size: cover;
 }
 
 .contacts__form_wrapper {
   grid-column: 2/3;
   display: grid;
-  background-color: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(7px);
   width: 100%;
   height: 100%;
-  margin-left: auto;
-  padding: 40px;
   align-content: center;
+  padding: 40px;
+  margin-left: auto;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(7px);
 }
 
 @media screen and (min-width: 768px) {
@@ -635,14 +634,19 @@
 }
 
 .form {
+  display: grid;
   width: 100%;
   height: 100%;
-  display: grid;
-  overflow-x: hidden;
 }
 
 .form__title {
   color: #ffffff;
+}
+
+@media screen and (max-width: 450px) {
+  .form__title {
+    font-size: 20px;
+  }
 }
 
 .form__subtitle {
@@ -653,48 +657,61 @@
 }
 
 .form__inputs {
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  height: 100%;
   gap: 20px;
 }
 
 .form__inputs_error {
-  display: none;
   font-weight: 400;
   font-size: 12px;
   color: #ffc700;
 }
 
+.form__inputs_success {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffc700;
+  margin: 20px 0px 0px;
+}
+
+@media screen and (min-width: 768px) {
+  .form__inputs_success {
+    margin: 40px 0px 0px;
+  }
+}
+
 .form__inputs > input[type="text"],
 .form__inputs > input[type="tel"],
 .form__inputs > input[type="email"] {
-  background-color: inherit;
   width: 100%;
   height: auto;
+  min-height: 40px;
+  color: #ffffff;
+  background-color: inherit;
+  padding: 5px 5px 0px 0px;
   border: 1px solid #ffffff;
   border-style: none none solid none;
-  color: #ffffff;
   outline: none;
   -webkit-appearance: none;
   appearance: none;
-  min-height: 40px;
-  padding: 5px 5px 0px 0px;
 }
 
 .form__inputs > input[type="text"]::placeholder,
 .form__inputs > input[type="tel"]::placeholder,
 .form__inputs > input[type="email"]::placeholder {
-  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
   font-size: 12px;
   font-weight: 500;
-  font-family: "Montserrat", sans-serif;
+  color: #ffffff;
 }
 
 .form__button {
-  margin: 80px 2px 2px;
   justify-self: left;
+  margin: 80px 2px 2px;
 }
 
 .form__button:hover {
@@ -703,7 +720,7 @@
 
 @media screen and (max-width: 767px) {
   .form__button {
-    margin: 40px 0px 0px;
     justify-self: center;
+    margin: 40px 0px 0px;
   }
 }
