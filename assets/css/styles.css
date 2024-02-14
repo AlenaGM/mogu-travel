@@ -23,6 +23,7 @@ body {
   width: 100vw;
   min-width: 350px;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 html {
@@ -43,7 +44,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overscroll-behavior: none;
-  overflow-x: hidden;
 }
 
 body._lock {
@@ -59,6 +59,7 @@ body._lock {
     "main"
     "footer";
   box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.05);
+  min-height: 100vh;
 }
 
 img {
@@ -392,7 +393,7 @@ h3 {
 /** ---- MAIN SECTION STYLES ---- **/
 
 section {
-  margin: 150px 0 0;
+  margin: 120px 0 0;
 }
 
 /** ---- FOOTER SECTION STYLES ---- **/
