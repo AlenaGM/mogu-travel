@@ -115,16 +115,22 @@ const sliderContainers = [...document.querySelectorAll(".slider-container")];
 const nxtBtn = [...document.querySelectorAll(".nxt-btn")];
 const preBtn = [...document.querySelectorAll(".pre-btn")];
 
-sliderContainers.forEach((item, i) => {
-  let containerDimensions = item.getBoundingClientRect();
-  let containerWidth = containerDimensions.width;
+sliderContainers.forEach((container, i) => {
+  let containerWidth = container.getBoundingClientRect().width;
+
+  let cardDimensions = container
+    .querySelector(".card")
+    .getBoundingClientRect().width;
+
+  let visibleCards = Math.floor(containerWidth / cardDimensions);
+  let oneMove = visibleCards * (cardDimensions + 24);
 
   nxtBtn[i].addEventListener("click", () => {
-    item.scrollLeft += containerWidth;
+    container.scrollLeft += oneMove;
   });
 
   preBtn[i].addEventListener("click", () => {
-    item.scrollLeft -= containerWidth;
+    container.scrollLeft -= oneMove;
   });
 });
 

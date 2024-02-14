@@ -148,7 +148,7 @@
   display: grid;
   grid-template-columns: repeat(10, minmax(auto, 360px));
   grid-auto-rows: 1fr;
-  gap: 20px;
+  gap: 24px;
   padding-right: 1.5rem;
   overflow-x: auto;
   cursor: grab;
@@ -228,6 +228,13 @@
 .excursion__info_description {
   width: 100%;
   font-size: 14px;
+}
+
+@media screen and (min-width: 1024px) {
+  .excursions__container {
+    padding-right: calc(1.5rem + 350px);
+    cursor: auto;
+  }
 }
 
 /*** About Us ---- ***/
@@ -495,7 +502,7 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(auto, 360px));
   grid-auto-rows: 1fr;
-  gap: 20px;
+  gap: 24px;
   padding-right: 1.5rem;
   overflow-x: auto;
   cursor: grab;
@@ -549,7 +556,6 @@
     display: grid;
     grid-template-columns: repeat(4, minmax(auto, 505px));
     grid-auto-rows: 1fr;
-    gap: 24px;
   }
 
   .reviews__card {
@@ -575,7 +581,8 @@
     display: grid;
     grid-template-columns: repeat(4, minmax(auto, 740px));
     grid-auto-rows: 1fr;
-    gap: 32px;
+    padding-right: calc(1.5rem + 740px);
+    cursor: auto;
   }
 
   .reviews__card {
