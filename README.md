@@ -1,24 +1,45 @@
-# Mogu-Travel Agency web-site
+# Mogu-Travel Agency Website
 
-Application for finding excursions in France. 
+_A web application for a travel agency, specializing in organizing excursions in France._
 
-_3rd Group Project at [ITGirlSchool]_<br><br>
+The website includes the following features:
 
-<img width="75%" alt="Capture webpage 2024-02-25" src="../main/screenshots/caputureweb-index.jpeg">
-<img width="75%" alt="Capture webpage 2024-02-25" src="../main/screenshots/caputureweb-filter.jpeg">
+- **[Homepage]** showcases the agency's presentation, popular excursions section, a picture gallery, customer reviews slider,  and a contact form.
 
-## Getting started
-Host the parent directory on the webserver
-  
-## Technologies:
-<code><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png"></code>
+- **[Excursions Page]** provides a list of all available excursions. Users can search for a specific excursion using different filters.<br><br>
+
+<img width="75%" alt="Capture webpage 2024-02-25: HomePage" src="../main/screenshots/captureweb-index.jpeg">
+<img width="75%" alt="Capture webpage 2024-02-25: Excursions Page" src="../main/screenshots/captureweb-filter.jpeg">
+
+
+## Project Information
+
+This project was developed as a part of the 3rd team project at [ITGirlSchool]_
+
+
+## Technologies
+
 <code><img height="25" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png"></code>
 <code><img height="25" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png"></code>
+<code><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png"></code>
 
-## Result:
+## Demo
+
 [Mogu Travel]
 
-## Our Team
+## Installation Instructions
+
+```bash
+# Clone the repository or download the source code.
+$ git clone https://github.com/AlenaGM/mogu-travel.git
+
+# Go into the repository
+$ cd mogu-travel
+
+# Run the application locally
+```
+  
+## Thanks to all Contributors!
 [![Contributors](https://contrib.rocks/image?repo=AlenaGM/Mogu-Travel)](https://github.com/AlenaGM/Mogu-Travel/graphs/contributors)
 
 
@@ -30,3 +51,6 @@ Host the parent directory on the webserver
 
    [ITGirlSchool]: <https://itgirlschool.com/en>
    [Mogu Travel]: <https://alenagm.github.io/mogu-travel/>
+   [Homepage]: <https://alenagm.github.io/mogu-travel/index.html/>
+   [Excursions Page]: <https://alenagm.github.io/mogu-travel/filter.html/>
+   
