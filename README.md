@@ -14,7 +14,7 @@ The website includes the following features:
 
 ## Project Information
 
-This project was developed as a part of the 3rd team project at [ITGirlSchool]_
+This website was developed as a part of the 3rd team project at [ITGirlSchool]
 
 
 ## Technologies
@@ -28,20 +28,19 @@ This project was developed as a part of the 3rd team project at [ITGirlSchool]_
 [Mogu Travel]
 
 ## Installation Instructions
-
 ```bash
 # Clone the repository or download the source code.
 $ git clone https://github.com/AlenaGM/mogu-travel.git
 
-# Go into the repository
+# Navigate to the project directory
 $ cd mogu-travel
 
 # Run the application locally
 ```
-  
+
 ## Thanks to all Contributors!
 [![Contributors](https://contrib.rocks/image?repo=AlenaGM/Mogu-Travel)](https://github.com/AlenaGM/Mogu-Travel/graphs/contributors)
-
+<br><br>
 
 ##
 
