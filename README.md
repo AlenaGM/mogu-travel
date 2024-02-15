@@ -51,6 +51,6 @@ $ cd mogu-travel
 
    [ITGirlSchool]: <https://itgirlschool.com/en>
    [Mogu Travel]: <https://alenagm.github.io/mogu-travel/>
-   [Homepage]: <https://alenagm.github.io/mogu-travel/index.html/>
-   [Excursions Page]: <https://alenagm.github.io/mogu-travel/filter.html/>
+   [Homepage]: <https://alenagm.github.io/mogu-travel/>
+   [Excursions Page]: <https://alenagm.github.io/mogu-travel/filter.html>
    
