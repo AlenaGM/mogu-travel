@@ -6,6 +6,7 @@ _3rd Group Project at [ITGirlSchool]_<br><br>
 
 <img width="700" alt="Снимок экрана 2024-02-25" src="../main/screenshots/Capture web_5-9-2022_151255_alenagm.github.io.jpeg"">
 <img width="700" alt="Снимок экрана 2024-02-25" src="../main/screenshots/Capture web_5-9-2022_151255_alenagm.github.io.jpeg">
+<img width="45%" alt="Capture webpage 2024-02-25" src="../main/screenshots/caputureweb-index.jpeg">
 
 ## Getting started
 Host the parent directory on the webserver
