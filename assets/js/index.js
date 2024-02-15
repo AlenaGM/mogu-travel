@@ -115,24 +115,44 @@ const sliderContainers = [...document.querySelectorAll(".slider-container")];
 const nxtBtn = [...document.querySelectorAll(".nxt-btn")];
 const preBtn = [...document.querySelectorAll(".pre-btn")];
 
-sliderContainers.forEach((container, i) => {
-  let containerWidth = container.getBoundingClientRect().width;
+function setSlider() {
+  sliderContainers.forEach((container, i) => {
+    const containerWidth = container.getBoundingClientRect().width;
+    const cardWidth =
+      container.querySelector(".card").getBoundingClientRect().width + 24; //1 card + column gap
+    const cardsQuantity = [...container.querySelectorAll(".card")].length;
 
-  let cardDimensions = container
-    .querySelector(".card")
-    .getBoundingClientRect().width;
+    const visibleCards = Math.floor(containerWidth / cardWidth);
+    const oneMove = visibleCards * cardWidth;
 
-  let visibleCards = Math.floor(containerWidth / cardDimensions);
-  let oneMove = visibleCards * (cardDimensions + 24);
+    const paddingRight =
+      cardsQuantity % visibleCards == 0
+        ? containerWidth - cardWidth + 24
+        : containerWidth - (cardsQuantity % visibleCards) * cardWidth + 24;
 
-  nxtBtn[i].addEventListener("click", () => {
-    container.scrollLeft += oneMove;
+    container.style["paddingRight"] = `${paddingRight}px`;
+
+    nxtBtn[i].addEventListener("click", () => {
+      container.scrollLeft += oneMove;
+    });
+
+    preBtn[i].addEventListener("click", () => {
+      container.scrollLeft -= oneMove;
+    });
   });
+}
 
-  preBtn[i].addEventListener("click", () => {
-    container.scrollLeft -= oneMove;
-  });
-});
+setSlider();
+
+window.onresize = () => {
+  sliderContainers.forEach((container) =>
+    container.scrollTo({
+      left: 0,
+      behavior: "smooth",
+    })
+  );
+  setSlider();
+};
 
 //BURGER-MENU
 const burgerMenu = document.querySelector(".menu__burger");

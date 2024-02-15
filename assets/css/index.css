@@ -232,7 +232,6 @@
 
 @media screen and (min-width: 1024px) {
   .excursions__container {
-    padding-right: calc(1.5rem + 350px);
     cursor: auto;
   }
 }
@@ -581,7 +580,6 @@
     display: grid;
     grid-template-columns: repeat(4, minmax(auto, 740px));
     grid-auto-rows: 1fr;
-    padding-right: calc(1.5rem + 740px);
     cursor: auto;
   }
 
